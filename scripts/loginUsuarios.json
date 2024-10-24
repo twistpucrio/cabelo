@@ -2,12 +2,14 @@
     {
         "login": "Ana.s", 
         "senha": "1234",
-        "email": "ana@gmail.com"
+        "email": "ana@gmail.com",
+        "cronogramaUsuário": 1
     },
 
     {
         "login": "Breno123", 
         "senha": "4321",
-        "email": "brenoLo@hotmail.com"
+        "email": "brenoLo@hotmail.com",
+        "cronogramaUsuário": 1 
     }
 ]
