@@ -1,0 +1,64 @@
+body {
+    margin: 0 auto;
+    background-color: #33ff00;
+}
+
+#conteudo {
+    background-color: #84f7ff;
+}
+
+/* parte da nav */
+#navigator{
+
+}
+
+
+/* fim nav */
+
+/* footer */
+#footer {
+    background-color: #d40b81;
+    color: white;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 0.7%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#footer-principal {
+    font-size: medium;
+}
+
+#footer-nomes {
+    font-size: small;
+}
+
+#github-logo {
+    width: 2.5em;
+    margin-bottom: -0.5%;
+    transition: transform .2s ease-in-out;
+    filter: brightness(200%);
+}
+
+#github-logo:hover {
+    transform: scale(1.3);
+}
+
+#saiba-mais-link {
+    text-decoration: none;
+    color: white;
+    box-shadow: inset 0 0 0 0 white;
+    margin: 0 -.20rem;
+    padding: 0 .20rem;
+    border-radius: 0.5em;
+    transition: color .4s ease-in, box-shadow .6s ease-in;
+}
+
+#saiba-mais-link:hover {
+    box-shadow: inset 15em 0 0 0 white;
+    color: #d40b81;
+    font-weight: bold;
+}
+
+/* fim footer */
