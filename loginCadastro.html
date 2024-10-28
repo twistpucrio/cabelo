@@ -6,9 +6,18 @@
     <title>Beleza Verdadeira</title>
     <link rel="stylesheet" href="styles/styleGeral.css">
     <link rel="stylesheet" href="styles/styleLoginCadastro.css">
+    <script src="scripts/login.js"></script>
 </head>
 <body>
     <div id="conteudo">
+        
+        <div class="modalSucesso" id="modalSucesso">
+            <div id="modalSucessoInner">
+                <h2 id="msgSucesso"> </h2>
+                <button id="botaoVaiHome">Ir para Página Inicial</button>
+            </div>
+        </div>
+
         <header id="header"></header>
         <nav id="navigator">
             <a href="index.html" id="homeLink"><img src="" alt="Logo do site" id="imgLogo"></a>
@@ -17,7 +26,38 @@
             <a href="loginCadastro.html" id="loginCadastroLink">Cadastro/Login</a>
         </nav>
         <section id="main">
-
+            <div id="divLogin">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="login">Login:</label>
+                    <input type="text" id="login" name="login" required>
+                    <br><br>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                    <br><br>
+                    <button id="enterLogin">Entrar</button>
+                </form>
+            </div>
+            <div id="divCadastro">
+                <h2>Cadastro:</h2>
+                <form id="cadastroForm">
+                    <label for="loginCadastro">Usuário:</label>
+                    <input type="text" id="loginCadastro" name="loginCadastro" required>
+                    <br><br>
+                    <label for="emailCadastro">Email:</label>
+                    <input type="text" id="emailCadastro" name="emailCadastro" required>
+                    <span id="mensagemEmail"></span>
+                    <br><br>
+                    <label for="senhaCadastro">Senha:</label>
+                    <input type="password" id="senhaCadastro" name="senhaCadastro" required>
+                    <br><br>
+                    <label for="senhaVerificacaoCadastro">Verificação de Senha:</label>
+                    <input type="password" id="senhaVerificacaoCadastro" name="senhaVerificacaoCadastro" required>
+                    <span id="mensagemSenha"></span>
+                    <br><br>
+                    <button id="enterCadastro">Entrar</button>
+                </form>
+            </div>
         </section>
         <footer id="footer">
             <p id="footer-principal">Site desenvolvido para o programa TWIST 2024.2</p>
