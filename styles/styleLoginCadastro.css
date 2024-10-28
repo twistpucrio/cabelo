@@ -1,0 +1,39 @@
+.modal_login{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal_login.open{
+    opacity: 1;
+    z-index: 999;
+}
+
+.modal_login h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #faead7;
+    margin-bottom: 2.5rem;
+}
+
+#modal_login-inner{
+	width: 19%;
+	height: 30%;
+	border-radius: 20%;
+
+	justify-items: center;
+    display: block;
+    align-content: center;
+	padding: 1%;
+    background-color: #c77ca8;
+
+}
