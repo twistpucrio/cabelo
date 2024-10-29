@@ -17,8 +17,7 @@ function modalSucesso(alternado){
     let msgSucesso = document.getElementById("msgSucesso");
     let btnVaiHome = document.getElementById("botaoVaiHome");
     let mensagem;
-
-    btnVaiHome.addEventListener('click', function () {
+  btnVaiHome.addEventListener('click', function () {
         location.href="index.html";
     });
 
@@ -32,6 +31,25 @@ function modalSucesso(alternado){
     modal.classList.add("open");
 }
 
+
+function mostrarModal() {
+    const modal = document.getElementById("modal_login");
+    modal.classList.add("open");
+
+    const btnVolta = document.getElementById("botaoVolta");
+    const btnCadastro = document.getElementById("botaoModalCadastro");
+
+    btnVolta.addEventListener('click', function () {
+        modal.classList.remove("open");
+    });
+
+    btnCadastro.addEventListener('click', function () {
+        modal.classList.remove("open");
+        // Aqui você pode redirecionar para a página de cadastro se necessário
+    });
+}
+
+
 async function verificarUsuario() {
     const login = document.getElementById("login").value;
     const senha = document.getElementById("senha").value;
@@ -41,22 +59,25 @@ async function verificarUsuario() {
         const usuarios = await response.json();
 
         const usuarioEncontrado = usuarios.find(usuario => 
-            usuario.login === login && usuario.senha === senha
+            usuario.login === login 
         );
 
         if (usuarioEncontrado) {
+
             //alert("Login bem-sucedido!");
             console.log(JSON.stringify(usuarioEncontrado));
             localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
             modalSucesso('login');
         } else {
-            alert("Login ou senha incorretos. Tente novamente.");
+            mostrarModal();
         }
+
     } catch (error) {
         console.error("Erro ao carregar o arquivo JSON:", error);
         alert("Erro ao carregar dados de login.");
     }
 }
+
 
 async function realizarCadastro() {
     const login = document.getElementById("loginCadastro").value;
@@ -114,13 +135,14 @@ async function realizarCadastro() {
 }
 
 
+
 window.addEventListener("load", function() {
     const submitButton = document.querySelector("#enterLogin");
     const submitButtonCadastro = document.querySelector("#enterCadastro");
 
-    let usuer = JSON.parse(localStorage.getItem("usuario"));
-    if (usuer){
-        console.log(usuer);   
+    let user = JSON.parse(localStorage.getItem("usuario"));
+    if (user){
+        console.log(user);   
     }
 
     submitButton.addEventListener("click", function(event) {
@@ -128,8 +150,10 @@ window.addEventListener("load", function() {
         verificarUsuario();
     });
 
+
     submitButtonCadastro.addEventListener("click", function(event) {
         event.preventDefault(); 
         realizarCadastro();
     });
 });
+
