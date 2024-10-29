@@ -17,7 +17,7 @@ function modalSucesso(alternado){
     let msgSucesso = document.getElementById("msgSucesso");
     let btnVaiHome = document.getElementById("botaoVaiHome");
     let mensagem;
-  btnVaiHome.addEventListener('click', function () {
+    btnVaiHome.addEventListener('click', function () {
         location.href="index.html";
     });
 

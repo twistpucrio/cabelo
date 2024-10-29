@@ -5,11 +5,34 @@
         "email": "ana@gmail.com",
         "cronograma": 1
     },
-
     {
         "login": "Breno123", 
         "senha": "4321",
         "email": "brenoLo@hotmail.com",
         "cronograma": 1 
+    },
+    {
+        "login": "Clara_J",
+        "senha": "abc",
+        "email": "clara.j@gmail.com",
+        "cronograma": 2
+    },
+    {
+        "login": "Luiz89",
+        "senha": "aaa",
+        "email": "luiz_89@hotmail.com",
+        "cronograma": 4
+    },
+    {
+        "login": "MarcosF",
+        "senha": "senha",
+        "email": "marcosf@outlook.com",
+        "cronograma": 3
+    },
+    {
+        "login": "Paula_Lima",
+        "senha": "eu",
+        "email": "paulalima@gmail.com",
+        "cronograma": 1
     }
 ]
