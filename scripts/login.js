@@ -57,17 +57,24 @@ async function verificarUsuario() {
     try {
         const response = await fetch('scripts/loginUsuarios.json');
         const usuarios = await response.json();
-
+        const msgSenhaLogin = document.getElementById("mensagemSenhaLogin");
         const usuarioEncontrado = usuarios.find(usuario => 
             usuario.login === login 
         );
 
         if (usuarioEncontrado) {
+            const senhaCerta = usuarios.find(usuario => 
+                    usuario.senha === senha 
+            );
 
-            //alert("Login bem-sucedido!");
-            console.log(JSON.stringify(usuarioEncontrado));
-            localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
-            modalSucesso('login');
+            if(senhaCerta){
+                console.log(JSON.stringify(usuarioEncontrado));
+                localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
+                modalSucesso('login');
+            }
+            else{
+                msgSenhaLogin.innerHTML = "Senha incorreta";
+            }
         } else {
             mostrarModal();
         }
