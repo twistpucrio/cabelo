@@ -10,6 +10,22 @@
 </head>
 <body>
     <div id="conteudo">
+        
+        <div class="modalSucesso" id="modalSucesso">
+            <div id="modalSucessoInner">
+                <h2 id="msgSucesso"> </h2>
+                <button id="botaoVaiHome">Ir para Página Inicial</button>
+            </div>
+        </div>
+        <div class="modal_login" id="modal_login">
+                <div id="modal_login-inner">
+                    <h2>Login invalido</h2>
+                    <button class="botaologinModal" id="botaoVolta">tentar novamente</button>
+                    <h3>Novo no site?</h3>
+                    <button class="botaoCadastrar" id="botaoModalCadastro">Fazer cadastro</button>
+                </div>
+            </div>
+
         <header id="header"></header>
         <nav id="navigator">
             <a href="index.html" id="homeLink"><img src="" alt="Logo do site" id="imgLogo"></a>
@@ -19,6 +35,9 @@
         </nav>
         <section id="main">
             <div id="divLogin">
+
+                <h2>Login</h2>
+
                 <form id="loginForm">
                     <label for="login">Login:</label>
                     <input type="text" id="login" name="login" required>
@@ -26,17 +45,29 @@
                     <label for="senha">Senha:</label>
                     <input type="password" id="senha" name="senha" required>
                     <br><br>
-                    <button type="submit">Entrar</button>
+                    <button id="enterLogin">Entrar</button>
                 </form>
             </div>
-            <div class="modal_login" id="modal_login">
-                <div id="modal_login-inner">
-                    <h2>Login invalido</h2>
-                    <button class="botaologinModal" id="botaoVolta">tentar novamente</button>
-                    <h3>Novo no site?</h3>
-                    <button class="botaoCadastrar" id="botaoModalCadastro">Fazer cadastro</button>
-                </div>
-            </div>
+            <div id="divCadastro">
+                <h2>Cadastro:</h2>
+                <form id="cadastroForm">
+                    <label for="loginCadastro">Usuário:</label>
+                    <input type="text" id="loginCadastro" name="loginCadastro" required>
+                    <br><br>
+                    <label for="emailCadastro">Email:</label>
+                    <input type="text" id="emailCadastro" name="emailCadastro" required>
+                    <span id="mensagemEmail"></span>
+                    <br><br>
+                    <label for="senhaCadastro">Senha:</label>
+                    <input type="password" id="senhaCadastro" name="senhaCadastro" required>
+                    <br><br>
+                    <label for="senhaVerificacaoCadastro">Verificação de Senha:</label>
+                    <input type="password" id="senhaVerificacaoCadastro" name="senhaVerificacaoCadastro" required>
+                    <span id="mensagemSenha"></span>
+                    <br><br>
+                    <button id="enterCadastro">Entrar</button>
+                </form>
+
             </div>
         </section>
         <footer id="footer">
