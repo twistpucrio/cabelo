@@ -12,6 +12,11 @@ function verificaSenhaVer(senha, senhaVer){
     }
 }
 
+function verificaLogin(login) {
+    const padrao = /^[^\s]+$/; 
+    return padrao.test(login);
+}
+
 function modalSucesso(alternado){
     let modal = document.getElementById("modalSucesso");
     let msgSucesso = document.getElementById("msgSucesso");
@@ -93,6 +98,7 @@ async function realizarCadastro() {
     const senhaVerificacao = document.getElementById("senhaVerificacaoCadastro").value;
     let msgEmail = document.getElementById("mensagemEmail");
     let msgSenha = document.getElementById("mensagemSenha");
+    let msgLogin = document.getElementById("mensagemLogin");
     let sai = false;
 
     if(!verificaEmail(email)){
@@ -104,6 +110,10 @@ async function realizarCadastro() {
         msgSenha.innerHTML = "Senhas não coincidem!";
         sai = true;
     }
+    if (!verificaLogin(login)){
+        msgLogin.innerHTML = "Favor não usar espaço no login de usuario";
+        sai = true;
+    }
 
     if (sai) {
         return;
@@ -111,6 +121,7 @@ async function realizarCadastro() {
 
     msgEmail.innerHTML = " ";
     msgSenha.innerHTML = " ";
+    msgLogin.innerHTML = " ";
 
     try {
         const response = await fetch('scripts/loginUsuarios.json');
