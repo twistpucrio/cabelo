@@ -40,7 +40,6 @@ function modalSucesso(alternado){
 function mostrarModal() {
     const modal = document.getElementById("modal_login");
     modal.classList.add("open");
-
     const btnVolta = document.getElementById("botaoVolta");
     const btnCadastro = document.getElementById("botaoModalCadastro");
 
@@ -50,7 +49,6 @@ function mostrarModal() {
 
     btnCadastro.addEventListener('click', function () {
         modal.classList.remove("open");
-        // Aqui você pode redirecionar para a página de cadastro se necessário
     });
 }
 
