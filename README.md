@@ -36,7 +36,8 @@ TELAS E FUNCIONALIDADES:
 
 OBSERVAÇÕES:
 
-  Precisa da seguinte extensão do Visual Studio code para rodar o projeto corretamente: Live Server
+  Precisa da seguinte extensão do Visual Studio code para rodar o projeto corretamente: 
+  - Live Server
 
-link pro nosso docs bonito e arrumadinho ^^: 
-https://docs.google.com/document/d/1JRFyP54ZBtOzBYTZBL5oV0leHzgx5qdWqNWisRYF9j4/edit?usp=sharing
+  link pro nosso docs bonito e arrumadinho ^^: 
+  https://docs.google.com/document/d/1JRFyP54ZBtOzBYTZBL5oV0leHzgx5qdWqNWisRYF9j4/edit?usp=sharing
