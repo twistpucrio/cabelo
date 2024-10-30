@@ -1,14 +1,15 @@
 body {
     margin: 0 auto;
-    background-color: #33ff00;
+    background-color: #ecaedd6c;
 }
 
 #conteudo {
-    background-color: #84f7ff;
+    background-color: #F2DCE0;
 }
 
 /* parte da nav */
 #navigator{
+    
 
 }
 
@@ -17,7 +18,7 @@ body {
 
 /* footer */
 #footer {
-    background-color: #d40b81;
+    background-color: #bf0f50c2;
     color: white;
     text-align: center;
     padding-top: 1%;
