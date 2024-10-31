@@ -1,13 +1,6 @@
 
-
-#imgUsuario{
-    width: 3rem;
-    height: auto;
-}
-
-
-
 img{
     width: 100%;
     height: auto;
+    opacity: 80%;
 }
