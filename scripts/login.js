@@ -31,7 +31,6 @@ function modalSucesso(alternado){
     modal.classList.add("open");
 }
 
-
 function mostrarModal() {
     const modal = document.getElementById("modal_login");
     modal.classList.add("open");
@@ -49,27 +48,64 @@ function mostrarModal() {
     });
 }
 
-
 async function verificarUsuario() {
     const login = document.getElementById("login").value;
     const senha = document.getElementById("senha").value;
+    let msgSenha = document.getElementById("mensagemSenhaLogin");
 
     try {
         const response = await fetch('scripts/loginUsuarios.json');
         const usuarios = await response.json();
 
         const usuarioEncontrado = usuarios.find(usuario => 
-            usuario.login === login 
+            usuario.login == login 
         );
 
         if (usuarioEncontrado) {
+            const usuarioSenhaCorreta = usuarios.find(usuario => 
+                usuario.senha == senha 
+            );
 
-            //alert("Login bem-sucedido!");
-            console.log(JSON.stringify(usuarioEncontrado));
-            localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
-            modalSucesso('login');
+            if (usuarioSenhaCorreta){
+                msgSenha.innerHTML = " ";
+                //alert("Login bem-sucedido!");
+                console.log(JSON.stringify(usuarioEncontrado));
+                localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
+                modalSucesso('login');
+            } else {
+                msgSenha.innerHTML = "Senha incorreta!";
+            }
         } else {
-            mostrarModal();
+            let listaCadastros = JSON.parse(localStorage.getItem("cadastros"));
+            console.log(listaCadastros);
+            let usuarioCadastrado = null;
+            for (let indice in listaCadastros){
+                console.log(listaCadastros[indice]);
+                if (listaCadastros[indice].login == login){
+                    usuarioCadastrado = listaCadastros[indice];
+                }
+            }
+
+            if (usuarioCadastrado) {
+                let senhaCadastrada = null;
+                for (let indice in listaCadastros){
+                    if (listaCadastros[indice].senha == senha){
+                        senhaCadastrada = true;
+                    }
+                }
+
+                if (senhaCadastrada) {
+                    msgSenha.innerHTML = " ";
+                    //alert("Login bem-sucedido!");
+                    console.log(JSON.stringify(usuarioCadastrado));
+                    localStorage.setItem("usuario", JSON.stringify(usuarioCadastrado));
+                    modalSucesso('login');
+                } else {
+                    msgSenha.innerHTML = "Senha incorreta!";
+                }
+            } else {
+                mostrarModal();
+            }
         }
 
     } catch (error) {
@@ -77,7 +113,6 @@ async function verificarUsuario() {
         alert("Erro ao carregar dados de login.");
     }
 }
-
 
 async function realizarCadastro() {
     const login = document.getElementById("loginCadastro").value;
@@ -125,6 +160,12 @@ async function realizarCadastro() {
             console.log(JSON.stringify(usuarioNovo));
             localStorage.setItem("usuario", JSON.stringify(usuarioNovo));
 
+            let listaCadastros = JSON.parse(localStorage.getItem("cadastros"));
+            console.log(listaCadastros);
+            listaCadastros.push(usuarioNovo)
+            console.log(JSON.stringify(listaCadastros));
+            localStorage.setItem("cadastros", JSON.stringify(listaCadastros));
+
             modalSucesso('cadastro');
             //alert("Usuário cadastrado com sucesso!");
         }
@@ -133,8 +174,6 @@ async function realizarCadastro() {
         alert("Erro ao carregar dados dos usuários.");
     }
 }
-
-
 
 window.addEventListener("load", function() {
     const submitButton = document.querySelector("#enterLogin");
@@ -149,7 +188,6 @@ window.addEventListener("load", function() {
         event.preventDefault(); 
         verificarUsuario();
     });
-
 
     submitButtonCadastro.addEventListener("click", function(event) {
         event.preventDefault(); 

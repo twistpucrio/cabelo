@@ -36,9 +36,19 @@ async function gerarCronograma(cronogramaId) {
         window.location.href = `form.html`;
     });
 
+    const btnSai = document.createElement('button');
+    btnSai.innerHTML = 'Sair da conta';
+    //btnSai.classList.add('classe');
+
+    btnSai.addEventListener('click', function() {
+        localStorage.setItem("usuario", null);
+        location.reload();
+    });
+
     containerCronograma.appendChild(tituloCronograma);
     containerCronograma.appendChild(tabelaDiv);
     containerCronograma.appendChild(btnForm);
+    containerCronograma.appendChild(btnSai);
 }
 
   function semUsuario(){
@@ -68,8 +78,18 @@ function semCronograma(){
     btnForm.addEventListener('click', function() {
         window.location.href = `form.html`;
     });
-    containerCronograma.appendChild(btnForm);
 
+    const btnSai = document.createElement('button');
+    btnSai.innerHTML = 'Sair da conta';
+    //btnSai.classList.add('classe');
+
+    btnSai.addEventListener('click', function() {
+        localStorage.setItem("usuario", null);
+        location.reload();
+    });
+
+    containerCronograma.appendChild(btnForm);
+    containerCronograma.appendChild(btnSai);
 }
 
 window.addEventListener("load", async function() {
