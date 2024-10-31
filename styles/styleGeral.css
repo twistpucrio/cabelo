@@ -1,33 +1,66 @@
+@font-face {
+    font-family: 'mulish';
+    src: url('fonts/Mulish-Light.ttf');
+}
+
 body {
     margin: 0 auto;
     background-color: #33ff00;
 }
 
 #conteudo {
-    background-color: #84f7ff;
+    background-color: #ffffff;
 }
 
 /* parte da nav */
 #navigator{
-
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease; 
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items:center;
+    z-index: 1000;
 }
 
+#navigator.scrolled {
+    background-color: pink;
+}
 
+#navigator a {
+    color: white;
+    text-decoration: none;
+    text-decoration: none;
+    font-size: x-large;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-family: 'Mulish', Arial, sans-serif;
+}
+
+#imgLogo{
+    width: 10rem;
+    height: auto;
+    padding-right: 35rem;
+}
 /* fim nav */
 
 /* footer */
 #footer {
-    background-color: #d40b81;
+    background-color:pink;
     color: white;
     text-align: center;
     padding-top: 1%;
     padding-bottom: 0.7%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Mulish', Arial, sans-serif;
 
 }
 
 #footer-principal {
-    font-size: medium;
+    font-size:larger;
 }
 
 #footer-nomes {
