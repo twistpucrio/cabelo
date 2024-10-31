@@ -1,15 +1,10 @@
-function verificaEmail(email){
+function verificaEmail(email) {
     const padrao = /[a-z._]+@[a-z._]+[.]+(.*[a-z])/;
     return padrao.test(email);
 }
 
-function verificaSenhaVer(senha, senhaVer){
-    if (senhaVer==senha){
-        return 1;
-    }
-    else{
-        return -1;
-    }
+function verificaSenhaVer(senha, senhaVer) {
+    return senhaVer === senha ? 1 : -1;
 }
 
 function verificaLogin(login) {
@@ -17,18 +12,19 @@ function verificaLogin(login) {
     return padrao.test(login);
 }
 
-function modalSucesso(alternado){
+function modalSucesso(alternado) {
     let modal = document.getElementById("modalSucesso");
     let msgSucesso = document.getElementById("msgSucesso");
     let btnVaiHome = document.getElementById("botaoVaiHome");
     let mensagem;
-  btnVaiHome.addEventListener('click', function () {
-        location.href="index.html";
+    
+    btnVaiHome.addEventListener('click', function () {
+        location.href = "index.html";
     });
 
-    if (alternado == 'login') {
+    if (alternado === 'login') {
         mensagem = "Usuário logado com sucesso!";
-    } else if (alternado == 'cadastro') {
+    } else if (alternado === 'cadastro') {
         mensagem = "Usuário cadastrado com sucesso!";
     }
 
@@ -36,22 +32,28 @@ function modalSucesso(alternado){
     modal.classList.add("open");
 }
 
-
 function mostrarModal() {
     const modal = document.getElementById("modal_login");
-    modal.classList.add("open");
     const btnVolta = document.getElementById("botaoVolta");
     const btnCadastro = document.getElementById("botaoModalCadastro");
+    const divCadastro = document.getElementById("divCadastro");
+    const user = JSON.parse(localStorage.getItem("usuario"));
+
+    // Se o usuário não estiver logado, exibe a div de cadastro
+    divCadastro.style.display = user ? 'none' : 'block';
+
+    modal.classList.add("open");
 
     btnVolta.addEventListener('click', function () {
         modal.classList.remove("open");
+        divCadastro.style.display = 'none'; // Reseta a exibição ao fechar o modal
     });
 
     btnCadastro.addEventListener('click', function () {
         modal.classList.remove("open");
+        divCadastro.style.display = 'block'; // Exibe a div de cadastro ao clicar
     });
 }
-
 
 async function verificarUsuario() {
     const login = document.getElementById("login").value;
@@ -66,16 +68,13 @@ async function verificarUsuario() {
         );
 
         if (usuarioEncontrado) {
-            const senhaCerta = usuarios.find(usuario => 
-                    usuario.senha === senha 
-            );
+            const senhaCerta = usuarioEncontrado.senha === senha;
 
-            if(senhaCerta){
+            if (senhaCerta) {
                 console.log(JSON.stringify(usuarioEncontrado));
                 localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
                 modalSucesso('login');
-            }
-            else{
+            } else {
                 msgSenhaLogin.innerHTML = "Senha incorreta";
             }
         } else {
@@ -88,7 +87,6 @@ async function verificarUsuario() {
     }
 }
 
-
 async function realizarCadastro() {
     const login = document.getElementById("loginCadastro").value;
     const email = document.getElementById("emailCadastro").value;
@@ -99,16 +97,17 @@ async function realizarCadastro() {
     let msgLogin = document.getElementById("mensagemLogin");
     let sai = false;
 
-    if(!verificaEmail(email)){
+    if (!verificaEmail(email)) {
         msgEmail.innerHTML = "Email não está no formato correto (xxx@xxx.xxx)!";
-        sai= true;
+        sai = true;
     }
 
-    if (verificaSenhaVer(senhaVerificacao, senha) == -1){
+    if (verificaSenhaVer(senhaVerificacao, senha) === -1) {
         msgSenha.innerHTML = "Senhas não coincidem!";
         sai = true;
     }
-    if (!verificaLogin(login)){
+
+    if (!verificaLogin(login)) {
         msgLogin.innerHTML = "Favor não usar espaço no login de usuario";
         sai = true;
     }
@@ -142,7 +141,6 @@ async function realizarCadastro() {
             localStorage.setItem("usuario", JSON.stringify(usuarioNovo));
 
             modalSucesso('cadastro');
-            //alert("Usuário cadastrado com sucesso!");
         }
     } catch (error) {
         console.error("Erro ao carregar o arquivo JSON:", error);
@@ -150,15 +148,15 @@ async function realizarCadastro() {
     }
 }
 
-
-
 window.addEventListener("load", function() {
     const submitButton = document.querySelector("#enterLogin");
     const submitButtonCadastro = document.querySelector("#enterCadastro");
+    const divCadastro = document.getElementById("divCadastro");
 
     let user = JSON.parse(localStorage.getItem("usuario"));
-    if (user){
-        console.log(user);   
+    if (user) {
+        console.log(user);
+        divCadastro.style.display = 'none'; 
     }
 
     submitButton.addEventListener("click", function(event) {
@@ -166,10 +164,8 @@ window.addEventListener("load", function() {
         verificarUsuario();
     });
 
-
     submitButtonCadastro.addEventListener("click", function(event) {
         event.preventDefault(); 
         realizarCadastro();
     });
 });
-

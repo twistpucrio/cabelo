@@ -110,10 +110,17 @@
 
 #divLogin, #divCadastro {
     margin: 2%; 
-    padding: 20px;  
+    padding: 20px; 
+    height: 47%; 
     width: 30%; 
     background-color: #f1b8d0;
-    border-radius: 10%;
+    border-radius: 5%;
     text-align:center;
 }
 
+#enterLogin{
+    margin-top: 40%;
+    width: 25%;
+    height:15%;
+    
+}
