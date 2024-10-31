@@ -1,37 +1,85 @@
+@font-face {
+    font-family: 'mulish';
+    src: url('../fonts/Mulish-Light.ttf');
+}
+
 body {
     margin: 0 auto;
     background-color: #33ff00;
 }
 
 #conteudo {
-    background-color: #84f7ff;
+    background-color: #ffffff;
 }
 
 /* parte da nav */
 #navigator{
-
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease; 
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    display: flex;
+    align-items:center;
+    z-index: 1000;
 }
 
+#navigator.scrolled {
+    background-color: pink;
+}
+
+#navigator a {
+    color: white;
+    text-decoration: none;
+    text-decoration: none;
+    font-size: large;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-family: 'Mulish', Arial, sans-serif;
+}
+
+#navigator a:hover {
+    color:#DF4C83;
+}
+
+#imgLogo{
+    width: 10rem;
+    height: auto;
+    padding-right: 35rem;
+    padding-left: 2rem;
+}
+
+#imgUsuario{
+    width: 3rem;
+    height: auto;
+}
+
+#imgUsuario:hover {
+    transform: scale(1.1);
+}
 
 /* fim nav */
 
 /* footer */
 #footer {
-    background-color: #d40b81;
+    background-color:pink;
     color: white;
     text-align: center;
     padding-top: 1%;
     padding-bottom: 0.7%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Mulish', Arial, sans-serif;
 
 }
 
 #footer-principal {
-    font-size: medium;
+    font-size:larger;
 }
 
 #footer-nomes {
-    font-size: small;
+    font-size:medium;
 }
 
 #github-logo {
@@ -57,7 +105,7 @@ body {
 
 #saiba-mais-link:hover {
     box-shadow: inset 15em 0 0 0 white;
-    color: #d40b81;
+    color: #DF4C83;
     font-weight: bold;
 }
 
