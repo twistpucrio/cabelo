@@ -33,10 +33,10 @@
             <a href="perfilUsuario.html" id="usuarioLink"><img src="img/usuario2.png" alt="Ícone usuário básico" id="imgUsuario"></a>
             <a href="loginCadastro.html" id="loginCadastroLink">CADASTRO/LOGIN</a>
         </nav>
-        <section id="main">
+        <section id="mainLogin">
             <div id="divLogin">
 
-                <h2>Login</h2>
+                <h2>Faça seu Login</h2>
 
                 <form id="loginForm">
                     <label for="login">Login:</label>
@@ -44,16 +44,18 @@
                     <br><br>
                     <label for="senha">Senha:</label>
                     <input type="password" id="senha" name="senha" required>
-                    <span id="mensagemSenhaLogin"></span>
+                    <p id="mensagemSenhaLogin"></p>
                     <br><br>
                     <button id="enterLogin">Entrar</button>
+                    <button id="fazerCadastro">Cadastro</button>
                 </form>
             </div>
-            <div id="divCadastro">
+            <div id="divCadastro" style="display:none">
                 <h2>Cadastro:</h2>
                 <form id="cadastroForm">
                     <label for="loginCadastro">Usuário:</label>
                     <input type="text" id="loginCadastro" name="loginCadastro" required>
+                    <span id="mensagemLogin"></span>
                     <br><br>
                     <label for="emailCadastro">Email:</label>
                     <input type="text" id="emailCadastro" name="emailCadastro" required>
