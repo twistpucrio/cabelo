@@ -24,6 +24,7 @@ body {
     display: flex;
     align-items:center;
     z-index: 1000;
+    justify-content: space-between;
 }
 
 #nav a {
@@ -47,6 +48,10 @@ body {
     padding-left: 2rem;
 }
 
+#imgLogo:hover{
+    transform: scale(1.1);
+}
+
 #imgUsuario{
     width: 3rem;
     height: auto;
@@ -56,24 +61,25 @@ body {
     transform: scale(1.1);
 }
 
-#homeLink{
-    width: 58%;
-}
-
 #forumLink{
     text-align: right;
-    width: 20%;
 }
 
 #usuarioLink{
     text-align: center;
     display: flex;
-    justify-content: center;
-    width: 5%;
 }
 
-#loginCadastroLink{
-    width: 18%;
+#logoDiv{
+    width: 62%;
+}
+
+#restoDiv{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 4rem;
 }
 
 /* fim nav */
