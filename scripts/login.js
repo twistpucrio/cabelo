@@ -164,11 +164,16 @@ async function realizarCadastro() {
 }
 
 window.addEventListener("load", function () {
+    const cadastrarButton = document.querySelector("#fazerCadastro");
     const submitButton = document.querySelector("#enterLogin");
     const submitButtonCadastro = document.querySelector("#enterCadastro");
     const divCadastro = document.getElementById("divCadastro");
     const divLogin = document.getElementById("divLogin");
 
+    cadastrarButton.addEventListener('click', function () {
+        divLogin.style.display = 'none';
+        divCadastro.style.display = 'block';
+    });
     let user = JSON.parse(localStorage.getItem("usuario"));
     if (user) {
         divCadastro.style.display = 'none';

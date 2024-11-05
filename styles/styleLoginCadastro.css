@@ -109,12 +109,22 @@
     background-color: whitesmoke;
 }
 
-#divLogin, #divCadastro {
+#divLogin {
     margin: 2%; 
     padding: 20px; 
     height: 47%; 
     width: 25%; 
-    background-color: #f3c3d7;
+    background-color: rgb(253, 201, 209);
+    border-radius: 5%;
+    text-align:center;
+}
+
+#divCadastro{
+    margin: 2%; 
+    padding: 20px; 
+    height: 57%; 
+    width: 25%; 
+    background-color: rgb(253, 201, 209);
     border-radius: 5%;
     text-align:center;
 }
@@ -123,16 +133,24 @@
     position:absolute;
     width: 7%;
     height: 40px;
-    top: 54%;
-    left: 51%
+    top: 60%;
+    left: 51%;
+    background-color: #FFFFFF;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
+    transition: transform 0.3s ease;
+    border:none;
 }
 
 #fazerCadastro{
     position:absolute;
     width: 7%;
     height: 40px;
-    top: 54%;
-    left: 42%
+    top: 60%;
+    left: 42%;
+    background-color: #FFFFFF;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
+    transition: transform 0.3s ease;
+    border:none;
 }
 
 #login{
@@ -150,3 +168,55 @@
 label{
     font-size:larger;
 }
+
+input{
+    margin-top: 1.5%;
+    height: 24px;
+    width: 45%;
+}
+
+#enterCadastro{
+    border: none;
+    position:absolute;
+    width: 7%;
+    height: 40px;
+    top: 66%;
+    left: 47%;
+    background-color: #FFFFFF;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
+    transition: transform 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.05);  
+    background-color: rgb(249, 208, 255)
+}
+
+#mensagemSenhaLogin{
+    color: #d61717;
+    animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-10deg);
+    }
+    20% {
+      transform: rotateZ(5deg);
+    }
+    25% {
+      transform: rotateZ(-5deg);
+    }
+    30% {
+      transform: rotateZ(3deg);
+    }
+    35% {
+      transform: rotateZ(-2deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
