@@ -27,28 +27,32 @@ async function gerarCronograma(cronogramaId) {
 
     tabela += "</table>";
     tabelaDiv.innerHTML = tabela;
-
+    
     const btnForm = document.createElement('button');
     btnForm.innerHTML = 'Refazer formulário!';
-    //btnForm.classList.add('classe');
-
+    btnForm.classList.add('btnForm');
+    
     btnForm.addEventListener('click', function() {
         window.location.href = `form.html`;
     });
-
+    
     const btnSai = document.createElement('button');
     btnSai.innerHTML = 'Sair da conta';
-    //btnSai.classList.add('classe');
+    btnSai.classList.add('btnForm');
 
     btnSai.addEventListener('click', function() {
         localStorage.setItem("usuario", null);
         location.reload();
     });
+    
+    const btnDiv = document.createElement('div');
+    btnDiv.setAttribute('id', 'btnDiv');
+    btnDiv.appendChild(btnForm);
+    btnDiv.appendChild(btnSai);
 
     containerCronograma.appendChild(tituloCronograma);
     containerCronograma.appendChild(tabelaDiv);
-    containerCronograma.appendChild(btnForm);
-    containerCronograma.appendChild(btnSai);
+    containerCronograma.appendChild(btnDiv);
 }
 
   function semUsuario(){
@@ -57,13 +61,18 @@ async function gerarCronograma(cronogramaId) {
     containerCronograma.innerHTML = "<h2 id='avisoPerfil'>Você não está na sua conta!</h2><p id='msgPerfil'>Por favor, logue-se ou cadastre-se em nosso site!</p>";
     
     const btnLogCad = document.createElement('button');
-    btnLogCad.innerHTML = 'Login/Cadastro';
-    //btnLogCad.classList.add('classe');
+    btnLogCad.innerHTML = 'Login / Cadastro';
+    btnLogCad.classList.add('btnForm');
 
     btnLogCad.addEventListener('click', function() {
         window.location.href = `loginCadastro.html`;
     });
-    containerCronograma.appendChild(btnLogCad);
+
+    const btnDiv = document.createElement('div');
+    btnDiv.setAttribute('id', 'btnDiv');
+    btnDiv.appendChild(btnLogCad);
+
+    containerCronograma.appendChild(btnDiv);
 }
 
 function semCronograma(){
@@ -73,7 +82,7 @@ function semCronograma(){
     
     const btnForm = document.createElement('button');
     btnForm.innerHTML = 'Formulário';
-    //btnForm.classList.add('classe');
+    btnForm.classList.add('btnForm');
 
     btnForm.addEventListener('click', function() {
         window.location.href = `form.html`;
@@ -81,15 +90,19 @@ function semCronograma(){
 
     const btnSai = document.createElement('button');
     btnSai.innerHTML = 'Sair da conta';
-    //btnSai.classList.add('classe');
+    btnSai.classList.add('btnForm');
 
     btnSai.addEventListener('click', function() {
         localStorage.setItem("usuario", null);
         location.reload();
     });
 
-    containerCronograma.appendChild(btnForm);
-    containerCronograma.appendChild(btnSai);
+    const btnDiv = document.createElement('div');
+    btnDiv.setAttribute('id', 'btnDiv');
+    btnDiv.appendChild(btnForm);
+    btnDiv.appendChild(btnSai);
+
+    containerCronograma.appendChild(btnDiv);
 }
 
 window.addEventListener("load", async function() {

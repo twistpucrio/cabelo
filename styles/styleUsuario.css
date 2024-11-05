@@ -1,3 +1,65 @@
 .cronogramaDia{
     text-align: center;
 }
+
+.tituloCronograma{
+    padding-left: 2rem;
+    font-size: xx-large;
+    color: #DF4C83;
+
+}
+
+#avisoPerfil{
+    padding-left: 2rem;
+    font-size: xx-large;
+    color: #DF4C83;
+}
+
+#msgPerfil{
+    padding: 0rem 0rem 3rem 2rem;
+    font-size: large;
+}
+
+#tabelaEventos{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 4rem 4rem 4rem;
+}
+
+#tabelaEventos table{
+    border: #DF4C83 solid 2px;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+#tabelaEventos tr{
+    padding: 1rem 0rem 1rem 0rem;
+    border: #DF4C83 solid 2px;
+
+}
+
+#btnDiv{
+    margin: 0rem 3rem 3rem 2rem;
+}
+
+.btnForm{
+    border: none;
+    background-color: #DF4C83;
+    font-size: medium;
+    padding: 0.7rem;
+    border-radius: 1.2rem;
+    color: white;
+    font-family: "mulish";
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.btnForm:hover{
+    background-color: #f56399;
+}
+
+.btnForm:active{
+    background-color: #ce2c67;
+}
