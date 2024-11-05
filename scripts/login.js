@@ -1,5 +1,5 @@
 function verificaEmail(email) {
-    const padrao = /[a-z._]+@[a-z._]+[.]+(.*[a-z])/;
+    const padrao = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i; 
     return padrao.test(email);
 }
 
@@ -18,9 +18,7 @@ function modalSucesso(alternado) {
     let btnVaiHome = document.getElementById("botaoVaiHome");
     let mensagem;
     btnVaiHome.addEventListener('click', function () {
-
         location.href = "index.html";
-
     });
 
     if (alternado === 'login') {
@@ -28,8 +26,8 @@ function modalSucesso(alternado) {
     } else if (alternado === 'cadastro') {
         mensagem = "Usuário cadastrado com sucesso!";
     }
-    msgSucesso.innerHTML = mensagem; 
-    modal.classList.add("open"); 
+    msgSucesso.innerHTML = mensagem;
+    modal.classList.add("open");
 }
 
 function mostrarModal() {
@@ -40,22 +38,22 @@ function mostrarModal() {
     const divLogin = document.getElementById("divLogin");
     const user = JSON.parse(localStorage.getItem("usuario"));
     if (user) {
-        divCadastro.style.display = 'none'; 
+        divCadastro.style.display = 'none';
     } else {
         divCadastro.style.display = 'none';
-        divLogin.style.display = 'block'; 
+        divLogin.style.display = 'block';
     }
 
-    modal.classList.add("open"); 
+    modal.classList.add("open");
     btnVolta.addEventListener('click', function () {
         modal.classList.remove("open");
-        divCadastro.style.display = 'none'; 
-        divLogin.style.display = 'block'; 
+        divCadastro.style.display = 'none';
+        divLogin.style.display = 'block';
     });
     btnCadastro.addEventListener('click', function () {
         modal.classList.remove("open");
-        divLogin.style.display = 'none'; 
-        divCadastro.style.display = 'block'; 
+        divLogin.style.display = 'none';
+        divCadastro.style.display = 'block';
     });
 }
 
@@ -67,68 +65,34 @@ async function verificarUsuario() {
     try {
         const response = await fetch('scripts/loginUsuarios.json');
         const usuarios = await response.json();
-        const msgSenhaLogin = document.getElementById("mensagemSenhaLogin");
-        const usuarioEncontrado = usuarios.find(usuario => 
-            usuario.login == login 
-        );
+
+        const usuarioEncontrado = usuarios.find(usuario => usuario.login === login);
 
         if (usuarioEncontrado) {
-            const senhaCerta = usuarioEncontrado.senha === senha;
-            if (senhaCerta) {
-                console.log(JSON.stringify(usuarioEncontrado));
-                localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado)); 
-                modalSucesso('login');
-            } else {
-                msgSenhaLogin.innerHTML = "Senha incorreta"; 
-            }
-        } else {
-            mostrarModal(); 
-            const usuarioSenhaCorreta = usuarios.find(usuario => 
-                usuario.senha == senha 
-            );
-
-            if (usuarioSenhaCorreta){
-                msgSenha.innerHTML = " ";
-                //alert("Login bem-sucedido!");
-                console.log(JSON.stringify(usuarioEncontrado));
+            if (usuarioEncontrado.senha === senha) {
+                console.log("Usuário encontrado: ", JSON.stringify(usuarioEncontrado));
                 localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
                 modalSucesso('login');
             } else {
                 msgSenha.innerHTML = "Senha incorreta!";
             }
         } else {
-            let listaCadastros = JSON.parse(localStorage.getItem("cadastros"));
-            console.log(listaCadastros);
-            let usuarioCadastrado = null;
-            for (let indice in listaCadastros){
-                console.log(listaCadastros[indice]);
-                if (listaCadastros[indice].login == login){
-                    usuarioCadastrado = listaCadastros[indice];
-                }
-            }
+ 
+            let listaCadastros = JSON.parse(localStorage.getItem("cadastros")) || [];
+            let usuarioCadastrado = listaCadastros.find(usuario => usuario.login === login);
 
             if (usuarioCadastrado) {
-                let senhaCadastrada = null;
-                for (let indice in listaCadastros){
-                    if (listaCadastros[indice].senha == senha){
-                        senhaCadastrada = true;
-                    }
-                }
-
-                if (senhaCadastrada) {
-                    msgSenha.innerHTML = " ";
-                    //alert("Login bem-sucedido!");
-                    console.log(JSON.stringify(usuarioCadastrado));
+                if (usuarioCadastrado.senha === senha) {
+                    console.log("Usuário cadastrado: ", JSON.stringify(usuarioCadastrado));
                     localStorage.setItem("usuario", JSON.stringify(usuarioCadastrado));
                     modalSucesso('login');
                 } else {
                     msgSenha.innerHTML = "Senha incorreta!";
                 }
             } else {
-                mostrarModal();
+                mostrarModal(); 
             }
         }
-
     } catch (error) {
         console.error("Erro ao carregar o arquivo JSON:", error);
         alert("Erro ao carregar dados de login.");
@@ -154,48 +118,44 @@ async function realizarCadastro() {
         msgSenha.innerHTML = "Senhas não coincidem!";
         sai = true;
     }
+
     if (!verificaLogin(login)) {
-        msgLogin.innerHTML = "Favor não usar espaço no login de usuario";
+        msgLogin.innerHTML = "Favor não usar espaço no login de usuário";
         sai = true;
     }
+
     if (sai) {
-        return;
+        return; 
     }
-    msgEmail.innerHTML = " "; 
-    msgSenha.innerHTML = " "; 
-    msgLogin.innerHTML = " "; 
+
+    msgEmail.innerHTML = " ";
+    msgSenha.innerHTML = " ";
+    msgLogin.innerHTML = " ";
 
     try {
         const response = await fetch('scripts/loginUsuarios.json');
         const usuarios = await response.json();
-        const usuarioExistente = usuarios.find(usuario => 
-            usuario.login === login || usuario.email === email
-        );
+
+        const usuarioExistente = usuarios.find(usuario => usuario.login === login || usuario.email === email);
 
         if (usuarioExistente) {
             alert("Já existe um usuário com esse nome ou email!");
         } else {
             const usuarioNovo = {
-                "login": login, 
+                "login": login,
                 "senha": senha,
                 "email": email,
                 "cronograma": -1
             };
             console.log(JSON.stringify(usuarioNovo));
-            localStorage.setItem("usuario", JSON.stringify(usuarioNovo)); 
-            modalSucesso('cadastro'); 
+            localStorage.setItem("usuario", JSON.stringify(usuarioNovo));
+            modalSucesso('cadastro');
             document.getElementById("divCadastro").style.display = 'none';
             document.getElementById("divLogin").style.display = 'block';
 
-            localStorage.setItem("usuario", JSON.stringify(usuarioNovo));
-            let listaCadastros = JSON.parse(localStorage.getItem("cadastros"));
-            console.log(listaCadastros);
-            listaCadastros.push(usuarioNovo)
-            console.log(JSON.stringify(listaCadastros));
+            let listaCadastros = JSON.parse(localStorage.getItem("cadastros")) || [];
+            listaCadastros.push(usuarioNovo);
             localStorage.setItem("cadastros", JSON.stringify(listaCadastros));
-            modalSucesso('cadastro');
-            //alert("Usuário cadastrado com sucesso!");
-
         }
     } catch (error) {
         console.error("Erro ao carregar o arquivo JSON:", error);
@@ -203,29 +163,28 @@ async function realizarCadastro() {
     }
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     const submitButton = document.querySelector("#enterLogin");
     const submitButtonCadastro = document.querySelector("#enterCadastro");
     const divCadastro = document.getElementById("divCadastro");
     const divLogin = document.getElementById("divLogin");
 
-
     let user = JSON.parse(localStorage.getItem("usuario"));
     if (user) {
-        divCadastro.style.display = 'none'; 
-        divLogin.style.display = 'block'; 
+        divCadastro.style.display = 'none';
+        divLogin.style.display = 'block';
     } else {
         divCadastro.style.display = 'none';
         divLogin.style.display = 'block';
     }
 
-    submitButton.addEventListener("click", function(event) {
-        event.preventDefault(); 
-        verificarUsuario(); 
+    submitButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        verificarUsuario();
     });
 
-    submitButtonCadastro.addEventListener("click", function(event) {
-        event.preventDefault(); 
-        realizarCadastro(); 
+    submitButtonCadastro.addEventListener("click", function (event) {
+        event.preventDefault();
+        realizarCadastro();
     });
 });
