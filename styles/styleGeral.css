@@ -14,42 +14,36 @@ body {
 }
 
 /* parte da nav */
-#navigator{
+#nav{
     width: 100%;
-    position: fixed;
     top: 0;
     left: 0;
-    background-color: transparent;
+    background-color: pink;
     transition: background-color 0.3s ease; 
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
+    padding-top: 0.2rem;
     display: flex;
     align-items:center;
     z-index: 1000;
 }
 
-#navigator.scrolled {
-    background-color: pink;
-}
-
-#navigator a {
+#nav a {
     color: white;
     text-decoration: none;
-    text-decoration: none;
     font-size: large;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     font-family: 'Mulish', Arial, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 0.05rem;
 }
 
-#navigator a:hover {
+#nav a:hover {
     color:#DF4C83;
 }
 
 #imgLogo{
     width: 10rem;
     height: auto;
-    padding-right: 35rem;
     padding-left: 2rem;
 }
 
@@ -60,6 +54,26 @@ body {
 
 #imgUsuario:hover {
     transform: scale(1.1);
+}
+
+#homeLink{
+    width: 58%;
+}
+
+#forumLink{
+    text-align: right;
+    width: 20%;
+}
+
+#usuarioLink{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 5%;
+}
+
+#loginCadastroLink{
+    width: 18%;
 }
 
 /* fim nav */
@@ -85,7 +99,7 @@ body {
 
 #github-logo {
     width: 2.5em;
-    margin-bottom: -0.5%;
+    margin-bottom: 1em;
     transition: transform .2s ease-in-out;
     filter: brightness(200%);
 }

@@ -51,40 +51,30 @@
     color: #faead7;
     margin-bottom: 2.5rem;
 }
-
   #modalSucessoInner{
 
 	width: 19%;
 	height: 30%;
 	border-radius: 20%;
-
 	justify-items: center;
     display: block;
     align-content: center;
 	padding: 1%;
-
     background-color: #c77ca8;
 }
-  
-
 #modal_login-inner{
 
 	width: 19%;
 	height: 30%;
 	border-radius: 20%;
-
 	justify-items: center;
     display: block;
     align-content: center;
 	padding: 1%;
-
     background-color: #c77ca8;
-
-
-
 }
-
 #botaoVaiHome{
+
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bolder;
     border: 0;
@@ -97,7 +87,6 @@
     font-size: medium;
     width: 13rem;
     height: 2.6rem;
-
     overflow: hidden;
     margin-bottom: 1.5rem;
 }
@@ -105,9 +94,59 @@
 #botaoVaiHome:hover{
     background-color: #ecd7bd;
 }
-
 #botaoVaiHome:active{
     color: #faead7;
     background-color: #6e3b26;
+}
 
+#mainLogin {
+    justify-content: center; 
+    align-items: center; 
+    height: 80vh;
+    display: flex;
+    align-content: stretch;
+    flex-direction: column-reverse;
+    background-color: whitesmoke;
+}
+
+#divLogin, #divCadastro {
+    margin: 2%; 
+    padding: 20px; 
+    height: 47%; 
+    width: 25%; 
+    background-color: #f3c3d7;
+    border-radius: 5%;
+    text-align:center;
+}
+
+#enterLogin{
+    position:absolute;
+    width: 7%;
+    height: 40px;
+    top: 54%;
+    left: 51%
+}
+
+#fazerCadastro{
+    position:absolute;
+    width: 7%;
+    height: 40px;
+    top: 54%;
+    left: 42%
+}
+
+#login{
+    margin-top: 5%;
+    height: 30px;
+    width: 55%;
+}
+
+#senha{
+    margin-top: 2%;
+    height: 30px;
+    width: 55%;
+}
+
+label{
+    font-size:larger;
 }
