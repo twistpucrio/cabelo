@@ -1,3 +1,81 @@
 .cronogramaDia{
     text-align: center;
 }
+#main{
+    padding: 5%;
+}
+
+#cronogramaUsuario{
+    margin-left: 30%;
+}
+
+button{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    border: 0;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    color: rgb(255, 255, 255);
+    background-color: #eb82bf;
+    text-align: center;
+    cursor: pointer;
+    font-size: medium;
+    width: 13rem;
+    height: 2.6rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    margin-left:19%;
+}
+
+h2{
+    font-size: 300%;
+    margin-left: 2%;
+}
+
+#msgPerfil{
+    margin-left:7%;
+    font-size: 135%;
+}
+
+body{
+    background-color: pink;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
