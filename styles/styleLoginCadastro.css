@@ -113,20 +113,32 @@
     margin: 2%; 
     padding: 20px; 
     height: 47%; 
-    width: 30%; 
-    background-color: #f1b8d0;
+    width: 27%; 
+    background-color: #f3c3d7;
     border-radius: 5%;
     text-align:center;
 }
 
 #enterLogin{
-    margin-top: 30%;
+    margin-top: 18%;
     width: 25%;
-    height:15%;
+    height:40px;
     
 }
 
+
 #login{
+    margin-top: 5%;
     height: 30px;
     width: 55%;
+}
+
+#senha{
+    margin-top: 2%;
+    height: 30px;
+    width: 55%;
+}
+
+label{
+    font-size:larger;
 }
