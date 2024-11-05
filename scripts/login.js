@@ -38,7 +38,6 @@ function mostrarModal() {
     const divLogin = document.getElementById("divLogin");
     const user = JSON.parse(localStorage.getItem("usuario"));
     if (user) {
-        divLogin.style.display = 'none'; 
         divCadastro.style.display = 'none'; 
     } else {
         divCadastro.style.display = 'none';
