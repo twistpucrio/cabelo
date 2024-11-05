@@ -6,19 +6,113 @@
     <title>Beleza Verdadeira</title>
     <link rel="stylesheet" href="styles/styleGeral.css">
     <link rel="stylesheet" href="styles/styleHome.css">
+    <script src="scripts/home.js"></script>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="conteudo">
         <header id="header"></header>
         <nav id="navigator">
-            <a href="index.html" id="homeLink"><img src="" alt="Logo do site" id="imgLogo"></a>
-            <a href="forum.html"id="forumLink">Fórum de perguntas</a>
-            <a href="perfilUsuario.html" id="usuarioLink"><img src="" alt="Ícone usuário básico" id="imgUsuario"></a>
-            <a href="loginCadastro.html" id="loginCadastroLink">Cadastro/Login</a>
+            <a href="index.html" id="homeLink"><img src="img/belezaV.png" alt="Logo do site" id="imgLogo"></a>
+            <a href="form.html"id="forumLink">FÓRUM DE PERGUNTAS</a>
+            <a href="perfilUsuario.html" id="usuarioLink"><img src="img/usuario2.png" alt="Ícone usuário básico" id="imgUsuario"></a>
+            <a href="loginCadastro.html" id="loginCadastroLink">CADASTRO/LOGIN</a>
         </nav>
         <section id="main">
-            <a href="form.html" id="formLink">Faça o formulário!</a>
+            <!--<a href="form.html" id="formLink">Faça o formulário!</a>-->
+            <img src="img/chat2.webp" alt="imagem cabelo">
+
+           
         </section>
+        <section class="section-main-cuidados">
+            <h1>Bem-vindo às recomendações do Beleza Verdadeira</h1>
+            <p>Descubra uma experiência única com tratamentos especialmente formulados para hidratação, nutrição e reconstrução dos fios, para todos os bolsos.</p>
+        </section>
+            <section class="section">
+                <div class="tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" href="#tab-hidratacao" data-toggle="tab">Hidratação</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tab-nutricao" data-toggle="tab">Nutrição</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tab-reconstrucao" data-toggle="tab">Reconstrução</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- Hidratação -->
+                        <div class="tab-pane fade show active" id="tab-hidratacao">
+                            <div class="event-item-modern">
+                                <p class="event-time">Faixa de preço: Econômico - Aproximadamente R$ 15 a R$ 25</p>
+                                <h4 class="event-item-modern-title">Máscara Hidratação Intensiva Elseve Hydra-Detox</h4>
+                                <p class="event-item-modern-text">Fórmula com ácido hialurônico, ideal para cabelos normais e levemente ressecados.</p>
+                            </div>
+                            <div class="event-item-modern">
+                                <p class="event-time">Faixa de preço: Médio - Aproximadamente R$ 20 a R$ 35</p>
+                                <h4 class="event-item-modern-title">Máscara de Hidratação Meu Liso Muito Mais Liso (Salon Line)</h4>
+                                <p class="event-item-modern-text">Com D-Pantenol e proteína do trigo, ajuda a alinhar os fios de cabelos lisos e ondulados.</p>
+                            </div>
+                            <div class="event-item-modern">
+                                <p class="event-time">Faixa de preço: Alto - Aproximadamente R$ 150 a R$ 200</p>
+                                <h4 class="event-item-modern-title">Máscara Moisture Recovery (Joico)</h4>
+                                <p class="event-item-modern-text">Indicado para cabelos cacheados, crespos ou muito ressecados, reduz o frizz com manteiga de murumuru.</p>
+                            </div>
+                        </div>
+                        <!-- Nutrição -->
+                        <div class="tab-pane fade" id="tab-nutricao">
+                            <div class="event-item-modern">
+                                <p class="event-time">Faixa de preço: Econômico - Aproximadamente R$ 15 a R$ 25</p>
+                                <h4 class="event-item-modern-title">Máscara Óleo Extraordinário (L'Oréal Paris)</h4>
+                                <p class="event-item-modern-text">Contém óleos nutritivos, deixando o cabelo macio e sem frizz.</p>
+                            </div>
+                            <div class="event-item-modern">
+                                <p class="event-time">Econômico - Aproximadamente R$ 10 a R$ 15</p>
+                                <h4 class="event-item-modern-title">Máscara de Nutrição Coco & Macadâmia (Skala)</h4>
+                                <p class="event-item-modern-text">Vegana e acessível, indicada para cabelos cacheados e crespos.</p>
+                            </div>
+                            <div class="event-item-modern">
+                                <p class="event-time">Alto - Aproximadamente R$ 100 a R$ 150</p>
+                                <h4 class="event-item-modern-title">Máscara Nutri Seduction (Alfaparf)</h4>
+                                <p class="event-item-modern-text">Nutrição intensa e controle de frizz, ideal para cabelos secos e indisciplinados.</p>
+                            </div>
+                        </div>
+                        <!-- Reconstrução -->
+                        <div class="tab-pane fade" id="tab-reconstrucao">
+                            <div class="event-item-modern">
+                                <p class="event-time">Econômico - Aproximadamente R$ 10 a R$ 20</p>
+                                <h4 class="event-item-modern-title">Máscara Reconstrutora SOS (Novex)</h4>
+                                <p class="event-item-modern-text">Contém queratina para reconstrução rápida em cabelos com química leve.</p>
+                            </div>
+                            <div class="event-item-modern">
+                                <p class="event-time">Faixa de preço: Médio - Aproximadamente R$ 30 a R$ 50</p>
+                                <h4 class="event-item-modern-title">Máscara Dream Repair (Lola Cosmetics)</h4>
+                                <p class="event-item-modern-text">Com queratina vegetal, indicada para cabelos extremamente danificados.</p>
+                            </div>
+                            <div class="event-item-modern">
+                                <p class="event-time">Faixa de preço: Alto - Aproximadamente R$ 200 a R$ 300</p>
+                                <h4 class="event-item-modern-title">Máscara Force Architecte (Kérastase)</h4>
+                                <p class="event-item-modern-text">Reconstrutor intensivo que reduz a quebra, ideal para cabelos muito danificados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- JavaScript para habilitar as abas -->
+        <script>
+            document.querySelectorAll('.nav-link').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.tab-pane').forEach(function(pane) {
+                        pane.classList.remove('show', 'active');
+                    });
+                    document.querySelectorAll('.nav-link').forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+                    link.classList.add('active');
+                    const target = document.querySelector(link.getAttribute('href'));
+                    target.classList.add('show', 'active');
+                });
+            });
+        </script>
         <footer id="footer">
             <p id="footer-principal">Site desenvolvido para o programa TWIST 2024.2</p>
             <p id="footer-nomes">Fernanda Figueiredo <br>

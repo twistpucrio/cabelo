@@ -1,43 +1,105 @@
+@font-face {
+    font-family: 'mulish';
+    src: url('../fonts/Mulish-Light.ttf');
+}
+
 body {
     margin: 0 auto;
-    background-color: #ecaedd6c;
+    background-color: #33ff00;
+    font-family: "mulish";
 }
 
 #conteudo {
-    background-color: #F2DCE0;
+    background-color: #ffffff;
 }
 
 /* parte da nav */
-#navigator{
-    
-
+#nav{
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: pink;
+    transition: background-color 0.3s ease; 
+    padding-top: 0.2rem;
+    display: flex;
+    align-items:center;
+    z-index: 1000;
 }
 
+#nav a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: 'Mulish', Arial, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 0.05rem;
+}
+
+#nav a:hover {
+    color:#DF4C83;
+}
+
+#imgLogo{
+    width: 10rem;
+    height: auto;
+    padding-left: 2rem;
+}
+
+#imgUsuario{
+    width: 3rem;
+    height: auto;
+}
+
+#imgUsuario:hover {
+    transform: scale(1.1);
+}
+
+#homeLink{
+    width: 58%;
+}
+
+#forumLink{
+    text-align: right;
+    width: 20%;
+}
+
+#usuarioLink{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 5%;
+}
+
+#loginCadastroLink{
+    width: 18%;
+}
 
 /* fim nav */
 
 /* footer */
 #footer {
-    background-color: #bf0f50c2;
+    background-color:pink;
     color: white;
     text-align: center;
     padding-top: 1%;
     padding-bottom: 0.7%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Mulish', Arial, sans-serif;
 
 }
 
 #footer-principal {
-    font-size: medium;
+    font-size:larger;
 }
 
 #footer-nomes {
-    font-size: small;
+    font-size:medium;
 }
 
 #github-logo {
     width: 2.5em;
-    margin-bottom: -0.5%;
+    margin-bottom: 1em;
     transition: transform .2s ease-in-out;
     filter: brightness(200%);
 }
@@ -58,7 +120,7 @@ body {
 
 #saiba-mais-link:hover {
     box-shadow: inset 15em 0 0 0 white;
-    color: #d40b81;
+    color: #DF4C83;
     font-weight: bold;
 }
 

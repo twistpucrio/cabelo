@@ -1,0 +1,125 @@
+img{
+    width: 100%;
+    height: auto;
+    opacity: 80%;
+}
+.section-main-cuidados {
+    background-size: cover;
+    background-position: center;
+    color: black;
+    padding: 50px 0;
+    text-align: center;
+}
+.section-main-cuidados h1 {
+    color: #FFC0CB; /* Rosa claro */
+    font-size: 48px;
+    text-shadow: 2px 2px #000000;
+}
+.section-main-cuidados p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+/* Estilos de Abas */
+.tabs-custom {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+.nav-item {
+    margin: 0 10px;
+}
+.nav-link {
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-link.active {
+    color: pink !important;
+    background-color: transparent;
+}
+.nav-link:hover {
+    color: white;
+    background-color: pink;
+}
+.tab-content {
+    padding: 20px;
+    border: 5px solid pink;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+/* Estilos dos Itens do Cardápio */
+.event-item-modern {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.event-item-modern:hover {
+    transform: scale(1.05);
+}
+.event-item-modern h4 {
+    color: #000000;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+.event-item-modern p {
+    color: #000000;
+    font-size: 16px;
+}
+.event-time {
+    color: #FFC0CB; /* Rosa claro para destacar o preço */
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* parte navigator da home */
+
+/* parte da nav */
+#navigator{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease; 
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    display: flex;
+    align-items:center;
+    z-index: 1000;
+}
+
+#navigator.scrolled {
+    background-color: pink;
+}
+
+#navigator a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: 'Mulish', Arial, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 0.05rem;
+}
+
+#navigator a:hover {
+    color:#DF4C83;
+}

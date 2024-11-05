@@ -18,7 +18,9 @@ function modalSucesso(alternado) {
     let btnVaiHome = document.getElementById("botaoVaiHome");
     let mensagem;
     btnVaiHome.addEventListener('click', function () {
+
         location.href = "index.html";
+
     });
 
     if (alternado === 'login') {
@@ -56,16 +58,18 @@ function mostrarModal() {
         divCadastro.style.display = 'block'; 
     });
 }
+
 async function verificarUsuario() {
     const login = document.getElementById("login").value;
     const senha = document.getElementById("senha").value;
+    let msgSenha = document.getElementById("mensagemSenhaLogin");
 
     try {
         const response = await fetch('scripts/loginUsuarios.json');
         const usuarios = await response.json();
         const msgSenhaLogin = document.getElementById("mensagemSenhaLogin");
         const usuarioEncontrado = usuarios.find(usuario => 
-            usuario.login === login 
+            usuario.login == login 
         );
 
         if (usuarioEncontrado) {
@@ -79,6 +83,50 @@ async function verificarUsuario() {
             }
         } else {
             mostrarModal(); 
+            const usuarioSenhaCorreta = usuarios.find(usuario => 
+                usuario.senha == senha 
+            );
+
+            if (usuarioSenhaCorreta){
+                msgSenha.innerHTML = " ";
+                //alert("Login bem-sucedido!");
+                console.log(JSON.stringify(usuarioEncontrado));
+                localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
+                modalSucesso('login');
+            } else {
+                msgSenha.innerHTML = "Senha incorreta!";
+            }
+        } else {
+            let listaCadastros = JSON.parse(localStorage.getItem("cadastros"));
+            console.log(listaCadastros);
+            let usuarioCadastrado = null;
+            for (let indice in listaCadastros){
+                console.log(listaCadastros[indice]);
+                if (listaCadastros[indice].login == login){
+                    usuarioCadastrado = listaCadastros[indice];
+                }
+            }
+
+            if (usuarioCadastrado) {
+                let senhaCadastrada = null;
+                for (let indice in listaCadastros){
+                    if (listaCadastros[indice].senha == senha){
+                        senhaCadastrada = true;
+                    }
+                }
+
+                if (senhaCadastrada) {
+                    msgSenha.innerHTML = " ";
+                    //alert("Login bem-sucedido!");
+                    console.log(JSON.stringify(usuarioCadastrado));
+                    localStorage.setItem("usuario", JSON.stringify(usuarioCadastrado));
+                    modalSucesso('login');
+                } else {
+                    msgSenha.innerHTML = "Senha incorreta!";
+                }
+            } else {
+                mostrarModal();
+            }
         }
 
     } catch (error) {
@@ -138,6 +186,16 @@ async function realizarCadastro() {
             modalSucesso('cadastro'); 
             document.getElementById("divCadastro").style.display = 'none';
             document.getElementById("divLogin").style.display = 'block';
+
+            localStorage.setItem("usuario", JSON.stringify(usuarioNovo));
+            let listaCadastros = JSON.parse(localStorage.getItem("cadastros"));
+            console.log(listaCadastros);
+            listaCadastros.push(usuarioNovo)
+            console.log(JSON.stringify(listaCadastros));
+            localStorage.setItem("cadastros", JSON.stringify(listaCadastros));
+            modalSucesso('cadastro');
+            //alert("Usuário cadastrado com sucesso!");
+
         }
     } catch (error) {
         console.error("Erro ao carregar o arquivo JSON:", error);
