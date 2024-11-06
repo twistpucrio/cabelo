@@ -173,6 +173,7 @@ input{
     margin-top: 1.5%;
     height: 24px;
     width: 45%;
+    margin-bottom: 1%;
 }
 
 #enterCadastro{
@@ -180,7 +181,7 @@ input{
     position:absolute;
     width: 7%;
     height: 40px;
-    top: 66%;
+    top: 68%;
     left: 47%;
     background-color: #FFFFFF;
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
@@ -219,4 +220,8 @@ button:hover{
     40%, 100% {
       transform: rotateZ(0);
     }
+  }
+
+  span{
+    color: #d61717;
   }
