@@ -9,7 +9,7 @@ async function gerarCronograma(cronogramaId) {
     const tabelaDiv = document.createElement('div');
     tabelaDiv.setAttribute('id', 'tabelaEventos');
 
-    let tabela = "<table>";
+    let tabela = "<table id='tabelaCronograma'>";
     tabela += "<tr><th>Semana</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th><th>Sábado</th><th>Domingo</th></tr>";
 
     const response = await fetch('scripts/cronograma.json');
@@ -18,9 +18,17 @@ async function gerarCronograma(cronogramaId) {
     const cronograma = cronogramas.find(c => c.id === cronogramaId);
 
     cronograma.semanas.forEach((semana, index) => {
-        tabela += `<tr><td>Semana ${index + 1}</td>`;
+        tabela += `<tr><td class='semanaTabela'>Semana ${index + 1}</td>`;
         semana.dias.forEach(dia => {
-          tabela += `<td class="cronogramaDia">${dia.evento}</td>`;
+            if (dia.evento == "-"){
+                tabela += `<td class="diaNada">${dia.evento}</td>`;
+            } else if (dia.evento == "Hidratação"){
+                tabela += `<td class="diaHidratacao">${dia.evento}</td>`;
+            } else if (dia.evento == "Nutrição"){
+                tabela += `<td class="diaNutricao">${dia.evento}</td>`;
+            } else if (dia.evento == "Reconstrução"){
+                tabela += `<td class="diaReconstrucao">${dia.evento}</td>`;
+            }
         });
         tabela += "</tr>";
     });
