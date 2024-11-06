@@ -42,6 +42,10 @@
     padding: 1rem;
 }
 
+.ultimaLinha{
+    border-bottom: none !important;
+}
+
 #btnDiv{
     margin: 0rem 3rem 3rem 2rem;
 }
@@ -56,6 +60,10 @@
     font-family: "mulish";
     margin-right: 2rem;
     cursor: pointer;
+}
+
+.semanaTabela{
+    border-right: 1px solid #ddd;
 }
 
 .diaNada{
@@ -75,6 +83,34 @@
 .diaReconstrucao{
     color: rgb(252, 77, 112);
     font-weight: bolder;
+}
+
+.semanaTabelaUltimo{
+    border-right: 1px solid #ddd;
+    border-bottom: none !important;
+}
+
+.diaNadaUltimo{
+    color: grey;
+    border-bottom: none !important;
+}
+
+.diaHidratacaoUltimo{
+    color: cornflowerblue;
+    font-weight: bolder;
+    border-bottom: none !important;
+}
+
+.diaNutricaoUltimo{
+    color: darkseagreen;
+    font-weight: bolder;
+    border-bottom: none !important;
+}
+
+.diaReconstrucaoUltimo{
+    color: rgb(252, 77, 112);
+    font-weight: bolder;
+    border-bottom: none !important;
 }
 
 .btnForm:hover{

@@ -18,16 +18,32 @@ async function gerarCronograma(cronogramaId) {
     const cronograma = cronogramas.find(c => c.id === cronogramaId);
 
     cronograma.semanas.forEach((semana, index) => {
-        tabela += `<tr><td class='semanaTabela'>Semana ${index + 1}</td>`;
+        if (index == 3) {
+            tabela += `<tr><td class='semanaTabelaUltimo'>Semana ${index + 1}</td>`;
+        } else {
+            tabela += `<tr><td class='semanaTabela'>Semana ${index + 1}</td>`;
+        }
         semana.dias.forEach(dia => {
-            if (dia.evento == "-"){
-                tabela += `<td class="diaNada">${dia.evento}</td>`;
-            } else if (dia.evento == "Hidratação"){
-                tabela += `<td class="diaHidratacao">${dia.evento}</td>`;
-            } else if (dia.evento == "Nutrição"){
-                tabela += `<td class="diaNutricao">${dia.evento}</td>`;
-            } else if (dia.evento == "Reconstrução"){
-                tabela += `<td class="diaReconstrucao">${dia.evento}</td>`;
+            if (index == 3){
+                if (dia.evento == "-"){
+                    tabela += `<td class="diaNadaUltimo">${dia.evento}</td>`;
+                } else if (dia.evento == "Hidratação"){
+                    tabela += `<td class="diaHidratacaoUltimo">${dia.evento}</td>`;
+                } else if (dia.evento == "Nutrição"){
+                    tabela += `<td class="diaNutricaoUltimo">${dia.evento}</td>`;
+                } else if (dia.evento == "Reconstrução"){
+                    tabela += `<td class="diaReconstrucaoUltimo">${dia.evento}</td>`;
+                }
+            } else {
+                if (dia.evento == "-"){
+                    tabela += `<td class="diaNada">${dia.evento}</td>`;
+                } else if (dia.evento == "Hidratação"){
+                    tabela += `<td class="diaHidratacao">${dia.evento}</td>`;
+                } else if (dia.evento == "Nutrição"){
+                    tabela += `<td class="diaNutricao">${dia.evento}</td>`;
+                } else if (dia.evento == "Reconstrução"){
+                    tabela += `<td class="diaReconstrucao">${dia.evento}</td>`;
+                }
             }
         });
         tabela += "</tr>";
