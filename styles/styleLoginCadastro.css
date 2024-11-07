@@ -40,7 +40,7 @@
 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    color: #faead7;
+    color: #FFFFFF;
     margin-bottom: 2.5rem;
 }
 
@@ -48,30 +48,31 @@
 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    color: #faead7;
+    color: #FFFFFF;
     margin-bottom: 2.5rem;
 }
   #modalSucessoInner{
 
-	width: 19%;
+	width: 20%;
 	height: 30%;
 	border-radius: 20%;
 	justify-items: center;
     display: block;
     align-content: center;
 	padding: 1%;
-    background-color: #c77ca8;
+    background-color: #ca85ae;
+    
 }
 #modal_login-inner{
 
-	width: 19%;
+	width: 20%;
 	height: 30%;
 	border-radius: 20%;
 	justify-items: center;
     display: block;
     align-content: center;
 	padding: 1%;
-    background-color: #c77ca8;
+    background-color: #ca85ae;
 }
 #botaoVaiHome{
 
@@ -80,8 +81,8 @@
     border: 0;
     letter-spacing: 0.05em;
     border-radius: 0.8em;
-    color: #6e3b26;
-    background-color: #faead7;
+    color: #250c19;
+    background-color: #FFFFFF;
     text-align: center;
     cursor: pointer;
     font-size: medium;
@@ -89,14 +90,16 @@
     height: 2.6rem;
     overflow: hidden;
     margin-bottom: 1.5rem;
+    background-color: #FFFFFF;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
+    transition: transform 0.3s ease;
 }
 
 #botaoVaiHome:hover{
-    background-color: #ecd7bd;
+    transform: scale(1.06);  
 }
 #botaoVaiHome:active{
-    color: #faead7;
-    background-color: #6e3b26;
+    transform: scale(1.0); 
 }
 
 #mainLogin {
@@ -107,6 +110,7 @@
     align-content: stretch;
     flex-direction: column-reverse;
     background-color: whitesmoke;
+    
 }
 
 #divLogin {
@@ -129,29 +133,27 @@
     text-align:center;
 }
 
-#enterLogin{
-    position:absolute;
-    width: 7%;
+#enterLogin{    
+    width: 25%;
     height: 40px;
-    top: 60%;
-    left: 51%;
     background-color: #FFFFFF;
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
     transition: transform 0.3s ease;
     border:none;
+    border-radius:2%;
 }
 
 #fazerCadastro{
-    position:absolute;
-    width: 7%;
+    margin-right: 4%;
+    width: 25%;
     height: 40px;
-    top: 60%;
-    left: 42%;
     background-color: #FFFFFF;
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
     transition: transform 0.3s ease;
     border:none;
+    border-radius:2%;
 }
+
 
 #login{
     margin-top: 5%;
@@ -178,14 +180,12 @@ input{
 
 #enterCadastro{
     border: none;
-    position:absolute;
-    width: 7%;
+    width: 27%;
     height: 40px;
-    top: 68%;
-    left: 47%;
     background-color: #FFFFFF;
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
     transition: transform 0.3s ease;
+    border-radius:2%;
 }
 
 button:hover{
@@ -193,10 +193,15 @@ button:hover{
     background-color: rgb(249, 208, 255)
 }
 
+
+
 #mensagemSenhaLogin{
+    margin-bottom: 0%;
     color: #d61717;
     animation: wiggle 2s linear infinite;
 }
+
+
 
 @keyframes wiggle {
     0%, 7% {
