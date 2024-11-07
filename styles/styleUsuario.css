@@ -1,8 +1,14 @@
 .tituloCronograma{
-    padding-left: 2rem;
+    padding-left: 8rem;
     font-size: xx-large;
     color: #DF4C83;
 
+}
+
+.avisoCronograma{
+    padding-left: 8rem;
+    font-size: medium;
+    color:black;
 }
 
 #avisoPerfil{
@@ -28,6 +34,7 @@
     border: #DF4C83 solid 2px;
     padding: 0.5rem;
     border-radius: 2rem;
+    font-size: large;
 }
 
 #tabelaCronograma th {
@@ -47,7 +54,7 @@
 }
 
 #btnDiv{
-    margin: 0rem 3rem 3rem 2rem;
+    margin: 0rem 3rem 3rem 8rem;
 }
 
 .btnForm{
@@ -75,14 +82,41 @@
     font-weight: bolder;
 }
 
+.diaHidratacao:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 -0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 0rem 0.1rem 0.4rem rgb(62, 114, 212),
+                 0rem -0.1rem 0.4rem rgb(62, 114, 212);
+    color: white;
+    cursor: pointer;
+}
+
 .diaNutricao{
     color: darkseagreen;
     font-weight: bolder;
 }
 
+.diaNutricao:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 -0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 0rem 0.1rem 0.4rem rgb(87, 151, 87),
+                 0rem -0.1rem 0.4rem rgb(87, 151, 87);
+    color: white;
+    cursor: pointer;
+}
+
 .diaReconstrucao{
     color: rgb(252, 77, 112);
     font-weight: bolder;
+}
+
+.diaReconstrucao:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 -0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 0rem 0.1rem 0.4rem rgb(206, 39, 72),
+                 0rem -0.1rem 0.4rem rgb(206, 39, 72);
+    color: white;
+    cursor: pointer;
 }
 
 .semanaTabelaUltimo{
@@ -101,16 +135,43 @@
     border-bottom: none !important;
 }
 
+.diaHidratacaoUltimo:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 -0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 0rem 0.1rem 0.4rem rgb(62, 114, 212),
+                 0rem -0.1rem 0.4rem rgb(62, 114, 212);
+    color: white;
+    cursor: pointer;
+}
+
 .diaNutricaoUltimo{
     color: darkseagreen;
     font-weight: bolder;
     border-bottom: none !important;
 }
 
+.diaNutricaoUltimo:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 -0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 0rem 0.1rem 0.4rem rgb(87, 151, 87),
+                 0rem -0.1rem 0.4rem rgb(87, 151, 87);
+    color: white;
+    cursor: pointer;
+}
+
 .diaReconstrucaoUltimo{
     color: rgb(252, 77, 112);
     font-weight: bolder;
     border-bottom: none !important;
+}
+
+.diaReconstrucaoUltimo:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 -0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 0rem 0.1rem 0.4rem rgb(206, 39, 72),
+                 0rem -0.1rem 0.4rem rgb(206, 39, 72);
+    color: white;
+    cursor: pointer;
 }
 
 .btnForm:hover{

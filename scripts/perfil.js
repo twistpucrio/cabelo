@@ -6,6 +6,10 @@ async function gerarCronograma(cronogramaId) {
     tituloCronograma.innerHTML = "Seu cronograma";
     tituloCronograma.classList.add('tituloCronograma');
 
+    const avisinho = document.createElement('p');
+    avisinho.innerHTML = "Clique para saber quais produtos usar! =D";
+    avisinho.classList.add('avisoCronograma');
+
     const tabelaDiv = document.createElement('div');
     tabelaDiv.setAttribute('id', 'tabelaEventos');
 
@@ -51,7 +55,7 @@ async function gerarCronograma(cronogramaId) {
 
     tabela += "</table>";
     tabelaDiv.innerHTML = tabela;
-    
+
     const btnForm = document.createElement('button');
     btnForm.innerHTML = 'Refazer formulário!';
     btnForm.classList.add('btnForm');
@@ -74,12 +78,136 @@ async function gerarCronograma(cronogramaId) {
     btnDiv.appendChild(btnForm);
     btnDiv.appendChild(btnSai);
 
+    const tabelaProdutos = document.createElement('div');
+    tabelaProdutos.setAttribute('id', 'tabelaProdutos');
+
     containerCronograma.appendChild(tituloCronograma);
+    containerCronograma.appendChild(avisinho);
     containerCronograma.appendChild(tabelaDiv);
+    containerCronograma.appendChild(tabelaProdutos);
     containerCronograma.appendChild(btnDiv);
 }
 
-  function semUsuario(){
+async function associarFuncoes(){
+    const hidratacoes = document.querySelectorAll(".diaHidratacao"); 
+    const hidratacoes2 = document.querySelectorAll(".diaHidratacaoUltimo"); 
+    const nutricoes = document.querySelectorAll(".diaNutricao"); 
+    const nutricoes2 = document.querySelectorAll(".diaNutricaoUltimo"); 
+    const reconstrucoes = document.querySelectorAll(".diaReconstrucao"); 
+    const reconstrucoes2 = document.querySelectorAll(".diaReconstrucaoUltimo"); 
+
+    if (hidratacoes){
+        for (let dia of hidratacoes) {
+            dia.addEventListener('click', function() {
+                produtosCronograma("h");
+            });
+        }
+    }
+    if (hidratacoes2){
+        for (let dia of hidratacoes2) {
+            dia.addEventListener('click', function() {
+                produtosCronograma("h");
+            });
+        }
+    }
+
+    if (nutricoes){
+        for (let dia of nutricoes) {
+            dia.addEventListener('click', function() {
+                produtosCronograma("n");
+            });
+        }
+    }
+    if (nutricoes2){
+        for (let dia of nutricoes2) {
+            dia.addEventListener('click', function() {
+                produtosCronograma("n");
+            });
+        }
+    }
+
+    if (reconstrucoes){
+        for (let dia of reconstrucoes) {
+            dia.addEventListener('click', function() {
+                produtosCronograma("r");
+            });
+        }
+    }
+    if (reconstrucoes2){
+        for (let dia of reconstrucoes2) {
+            dia.addEventListener('click', function() {
+                produtosCronograma("r");
+            });
+        }
+    }
+}
+
+function produtosCronograma(tipo){ 
+    const containerProdutos = document.getElementById("tabelaProdutos");
+
+    console.log(tipo);
+
+    if (tipo == "h"){
+        if (document.getElementById("tabelaHidratacao")){
+            containerProdutos.innerHTML = '';
+            return;
+        }
+
+        containerProdutos.innerHTML = '';
+        const hidratacaoProdutos = ["Máscara Hidratação Intensiva Elseve Hydra-Detox","Máscara de Hidratação Meu Liso Muito Mais Liso (Salon Line)","Máscara Intense Repair (L'Oréal Professionnel)","Máscara Moisture Recovery (Joico)"];
+        const tabelaHidratacao = document.createElement('div');
+        tabelaHidratacao.setAttribute('id', 'tabelaHidratacao');
+
+        for (let indice in hidratacaoProdutos){
+            const hidratacao = document.createElement('h4');
+            hidratacao.innerHTML = hidratacaoProdutos[indice];
+            hidratacao.classList.add('hidratacaoProduto');
+            tabelaHidratacao.appendChild(hidratacao);
+        }
+        containerProdutos.appendChild(tabelaHidratacao);
+
+    } else if (tipo == "n"){
+        if (document.getElementById("tabelaNutricao")){
+            containerProdutos.innerHTML = '';
+            return;
+        }
+
+        containerProdutos.innerHTML = '';
+        const nutricaoProdutos = ["Máscara de Nutrição Coco & Macadâmia (Skala)","Máscara Óleo Extraordinário (L'Oréal Paris)","Máscara Macadamia Natural Oil Deep Repair","Máscara Nutri Seduction (Alfaparf)"];
+        const tabelaNutricao = document.createElement('div');
+        tabelaNutricao.setAttribute('id', 'tabelaNutricao');
+    
+        for (let indice in nutricaoProdutos){
+            const nutricao = document.createElement('h4');
+            nutricao.innerHTML = nutricaoProdutos[indice];
+            nutricao.classList.add('nutricaoProduto');
+            tabelaNutricao.appendChild(nutricao);
+        }    
+        containerProdutos.appendChild(tabelaNutricao);
+
+    } else{
+        if (document.getElementById("tabelaReconstrucao")){
+            containerProdutos.innerHTML = '';
+            return;
+        }
+
+        containerProdutos.innerHTML = '';
+        const reconstrucaoProdutos = ["Máscara Reconstrutora SOS (Novex)","Máscara Dream Repair (Lola Cosmetics)","Máscara Fiberceutic (L'Oréal Professionnel)","Máscara Force Architecte (Kérastase)"];
+        const tabelaReconstrucao = document.createElement('div');
+        tabelaReconstrucao.setAttribute('id', 'tabelaReconstrucao');
+
+        for (let indice in reconstrucaoProdutos){
+            const reconstrucao = document.createElement('h4');
+            reconstrucao.innerHTML = reconstrucaoProdutos[indice];
+            reconstrucao.classList.add('reconstrucaoProduto');
+            tabelaReconstrucao.appendChild(reconstrucao);
+        }
+        containerProdutos.appendChild(tabelaReconstrucao);
+
+    }
+}
+
+function semUsuario(){
     const containerCronograma = document.querySelector("#cronogramaUsuario");
 
     containerCronograma.innerHTML = "<h2 id='avisoPerfil'>Você não está na sua conta!</h2><p id='msgPerfil'>Por favor, logue-se ou cadastre-se em nosso site!</p>";
@@ -141,7 +269,8 @@ window.addEventListener("load", async function() {
         if (cronogramaUsuario == -1){
             semCronograma();
         } else {
-            gerarCronograma(usuario.cronograma);
+            await gerarCronograma(usuario.cronograma);
+            associarFuncoes();
         }
     }
 });
