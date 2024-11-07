@@ -10,7 +10,6 @@
 </head>
 <body>
     <div id="conteudo">
-        
         <div class="modalSucesso" id="modalSucesso">
             <div id="modalSucessoInner">
                 <h2 id="msgSucesso"> </h2>
@@ -25,7 +24,6 @@
                     <button class="botaoCadastrar" id="botaoModalCadastro">Fazer cadastro</button>
                 </div>
             </div>
-
         <header id="header"></header>
         <nav id="nav">
             <div id="logoDiv">
@@ -50,8 +48,8 @@
                     <input type="password" id="senha" name="senha" required>
                     <p id="mensagemSenhaLogin"></p>
                     <br><br>
-                    <button id="enterLogin">Entrar</button>
                     <button id="fazerCadastro">Cadastro</button>
+                    <button id="enterLogin">Entrar</button>
                 </form>
             </div>
             <div id="divCadastro" style="display:none">
@@ -59,17 +57,22 @@
                 <form id="cadastroForm">
                     <label for="loginCadastro">Usuário:</label>
                     <input type="text" id="loginCadastro" name="loginCadastro" required>
+                    <br>
                     <span id="mensagemLogin"></span>
                     <br><br>
                     <label for="emailCadastro">Email:</label>
                     <input type="text" id="emailCadastro" name="emailCadastro" required>
+                    <br>
                     <span id="mensagemEmail"></span>
                     <br><br>
                     <label for="senhaCadastro">Senha:</label>
                     <input type="password" id="senhaCadastro" name="senhaCadastro" required>
+                    <br>
+                    <span id="spanInutil"></span>
                     <br><br>
                     <label for="senhaVerificacaoCadastro">Verificação de Senha:</label>
                     <input type="password" id="senhaVerificacaoCadastro" name="senhaVerificacaoCadastro" required>
+                    <br>
                     <span id="mensagemSenha"></span>
                     <br><br>
                     <button id="enterCadastro">Entrar</button>
