@@ -141,6 +141,7 @@
     transition: transform 0.3s ease;
     border:none;
     border-radius:2%;
+    cursor: pointer;
 }
 
 #fazerCadastro{
@@ -152,7 +153,22 @@
     transition: transform 0.3s ease;
     border:none;
     border-radius:2%;
+    cursor: pointer;
 }
+#fazerCadastro:hover{
+    transform: scale(1.06);  
+}
+#fazerCadastro:active{
+    transform: scale(1.0); 
+}
+
+#enterLogin:hover{
+    transform: scale(1.06);  
+}
+#enterLogin:active{
+    transform: scale(1.0); 
+}
+
 
 
 #login{
@@ -186,13 +202,15 @@ input{
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
     transition: transform 0.3s ease;
     border-radius:2%;
+    cursor: pointer;
 }
 
-button:hover{
-    transform: scale(1.05);  
-    background-color: rgb(249, 208, 255)
+#enterCadastro:hover{
+    transform: scale(1.06);  
 }
-
+#enterCadastro:active{
+    transform: scale(1.0); 
+}
 
 
 #mensagemSenhaLogin{
