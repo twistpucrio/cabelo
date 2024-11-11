@@ -148,12 +148,18 @@ function produtosCronograma(tipo){
     console.log(tipo);
 
     if (tipo == "h"){
-        if (document.getElementById("tabelaHidratacao")){
-            containerProdutos.innerHTML = '';
+        if (document.getElementById("tabelaHidratacao")) {
+            const tabelaHidratacao = document.getElementById("tabelaHidratacao");
+        
+            tabelaHidratacao.classList.add('sairElemento');
+        
+            setTimeout(() => {
+                tabelaHidratacao.remove();
+            }, 600); 
             return;
         }
-
         containerProdutos.innerHTML = '';
+
         const hidratacaoProdutos = ["Máscara Hidratação Intensiva Elseve Hydra-Detox","Máscara de Hidratação Meu Liso Muito Mais Liso (Salon Line)","Máscara Intense Repair (L'Oréal Professionnel)","Máscara Moisture Recovery (Joico)"];
         const tabelaHidratacao = document.createElement('div');
         tabelaHidratacao.setAttribute('id', 'tabelaHidratacao');
@@ -168,11 +174,17 @@ function produtosCronograma(tipo){
 
     } else if (tipo == "n"){
         if (document.getElementById("tabelaNutricao")){
-            containerProdutos.innerHTML = '';
+            const tabelaNutricao = document.getElementById("tabelaNutricao");
+        
+            tabelaNutricao.classList.add('sairElemento');
+        
+            setTimeout(() => {
+                tabelaNutricao.remove();
+            }, 600); 
             return;
         }
-
         containerProdutos.innerHTML = '';
+
         const nutricaoProdutos = ["Máscara de Nutrição Coco & Macadâmia (Skala)","Máscara Óleo Extraordinário (L'Oréal Paris)","Máscara Macadamia Natural Oil Deep Repair","Máscara Nutri Seduction (Alfaparf)"];
         const tabelaNutricao = document.createElement('div');
         tabelaNutricao.setAttribute('id', 'tabelaNutricao');
@@ -187,7 +199,13 @@ function produtosCronograma(tipo){
 
     } else{
         if (document.getElementById("tabelaReconstrucao")){
-            containerProdutos.innerHTML = '';
+            const tabelaReconstrucao = document.getElementById("tabelaReconstrucao");
+        
+            tabelaReconstrucao.classList.add('sairElemento');
+        
+            setTimeout(() => {
+                tabelaReconstrucao.remove();
+            }, 600); 
             return;
         }
 
