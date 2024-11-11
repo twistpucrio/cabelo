@@ -5,7 +5,7 @@
 
 body {
     margin: 0 auto;
-    background-color: #33ff00;
+    background-color: pink;
     font-family: "mulish";
 }
 
@@ -16,8 +16,6 @@ body {
 /* parte da nav */
 #nav{
     width: 100%;
-    top: 0;
-    left: 0;
     background-color: pink;
     transition: background-color 0.3s ease; 
     padding-top: 0.2rem;
@@ -45,7 +43,8 @@ body {
 #imgLogo{
     width: 10rem;
     height: auto;
-    padding-left: 2rem;
+    padding: 1rem 2rem;
+    box-sizing: initial;
 }
 
 #imgLogo:hover{

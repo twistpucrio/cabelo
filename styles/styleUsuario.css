@@ -1,3 +1,278 @@
-.cronogramaDia{
+.tituloCronograma{
+    padding-left: 8rem;
+    padding-top: 2rem;
+    font-size: xx-large;
+    color: #DF4C83;
+
+}
+
+.avisoCronograma{
+    padding-left: 8rem;
+    font-size: medium;
+    color:black;
+}
+
+#avisoPerfil{
+    padding-left: 8rem;
+    padding-top: 2rem;
+    font-size: xx-large;
+    color: #DF4C83;
+}
+
+#msgPerfil{
+    padding: 0rem 0rem 3rem 8rem;
+    font-size: large;
+}
+
+#tabelaEventos{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 4rem 4rem 4rem;
+}
+
+#tabelaEventos table{
+    border: #DF4C83 solid 2px;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    font-size: large;
+}
+
+#tabelaCronograma th {
+    border-bottom: 2px solid pink;
+    text-align: center;
+    padding: 0.3rem;
+}
+
+#tabelaCronograma td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    padding: 1rem;
+}
+
+.ultimaLinha{
+    border-bottom: none !important;
+}
+
+#btnDiv{
+    margin: 0rem 3rem 3rem 8rem;
+}
+
+.btnForm{
+    border: none;
+    background-color: #DF4C83;
+    font-size: medium;
+    padding: 0.7rem;
+    border-radius: 1.2rem;
+    color: white;
+    font-family: "mulish";
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.semanaTabela{
+    border-right: 1px solid #ddd;
+}
+
+.diaNada{
+    color: grey;
+}
+
+.diaHidratacao{
+    color: cornflowerblue;
+    font-weight: bolder;
+}
+
+.diaHidratacao:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 -0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 0rem 0.1rem 0.4rem rgb(62, 114, 212),
+                 0rem -0.1rem 0.4rem rgb(62, 114, 212);
+    color: white;
+    cursor: pointer;
+}
+
+.diaNutricao{
+    color: darkseagreen;
+    font-weight: bolder;
+}
+
+.diaNutricao:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 -0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 0rem 0.1rem 0.4rem rgb(87, 151, 87),
+                 0rem -0.1rem 0.4rem rgb(87, 151, 87);
+    color: white;
+    cursor: pointer;
+}
+
+.diaReconstrucao{
+    color: rgb(252, 77, 112);
+    font-weight: bolder;
+}
+
+.diaReconstrucao:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 -0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 0rem 0.1rem 0.4rem rgb(206, 39, 72),
+                 0rem -0.1rem 0.4rem rgb(206, 39, 72);
+    color: white;
+    cursor: pointer;
+}
+
+.semanaTabelaUltimo{
+    border-right: 1px solid #ddd;
+    border-bottom: none !important;
+}
+
+.diaNadaUltimo{
+    color: grey;
+    border-bottom: none !important;
+}
+
+.diaHidratacaoUltimo{
+    color: cornflowerblue;
+    font-weight: bolder;
+    border-bottom: none !important;
+}
+
+.diaHidratacaoUltimo:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 -0.1rem 0rem 0.4rem rgb(62, 114, 212),
+                 0rem 0.1rem 0.4rem rgb(62, 114, 212),
+                 0rem -0.1rem 0.4rem rgb(62, 114, 212);
+    color: white;
+    cursor: pointer;
+}
+
+.diaNutricaoUltimo{
+    color: darkseagreen;
+    font-weight: bolder;
+    border-bottom: none !important;
+}
+
+.diaNutricaoUltimo:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 -0.1rem 0rem 0.4rem rgb(87, 151, 87),
+                 0rem 0.1rem 0.4rem rgb(87, 151, 87),
+                 0rem -0.1rem 0.4rem rgb(87, 151, 87);
+    color: white;
+    cursor: pointer;
+}
+
+.diaReconstrucaoUltimo{
+    color: rgb(252, 77, 112);
+    font-weight: bolder;
+    border-bottom: none !important;
+}
+
+.diaReconstrucaoUltimo:hover{
+    text-shadow: 0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 -0.1rem 0rem 0.4rem rgb(206, 39, 72),
+                 0rem 0.1rem 0.4rem rgb(206, 39, 72),
+                 0rem -0.1rem 0.4rem rgb(206, 39, 72);
+    color: white;
+    cursor: pointer;
+}
+
+.btnForm:hover{
+    background-color: #f56399;
+    transform: translateY(-0.2rem);
+    box-shadow: rgb(104, 76, 92) 0rem 0.2rem 0.3rem;
+}
+
+.btnForm:active, .btnForm:focus{
+    background-color: #ce2c67;
+    transform: translateY(0.2rem);
+    box-shadow: none;
+}
+
+#tabelaProdutos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes show {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#tabelaHidratacao{
+    width: 30%;
+    text-align: center;
+    background-color: rgb(192, 212, 250);
+    margin: 0rem 17rem 4rem 17rem;
+    padding: 1.5rem;
+    border-radius: 4rem;
+
+    animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top center;
+}
+
+.nutricaoProduto:hover{
+    cursor: default;
+    transform: scale(1.1);
+    color: rgb(24, 146, 24);
+}
+
+#tabelaNutricao{
+    width: 30%;
+    text-align: center;
+    background-color: rgb(198, 231, 198);
+    margin: 0rem 17rem 4rem 17rem;
+    padding: 1.5rem;
+    border-radius: 4rem;
+
+    animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top center;
+}
+
+.hidratacaoProduto:hover{
+    cursor: default;
+    transform: scale(1.1);
+    color: rgb(17, 87, 218);
+}
+
+#tabelaReconstrucao{
+    width: 30%;
+    text-align: center;
+    background-color: rgb(255, 176, 192);
+    margin: 0rem 17rem 4rem 17rem;
+    padding: 1.5rem;
+    border-radius: 4rem;
+
+    animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top center;
+}
+
+.reconstrucaoProduto:hover{
+    cursor: default;
+    transform: scale(1.1);
+    color: rgb(221, 31, 69);
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        transform: none;
+    }
+    100% {
+        opacity: 0;
+        transform-origin: top center;
+        transform: rotateX(-90deg);
+    }
+}
+
+.sairElemento{
+    animation: hide 450ms 50ms cubic-bezier(0.38, 0.97, 0.56, 0.76) backwards !important;
 }
