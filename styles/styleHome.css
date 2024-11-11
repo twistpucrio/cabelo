@@ -1,4 +1,4 @@
-img{
+#imagemPrincipal{
     width: 100%;
     height: auto;
     opacity: 80%;
@@ -98,8 +98,8 @@ img{
     left: 0;
     background-color: transparent;
     transition: background-color 0.3s ease; 
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
     display: flex;
     align-items:center;
     z-index: 1000;

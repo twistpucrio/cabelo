@@ -1,5 +1,6 @@
 .tituloCronograma{
     padding-left: 8rem;
+    padding-top: 2rem;
     font-size: xx-large;
     color: #DF4C83;
 
@@ -12,13 +13,14 @@
 }
 
 #avisoPerfil{
-    padding-left: 2rem;
+    padding-left: 8rem;
+    padding-top: 2rem;
     font-size: xx-large;
     color: #DF4C83;
 }
 
 #msgPerfil{
-    padding: 0rem 0rem 3rem 2rem;
+    padding: 0rem 0rem 3rem 8rem;
     font-size: large;
 }
 
@@ -186,6 +188,12 @@
     box-shadow: none;
 }
 
+#tabelaProdutos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @keyframes show {
     100% {
         opacity: 1;
@@ -194,9 +202,10 @@
 }
 
 #tabelaHidratacao{
+    width: 30%;
     text-align: center;
     background-color: rgb(192, 212, 250);
-    margin: 4rem 26rem;
+    margin: 0rem 17rem 4rem 17rem;
     padding: 1.5rem;
     border-radius: 4rem;
 
@@ -213,9 +222,10 @@
 }
 
 #tabelaNutricao{
+    width: 30%;
     text-align: center;
     background-color: rgb(198, 231, 198);
-    margin: 4rem 26rem;
+    margin: 0rem 17rem 4rem 17rem;
     padding: 1.5rem;
     border-radius: 4rem;
 
@@ -232,9 +242,10 @@
 }
 
 #tabelaReconstrucao{
+    width: 30%;
     text-align: center;
     background-color: rgb(255, 176, 192);
-    margin: 4rem 26rem;
+    margin: 0rem 17rem 4rem 17rem;
     padding: 1.5rem;
     border-radius: 4rem;
 
