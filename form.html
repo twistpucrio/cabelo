@@ -25,6 +25,7 @@
         <form id="formulario-rotina">
             <label>Qual é a textura natural do seu cabelo?</label>
             <select id="textura" required>
+                <option value="blank"></option>
                 <option value="Liso">Liso</option>
                 <option value="Ondulado">Ondulado</option>
                 <option value="Cacheado">Cacheado</option>
@@ -33,7 +34,8 @@
 
             <label>Seu cabelo possui algum procedimento?</label>
             <select id="procedimento" required>
-                <option value="Natural">Natural</option>
+                <option value="blank"></option>
+                <option value="Nao">Não</option>
                 <option value="Com Luzes">Com Luzes</option>
                 <option value="Colorido">Colorido</option>
                 <option value="Alisado">Alisado</option>
@@ -41,6 +43,7 @@
 
             <label>Qual a espessura do seu cabelo?</label>
             <select id="espessura" required>
+                <option value="blank"></option>
                 <option value="Fino">Fino</option>
                 <option value="Médio">Médio</option>
                 <option value="Grosso">Grosso</option>
@@ -48,6 +51,7 @@
             
             <label>Como você descreveria seu couro cabeludo?</label>
             <select id="couroCabeludo" required>
+                <option value="blank"></option>
                 <option value="Oleoso">Oleoso</option>
                 <option value="Seco">Seco</option>
                 <option value="Saudável">Saudável</option>
@@ -56,13 +60,15 @@
 
             <label>Com que frequência você lava seu cabelo?</label>
             <select id="frequencia" required>
+                <option value="blank"></option>
                 <option value="Todo dia">Todo dia</option>
                 <option value="4 a 6 dias">4 a 6 dias</option>
                 <option value="1 a 3 dias">1 a 3 dias</option>
             </select>
 
-            <label>Quais são as 2 principais preocupações com o seu cabelo?</label>
+            <label>Qual é a principal preocupação com o seu cabelo?</label>
             <select id="preocupacao" required>
+                <option value="blank"></option>
                 <option value="Queda de cabelo">Queda de cabelo</option>
                 <option value="Ressecamento">Ressecamento</option>
                 <option value="Opacidade">Opacidade</option>
@@ -72,6 +78,7 @@
 
             <label>Com que frequência você usa ferramentas de calor?</label>
             <select id="ferramentasCalor" required>
+                <option value="blank"></option>
                 <option value="Nunca">Nunca</option>
                 <option value="Todos os dias">Todos os dias</option>
                 <option value="4 a 6 dias">4 a 6 dias</option>
@@ -80,12 +87,14 @@
 
             <label>Você pratica atividades físicas que podem afetar seu cabelo?</label>
             <select id="atividadesFisicas" required>
+                <option value="blank"></option>
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
             </select>
 
-            <button type="button" onclick="gerarRotina()">Ver Rotina Recomendada</button>
+            <button type="button" id="botaoRotina">Ver Rotina Recomendada</button>
         </form>
+       
 
         <div id="resultadoRotina"></div>
 
