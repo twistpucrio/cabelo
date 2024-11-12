@@ -23,73 +23,87 @@
         </nav>
 
         <form id="formulario-rotina">
-            <label>Qual é a textura natural do seu cabelo?</label>
-            <select id="textura" required>
-                <option value="Liso">Liso</option>
-                <option value="Ondulado">Ondulado</option>
-                <option value="Cacheado">Cacheado</option>
-                <option value="Crespo">Crespo</option>
-            </select>
-
-            <label>Seu cabelo possui algum procedimento?</label>
-            <select id="procedimento" required>
-                <option value="Natural">Natural</option>
-                <option value="Com Luzes">Com Luzes</option>
-                <option value="Colorido">Colorido</option>
-                <option value="Alisado">Alisado</option>
-            </select>
-
-            <label>Qual a espessura do seu cabelo?</label>
-            <select id="espessura" required>
-                <option value="Fino">Fino</option>
-                <option value="Médio">Médio</option>
-                <option value="Grosso">Grosso</option>
-            </select>
-            
-            <label>Como você descreveria seu couro cabeludo?</label>
-            <select id="couroCabeludo" required>
-                <option value="Oleoso">Oleoso</option>
-                <option value="Seco">Seco</option>
-                <option value="Saudável">Saudável</option>
-                <option value="Descamação">Com Descamação</option>
-            </select>
-
-            <label>Com que frequência você lava seu cabelo?</label>
-            <select id="frequencia" required>
-                <option value="Todo dia">Todo dia</option>
-                <option value="4 a 6 dias">4 a 6 dias</option>
-                <option value="1 a 3 dias">1 a 3 dias</option>
-            </select>
-
-            <label>Quais são as 2 principais preocupações com o seu cabelo?</label>
-            <select id="preocupacao" required>
-                <option value="Queda de cabelo">Queda de cabelo</option>
-                <option value="Ressecamento">Ressecamento</option>
-                <option value="Opacidade">Opacidade</option>
-                <option value="Elasticidade">Elasticidade</option>
-                <option value="Frizz">Frizz</option>
-            </select>
-
-            <label>Com que frequência você usa ferramentas de calor?</label>
-            <select id="ferramentasCalor" required>
-                <option value="Nunca">Nunca</option>
-                <option value="Todos os dias">Todos os dias</option>
-                <option value="4 a 6 dias">4 a 6 dias</option>
-                <option value="1 a 3 dias">1 a 3 dias</option>
-            </select>
-
-            <label>Você pratica atividades físicas que podem afetar seu cabelo?</label>
-            <select id="atividadesFisicas" required>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-            </select>
-
-            <button type="button" onclick="gerarRotina()">Ver Rotina Recomendada</button>
+            <div class ="pergunta" id="textura">
+                <label>Qual é a textura natural do seu cabelo?</label>
+                <br>
+                <select id="textura" required>
+                    <option value="Liso">Liso</option>
+                    <option value="Ondulado">Ondulado</option>
+                    <option value="Cacheado">Cacheado</option>
+                    <option value="Crespo">Crespo</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="procedimento">
+                <label>Seu cabelo possui algum procedimento?</label>
+                <br>
+                <select id="procedimento" required>
+                    <option value="Natural">Natural</option>
+                    <option value="Com Luzes">Com Luzes</option>
+                    <option value="Colorido">Colorido</option>
+                    <option value="Alisado">Alisado</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="espessura">
+                <label>Qual a espessura do seu cabelo?</label>
+                <br>
+                <select id="espessura" required>
+                    <option value="Fino">Fino</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grosso">Grosso</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="couroCabeludo">
+                <label>Como você descreveria seu couro cabeludo?</label>
+                <br>
+                <select id="couroCabeludo" required>
+                    <option value="Oleoso">Oleoso</option>
+                    <option value="Seco">Seco</option>
+                    <option value="Saudável">Saudável</option>
+                    <option value="Descamação">Com Descamação</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="lavagem">
+                <label>Com que frequência você lava seu cabelo?</label>
+                <br>
+                <select id="frequencia" required>
+                    <option value="Todo dia">Todo dia</option>
+                    <option value="4 a 6 dias">4 a 6 dias</option>
+                    <option value="1 a 3 dias">1 a 3 dias</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="preocupacoes">
+                <label>Quais são as 2 principais preocupações com o seu cabelo?</label>
+                <br>
+                <select id="preocupacao" required>
+                    <option value="Queda de cabelo">Queda de cabelo</option>
+                    <option value="Ressecamento">Ressecamento</option>
+                    <option value="Opacidade">Opacidade</option>
+                    <option value="Elasticidade">Elasticidade</option>
+                    <option value="Frizz">Frizz</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="calor">
+                <label>Com que frequência você usa ferramentas de calor?</label>
+                <br>
+                <select id="ferramentasCalor" required>
+                    <option value="Nunca">Nunca</option>
+                    <option value="Todos os dias">Todos os dias</option>
+                    <option value="4 a 6 dias">4 a 6 dias</option>
+                    <option value="1 a 3 dias">1 a 3 dias</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="acad">
+                <label>Você pratica atividades físicas que podem afetar seu cabelo?</label>
+                <br>
+                <select id="atividadesFisicas" required>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <button type="button" id="vaiRotina" onclick="gerarRotina()">Ver Rotina Recomendada</button>
         </form>
 
-        <div id="resultadoRotina"></div>
 
-    </div>
     <footer id="footer">
         <p id="footer-principal">Site desenvolvido para o programa TWIST 2024.2</p>
         <p id="footer-nomes">Fernanda Figueiredo <br>
