@@ -18,8 +18,8 @@
         </div>
         <div class="modal_login" id="modal_login">
                 <div id="modal_login-inner">
-                    <h2>Login invalido</h2>
-                    <button class="botaologinModal" id="botaoVolta">tentar novamente</button>
+                    <h2>Login inválido!</h2>
+                    <button class="botaologinModal" id="botaoVolta">Tentar novamente</button>
                     <h3>Novo no site?</h3>
                     <button class="botaoCadastrar" id="botaoModalCadastro">Fazer cadastro</button>
                 </div>
@@ -30,7 +30,7 @@
                 <a href="index.html" id="homeLink"><img src="img/logo.png" alt="Logo do site" id="imgLogo"></a>
             </div>
             <div id="restoDiv">
-                <a href="form.html"id="forumLink">FÓRUM DE PERGUNTAS</a>
+                <a href="forum.html"id="forumLink">FÓRUM DE PERGUNTAS</a>
                 <a href="perfilUsuario.html" id="usuarioLink"><img src="img/usuario2.png" alt="Ícone usuário básico" id="imgUsuario"></a>
                 <a href="loginCadastro.html" id="loginCadastroLink">CADASTRO/LOGIN</a>
             </div>
@@ -41,12 +41,13 @@
                 <h2>Faça seu Login</h2>
 
                 <form id="loginForm">
-                    <label for="login">Login:</label>
-                    <input type="text" id="login" name="login" required>
+                    <label for="login" class="labelLogin">Login:</label>
+                    <input type="text" id="login" name="login" class="inputLogin" required>
                     <br><br>
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
-                    <p id="mensagemSenhaLogin"></p>
+                    <label for="senha" class="labelLogin">Senha:</label>
+                    <input type="password" id="senha" name="senha" class="inputLogin" required>
+                    <br>
+                    <p id="mensagemSenhaLogin" class="mensagemSenhaErrada"></p>
                     <br><br>
                     <button id="fazerCadastro">Cadastro</button>
                     <button id="enterLogin">Entrar</button>
@@ -55,25 +56,25 @@
             <div id="divCadastro" style="display:none">
                 <h2>Cadastro:</h2>
                 <form id="cadastroForm">
-                    <label for="loginCadastro">Usuário:</label>
-                    <input type="text" id="loginCadastro" name="loginCadastro" required>
+                    <label for="loginCadastro" class="labelLogin">Usuário:</label>
+                    <input type="text" id="loginCadastro" name="loginCadastro" class="inputLogin" required>
                     <br>
-                    <span id="mensagemLogin"></span>
+                    <span id="mensagemLogin" class="mensagem"></span>
                     <br><br>
-                    <label for="emailCadastro">Email:</label>
-                    <input type="text" id="emailCadastro" name="emailCadastro" required>
+                    <label for="emailCadastro" class="labelLogin">Email:</label>
+                    <input type="text" id="emailCadastro" name="emailCadastro" class="inputLogin" required>
                     <br>
-                    <span id="mensagemEmail"></span>
+                    <span id="mensagemEmail" class="mensagem"></span>
                     <br><br>
-                    <label for="senhaCadastro">Senha:</label>
-                    <input type="password" id="senhaCadastro" name="senhaCadastro" required>
+                    <label for="senhaCadastro" class="labelLogin">Senha:</label>
+                    <input type="password" id="senhaCadastro" name="senhaCadastro" class="inputLogin" required>
                     <br>
-                    <span id="spanInutil"></span>
+                    <span id="spanInutil" class="mensagem"></span>
                     <br><br>
-                    <label for="senhaVerificacaoCadastro">Verificação de Senha:</label>
-                    <input type="password" id="senhaVerificacaoCadastro" name="senhaVerificacaoCadastro" required>
+                    <label for="senhaVerificacaoCadastro" class="labelVerificaSenha">Verificação de Senha:</label>
+                    <input type="password" id="senhaVerificacaoCadastro" name="senhaVerificacaoCadastro" class="inputLogin" required>
                     <br>
-                    <span id="mensagemSenha"></span>
+                    <span id="mensagemSenha" class="mensagem"></span>
                     <br><br>
                     <button id="enterCadastro">Entrar</button>
                 </form>

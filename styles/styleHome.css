@@ -123,3 +123,7 @@
 #navigator a:hover {
     color:#DF4C83;
 }
+
+#formularioBtn{
+    z-index: 1000;
+}
