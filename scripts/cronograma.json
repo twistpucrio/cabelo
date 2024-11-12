@@ -183,43 +183,11 @@
                     },
                     {
                         "dia": "Quinta",
-                        "evento": "Hidratação"
+                        "evento": "Nutrição"
                     },
                     {
                         "dia": "Sexta",
                         "evento": "-"
-                    },
-                    {
-                        "dia": "Sábado",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Domingo",
-                        "evento": "Nutrição"
-                    }
-                ]
-            },
-            {
-                "dias": [
-                    {
-                        "dia": "Segunda",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Terça",
-                        "evento": "Hidratação"
-                    },
-                    {
-                        "dia": "Quarta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Quinta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Sexta",
-                        "evento": "Nutrição"
                     },
                     {
                         "dia": "Sábado",
@@ -239,27 +207,59 @@
                     },
                     {
                         "dia": "Terça",
-                        "evento": "Hidratação"
-                    },
-                    {
-                        "dia": "Quarta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Quinta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Sexta",
-                        "evento": "Nutrição"
-                    },
-                    {
-                        "dia": "Sábado",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Domingo",
                         "evento": "Reconstrução"
+                    },
+                    {
+                        "dia": "Quarta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Quinta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Sexta",
+                        "evento": "Hidratação"
+                    },
+                    {
+                        "dia": "Sábado",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Domingo",
+                        "evento": "Nutrição"
+                    }
+                ]
+            },
+            {
+                "dias": [
+                    {
+                        "dia": "Segunda",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Terça",
+                        "evento": "Hidratação"
+                    },
+                    {
+                        "dia": "Quarta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Quinta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Sexta",
+                        "evento": "Nutrição"
+                    },
+                    {
+                        "dia": "Sábado",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Domingo",
+                        "evento": "Hidratação"
                     }
                 ]
             }
@@ -284,51 +284,19 @@
                     },
                     {
                         "dia": "Quinta",
-                        "evento": "Hidratação"
-                    },
-                    {
-                        "dia": "Sexta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Sábado",
-                        "evento": "Nutrição"
-                    },
-                    {
-                        "dia": "Domingo",
-                        "evento": "-"
-                    }
-                ]
-            },
-            {
-                "dias": [
-                    {
-                        "dia": "Segunda",
-                        "evento": "Hidratação"
-                    },
-                    {
-                        "dia": "Terça",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Quarta",
-                        "evento": "Nutrição"
-                    },
-                    {
-                        "dia": "Quinta",
                         "evento": "-"
                     },
                     {
                         "dia": "Sexta",
-                        "evento": "-"
+                        "evento": "Nutrição"
                     },
                     {
                         "dia": "Sábado",
-                        "evento": "Hidratação"
+                        "evento": "-"
                     },
                     {
                         "dia": "Domingo",
-                        "evento": "-"
+                        "evento": "Hidratação"
                     }
                 ]
             },
@@ -340,7 +308,7 @@
                     },
                     {
                         "dia": "Terça",
-                        "evento": "Hidratação"
+                        "evento": "Nutrição"
                     },
                     {
                         "dia": "Quarta",
@@ -348,51 +316,83 @@
                     },
                     {
                         "dia": "Quinta",
-                        "evento": "Hidratação"
-                    },
-                    {
-                        "dia": "Sexta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Sábado",
-                        "evento": "Nutrição"
-                    },
-                    {
-                        "dia": "Domingo",
-                        "evento": "-"
-                    }
-                ]
-            },
-            {
-                "dias": [
-                    {
-                        "dia": "Segunda",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Terça",
-                        "evento": "Hidratação"
-                    },
-                    {
-                        "dia": "Quarta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Quinta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Sexta",
-                        "evento": "Nutrição"
-                    },
-                    {
-                        "dia": "Sábado",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Domingo",
                         "evento": "Reconstrução"
+                    },
+                    {
+                        "dia": "Sexta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Sábado",
+                        "evento": "Hidratação"
+                    },
+                    {
+                        "dia": "Domingo",
+                        "evento": "-"
+                    }
+                ]
+            },
+            {
+                "dias": [
+                    {
+                        "dia": "Segunda",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Terça",
+                        "evento": "Hidratação"
+                    },
+                    {
+                        "dia": "Quarta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Quinta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Sexta",
+                        "evento": "Nutrição"
+                    },
+                    {
+                        "dia": "Sábado",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Domingo",
+                        "evento": "Hidratação"
+                    }
+                ]
+            },
+            {
+                "dias": [
+                    {
+                        "dia": "Segunda",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Terça",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Quarta",
+                        "evento": "Nutrição"
+                    },
+                    {
+                        "dia": "Quinta",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Sexta",
+                        "evento": "Nutrição"
+                    },
+                    {
+                        "dia": "Sábado",
+                        "evento": "-"
+                    },
+                    {
+                        "dia": "Domingo",
+                        "evento": "Hidratação"
                     }
                 ]
             }
@@ -417,11 +417,11 @@
                     },
                     {
                         "dia": "Quinta",
-                        "evento": "Nutrição"
+                        "evento": "-"
                     },
                     {
                         "dia": "Sexta",
-                        "evento": "-"
+                        "evento": "Nutrição"
                     },
                     {
                         "dia": "Sábado",
@@ -469,11 +469,11 @@
                 "dias": [
                     {
                         "dia": "Segunda",
-                        "evento": "Nutrição"
+                        "evento": "-"
                     },
                     {
                         "dia": "Terça",
-                        "evento": "-"
+                        "evento": "Hidratação"
                     },
                     {
                         "dia": "Quarta",
@@ -481,19 +481,19 @@
                     },
                     {
                         "dia": "Quinta",
-                        "evento": "Hidratação"
+                        "evento": "-"
                     },
                     {
                         "dia": "Sexta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Sábado",
                         "evento": "Nutrição"
                     },
                     {
-                        "dia": "Domingo",
+                        "dia": "Sábado",
                         "evento": "-"
+                    },
+                    {
+                        "dia": "Domingo",
+                        "evento": "Hidratação"
                     }
                 ]
             },
@@ -505,19 +505,19 @@
                     },
                     {
                         "dia": "Terça",
-                        "evento": "Hidratação"
+                        "evento": "-"
                     },
                     {
                         "dia": "Quarta",
-                        "evento": "-"
-                    },
-                    {
-                        "dia": "Quinta",
                         "evento": "Nutrição"
                     },
                     {
-                        "dia": "Sexta",
+                        "dia": "Quinta",
                         "evento": "-"
+                    },
+                    {
+                        "dia": "Sexta",
+                        "evento": "Hidratação"
                     },
                     {
                         "dia": "Sábado",
@@ -525,10 +525,10 @@
                     },
                     {
                         "dia": "Domingo",
-                        "evento": "Hidratação"
+                        "evento": "Reconstrução"
                     }
                 ]
             }
         ]
-    }
+    }    
 ]
