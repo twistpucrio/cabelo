@@ -73,8 +73,10 @@ async function verificarUsuario() {
                 console.log("Usuário encontrado: ", JSON.stringify(usuarioEncontrado));
                 localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
                 modalSucesso('login');
+                return;
             } else {
                 msgSenha.innerHTML = "Senha incorreta!";
+                return;
             }
         } else {
  
@@ -86,11 +88,14 @@ async function verificarUsuario() {
                     console.log("Usuário cadastrado: ", JSON.stringify(usuarioCadastrado));
                     localStorage.setItem("usuario", JSON.stringify(usuarioCadastrado));
                     modalSucesso('login');
+                    return;
                 } else {
                     msgSenha.innerHTML = "Senha incorreta!";
+                    return;
                 }
             } else {
                 mostrarModal(); 
+                return;
             }
         }
     } catch (error) {
@@ -171,6 +176,7 @@ window.addEventListener("load", function () {
     const divLogin = document.getElementById("divLogin");
 
     cadastrarButton.addEventListener('click', function () {
+        event.preventDefault();
         divLogin.style.display = 'none';
         divCadastro.style.display = 'block';
     });
@@ -183,12 +189,12 @@ window.addEventListener("load", function () {
         divLogin.style.display = 'block';
     }
 
-    submitButton.addEventListener("click", function (event) {
+    submitButton.addEventListener("click", function () {
         event.preventDefault();
         verificarUsuario();
     });
 
-    submitButtonCadastro.addEventListener("click", function (event) {
+    submitButtonCadastro.addEventListener("click", function () {
         event.preventDefault();
         realizarCadastro();
     });
