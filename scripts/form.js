@@ -29,6 +29,7 @@ async function gerarRotina() {
 }
 
 window.addEventListener("load", function() {
+    document.getElementsById("sellect").selectedIndex = -1;
     const botaoRotina = document.getElementById('vaiRotina');
     botaoRotina.addEventListener("click", function(event) {
         event.preventDefault();
