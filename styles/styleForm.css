@@ -1,0 +1,71 @@
+.pergunta{
+    width: 60%;
+    height: 100px;
+    text-align: center;
+    margin: 2%;
+    background-color: rgba(255, 223, 234, 0.842);
+    padding:  1.4%;
+    transition: transform 0.4s ease;
+    border-radius:15px 17px 21px ;
+}
+
+.pergunta:hover{
+    transform: scale(1.07);  
+    box-shadow: 7px 8px 10px rgba(0, 0, 0.1, 0.226);
+}
+
+
+label{
+    font-size: larger;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+select{
+ margin-bottom: 1%;   
+ margin-top: 1%;
+ width: 15%;
+ height: 27px;
+ font-size: medium;
+}
+
+#formulario-rotina{
+    margin: 5%;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+#vaiRotina{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: medium;
+    border: 0;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    color: #ffffff;
+    background-color: #db7f9b;
+    text-align: center;
+    cursor: pointer;
+    font-size: medium;
+    width: 16rem;
+    height: 2.8rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
+    transition: transform 0.3s ease;
+}
+
+#vaiRotina:hover{
+    transform: scale(1.06);  
+}
+#vaiRotina:active{
+    transform: scale(0.95); 
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
+}
