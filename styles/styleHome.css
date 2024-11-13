@@ -130,31 +130,90 @@
 }
 
 #formularioBtn{
-    font-family: "fonte";
+    font-family: "mulish";
+    font-weight: bolder;
     background-color: transparent;
     z-index: 1000;
     margin-bottom: 18rem;
     border: none;
-    color: #fd2977;
-    font-weight: bolder;
+    color: #df5789;
     font-size: 2.2rem;
     transition: transform 0.5s ease-in-out;
-    text-shadow: rgb(146, 70, 70) 2px 0px 10px;
+    text-shadow: rgba(146, 70, 70, 0.555) 0px 0px 10px;
 }
 
 #formularioBtn:hover{
-    transform: scale(1.10);
+    transform: scale(1.06);
+}
+
+#formularioBtn:active{
+    transform: scale(1);
 }
 
 #imagemFundo{
     background-image: url(../img/chat2.webp);
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: contain;
     width: 100%;
+    height: 118vh; */
+    background-size: cover;
     height: 1024px;
     opacity: 80%;
     display: flex;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
 }
+
+#mensagemHome{
+    font-family: "mulish";
+    color: #df5789;
+    font-size: x-large;
+    text-shadow: rgba(146, 70, 70, 0.555) 0px 0px 10px;
+    font-weight: bolder;
+}
+
+/* parte modal */
+.modalFormulario{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#modalFormulario{
+    background-color: #fca2c042;
+}
+
+.modalFormulario.open{
+    opacity: 1;
+    z-index: 999;
+}
+
+.modalFormulario h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 2.5rem;
+}
+
+#modalFormularioInner{
+	width: 20%;
+	height: 30%;
+	border-radius: 2rem;
+	justify-items: center;
+    display: block;
+    align-content: center;
+	padding: 1%;
+    background-color: #f19dbd;
+}
+/* fim modal */
