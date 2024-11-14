@@ -15,11 +15,11 @@
 }
 
 #modalSucesso{
-    background-color: #fca2c05e;
+    background-color: #fca2c042;
 }
 
 #modal_login{
-    background-color: #fca2c05e;
+    background-color: #fca2c042;
 }
 .modal_login{
     opacity: 0;
@@ -43,8 +43,8 @@
     opacity: 1;
     z-index: 999;
 }
-.modalSucesso h2{
 
+.modalSucesso h2{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     color: #FFFFFF;
@@ -54,32 +54,32 @@
 
 
 .modal_login h2{
-
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 1.4rem;
 }
-  #modalSucessoInner{
+
+#modalSucessoInner{
 	width: 20%;
 	height: 30%;
-	border-radius: 20%;
+	border-radius: 2rem;
 	justify-items: center;
     display: block;
     align-content: center;
 	padding: 1%;
-    background-color: #ca85ae;
-    
+    background-color: #f19dbd;
 }
+
 #modal_login-inner{
 	width: 20%;
 	height: 30%;
-	border-radius: 20%;
+	border-radius: 2rem;
 	justify-items: center;
     display: block;
     align-content: center;
 	padding: 1%;
-    background-color: #ca85ae;
+    background-color: #f19dbd;
 }
 
 #botaoVolta{
@@ -97,7 +97,6 @@
     height: 2.6rem;
     overflow: hidden;
     margin-bottom: 1.5rem;
-    background-color: #FFFFFF;
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
     transition: transform 0.3s ease;
 }
@@ -125,7 +124,6 @@
     height: 2.6rem;
     overflow: hidden;
     margin-bottom: 1.5rem;
-    background-color: #FFFFFF;
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
     transition: transform 0.3s ease;
 }
@@ -153,7 +151,6 @@
     height: 2.6rem;
     overflow: hidden;
     margin-bottom: 1.5rem;
-    background-color: #FFFFFF;
     box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
     transition: transform 0.3s ease;
 }
@@ -172,15 +169,13 @@
     height: 80vh;
     display: flex;
     align-content: stretch;
-    flex-direction: column-reverse;
-    background-color: whitesmoke;
-    
+    flex-direction: column-reverse;   
 }
 
 #divLogin {
     margin: 2%; 
     padding: 20px; 
-    height: 47%; 
+    height: 47%;
     width: 25%; 
     background-color: rgb(253, 201, 209);
     border-radius: 5%;
@@ -190,7 +185,7 @@
 #divCadastro{
     margin: 2%; 
     padding: 20px; 
-    height: 62%; 
+    height: 75%; 
     width: 25%; 
     background-color: rgb(253, 201, 209);
     border-radius: 5%;
@@ -236,29 +231,22 @@
     box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
 }
 
-
-
-#login{
-    margin-top: 5%;
-    height: 30px;
-    width: 55%;
-}
-
-#senha{
+.inputLogin{
     margin-top: 2%;
     height: 30px;
     width: 55%;
 }
 
-label{
-    font-size:larger;
+.labelLogin{
+    font-size: large;
+    display: block;
+    width: 55%;
 }
 
-input{
-    margin-top: 1.5%;
-    height: 24px;
-    width: 45%;
-    margin-bottom: 1%;
+.labelVerificaSenha{
+    font-size: large;
+    display: block;
+    width: 80%;
 }
 
 #enterCadastro{
@@ -275,21 +263,23 @@ input{
 #enterCadastro:hover{
     transform: scale(1.06);  
 }
+
 #enterCadastro:active{
     transform: scale(0.95); 
     box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
 }
 
-
-#mensagemSenhaLogin{
+.mensagem{
     margin-bottom: 0%;
     color: #d61717;
-    animation: wiggle 2s linear infinite;
 }
 
-span{
+.mensagemSenhaErrada{
+    animation: wiggle 2s linear infinite;
+    margin-bottom: 0%;
     color: #d61717;
-  }
+}
+
 
 @keyframes wiggle {
     0%, 7% {

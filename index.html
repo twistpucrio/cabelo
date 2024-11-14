@@ -13,6 +13,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <div class="modalFormulario" id="modalFormulario">
+        <div id="modalFormularioInner">
+            <button id="botaoFecha">
+                
+            </button>
+            <h2 id="msgFormulario">Por favor, entre ou crie sua conta antes de realizar a personalização de sua rotina capilar!</h2>
+            <button id="botaoLogin">
+                
+            </button>
+        </div>
+    </div>
     <div id="conteudo">
         <header id="header"></header>
         <nav id="navigator">
@@ -20,14 +31,18 @@
                 <a href="index.html" id="homeLink"><img src="img/logo.png" alt="Logo do site" id="imgLogo"></a>
             </div>
             <div id="restoDiv">
-                <a href="form.html"id="forumLink">FÓRUM DE PERGUNTAS</a>
+                <a href="forum.html"id="forumLink">FÓRUM DE PERGUNTAS</a>
                 <a href="perfilUsuario.html" id="usuarioLink"><img src="img/usuario2.png" alt="Ícone usuário básico" id="imgUsuario"></a>
                 <a href="loginCadastro.html" id="loginCadastroLink">CADASTRO/LOGIN</a>
             </div>
         </nav>
         <section id="main">
             <!--<a href="form.html" id="formLink">Faça o formulário!</a>-->
-            <img src="img/chat2.webp" alt="imagem cabelo" id="imagemPrincipal">
+            <div id="imagemFundo">
+                <p id="mensagemHome"></p>
+                <button id="formularioBtn">Personalize sua rotina capilar!</button>
+            </div>
+            <!-- <img src="img/chat2.webp" alt="imagem cabelo" id="imagemPrincipal"> -->
 
            
         </section>

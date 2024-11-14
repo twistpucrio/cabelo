@@ -125,7 +125,7 @@ async function realizarCadastro() {
     }
 
     if (!verificaLogin(login)) {
-        msgLogin.innerHTML = "Favor não usar espaço no login de usuário";
+        msgLogin.innerHTML = "Não use espaço no login de usuário!";
         sai = true;
     }
 
@@ -142,9 +142,13 @@ async function realizarCadastro() {
         const usuarios = await response.json();
 
         const usuarioExistente = usuarios.find(usuario => usuario.login === login || usuario.email === email);
+        let listaCadastros = JSON.parse(localStorage.getItem("cadastros")) || [];
+        let usuarioCadastradoExistente = listaCadastros.find(usuario => usuario.login === login || usuario.email === email);
 
-        if (usuarioExistente) {
-            alert("Já existe um usuário com esse nome ou email!");
+        if (usuarioExistente || usuarioCadastradoExistente) {
+            // alert("Já existe um usuário com esse nome ou email!");
+            msgSenha.innerHTML = "Já existe um usuário com esse nome ou email!";
+            return;
         } else {
             const usuarioNovo = {
                 "login": login,
@@ -182,9 +186,6 @@ window.addEventListener("load", function () {
     });
     let user = JSON.parse(localStorage.getItem("usuario"));
     if (user) {
-        divCadastro.style.display = 'none';
-        divLogin.style.display = 'block';
-    } else {
         divCadastro.style.display = 'none';
         divLogin.style.display = 'block';
     }

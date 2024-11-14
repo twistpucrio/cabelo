@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Dynalight';
+    src: url('../fonts/Dynalight-Regular.ttf');
+}
 /* inicio sobre nós */
 #imagens-sobre {
     display: flex;
@@ -19,8 +23,7 @@
 
 #paragrafo-sobre {
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #6e3b26;
+    color: black;
     margin: 0 10rem 5rem 10rem;
     font-size: 1.2rem;
 }
@@ -36,7 +39,7 @@
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 3.5em;
-    color: #6e3b26;
+    color: #DF4C83;
     margin: 2rem;
     padding: 1rem;
     height: 3.5rem;
@@ -62,9 +65,17 @@
     #leilas:after {
         width: 47%;
         height: 4px;
-        background-color: #6e3b26;
+        background-color: #DF4C83;
     }
 
 } 
+
+#fraseLogo{
+    margin: 0.5rem;
+    font-family: 'Dynalight';
+    color: #DF4C83;
+    font-size: 3rem;
+    letter-spacing: 0.08rem;
+}
 
 /* fim sobre nós */
