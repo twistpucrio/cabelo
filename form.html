@@ -6,6 +6,7 @@
     <title>Beleza Verdadeira</title>
     <link rel="stylesheet" href="styles/styleGeral.css">
     <link rel="stylesheet" href="styles/styleForm.css">
+    <script src="scripts/form.js"></script>
 </head>
 <body>
     <div id="conteudo">
@@ -20,18 +21,96 @@
                 <a href="loginCadastro.html" id="loginCadastroLink">CADASTRO/LOGIN</a>
             </div>
         </nav>
-        <section id="main">
 
-        </section>
-        <footer id="footer">
-            <p id="footer-principal">Site desenvolvido para o programa TWIST 2024.2</p>
-            <p id="footer-nomes">Fernanda Figueiredo <br>
+        <form id="formulario-rotina">
+            <div class ="pergunta" id="textura">
+                <label>Qual é a textura natural do seu cabelo?</label>
+                <br>
+                <select id="textura" required>
+                    <option value="Liso">Liso</option>
+                    <option value="Ondulado">Ondulado</option>
+                    <option value="Cacheado">Cacheado</option>
+                    <option value="Crespo">Crespo</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="procedimento">
+                <label>Seu cabelo possui algum procedimento?</label>
+                <br>
+                <select id="procedimento" required>
+                    <option value="Natural">Natural</option>
+                    <option value="Com Luzes">Com Luzes</option>
+                    <option value="Colorido">Colorido</option>
+                    <option value="Alisado">Alisado</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="espessura">
+                <label>Qual a espessura do seu cabelo?</label>
+                <br>
+                <select id="espessura" required>
+                    <option value="Fino">Fino</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grosso">Grosso</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="couroCabeludo">
+                <label>Como você descreveria seu couro cabeludo?</label>
+                <br>
+                <select id="couroCabeludo" required>
+                    <option value="Oleoso">Oleoso</option>
+                    <option value="Seco">Seco</option>
+                    <option value="Saudável">Saudável</option>
+                    <option value="Descamação">Com Descamação</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="lavagem">
+                <label>Com que frequência você lava seu cabelo?</label>
+                <br>
+                <select id="frequencia" required>
+                    <option value="Todo dia">Todo dia</option>
+                    <option value="4 a 6 dias">4 a 6 dias</option>
+                    <option value="1 a 3 dias">1 a 3 dias</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="preocupacoes">
+                <label>Quais são as 2 principais preocupações com o seu cabelo?</label>
+                <br>
+                <select id="preocupacao" required>
+                    <option value="Queda de cabelo">Queda de cabelo</option>
+                    <option value="Ressecamento">Ressecamento</option>
+                    <option value="Opacidade">Opacidade</option>
+                    <option value="Elasticidade">Elasticidade</option>
+                    <option value="Frizz">Frizz</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="calor">
+                <label>Com que frequência você usa ferramentas de calor?</label>
+                <br>
+                <select id="ferramentasCalor" required>
+                    <option value="Nunca">Nunca</option>
+                    <option value="Todos os dias">Todos os dias</option>
+                    <option value="4 a 6 dias">4 a 6 dias</option>
+                    <option value="1 a 3 dias">1 a 3 dias</option>
+                </select>
+            </div>
+            <div class ="pergunta" id="acad">
+                <label>Você pratica atividades físicas que podem afetar seu cabelo?</label>
+                <br>
+                <select id="atividadesFisicas" required>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <button type="button" id="vaiRotina" onclick="gerarRotina()">Ver Rotina Recomendada</button>
+        </form>
+       
+    <footer id="footer">
+        <p id="footer-principal">Site desenvolvido para o programa TWIST 2024.2</p>
+        <p id="footer-nomes">Fernanda Figueiredo <br>
             Isabel Amaral <br>
             Luiza Régnier <br>
             Maria Luiza Dutra</p>
-            <a href="https://github.com/twistpucrio/cabelo" target="_blank"> <img src="img/github.png" alt="Logo do site GitHub" id="github-logo"></a>
-            <p><a href="sobrenos.html" id="saiba-mais-link">Saiba mais sobre nós</a></p>
-        </footer>
-    </div>
+        <a href="https://github.com/twistpucrio/cabelo" target="_blank"> <img src="img/github.png" alt="Logo do site GitHub" id="github-logo"></a>
+        <p><a href="sobrenos.html" id="saiba-mais-link">Saiba mais sobre nós</a></p>
+    </footer>
 </body>
 </html>
