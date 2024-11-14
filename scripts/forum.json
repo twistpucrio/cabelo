@@ -1,0 +1,62 @@
+[
+    {
+        "login": "Breno123",
+        "post": {
+            "titulo": "Como escolher o shampoo ideal para cabelo cacheado?",
+            "conteudo": "Tenho cabelo cacheado e fico na dúvida sobre qual shampoo é o mais indicado para manter a hidratação. Alguma dica?",
+            "data": "2024-11-14"
+        },
+        "comentarios": [
+            {
+                "login": "Clara_J",
+                "comentario": {
+                    "conteudo": "Oi Breno123! Eu uso shampoos sem sulfato e vejo muita diferença na hidratação dos meus cachos.",
+                    "data": "2024-11-14"
+                }
+            },
+            {
+                "login": "Ana.s",
+                "comentario": {
+                    "conteudo": "Recomendo experimentar produtos com óleo de coco. Meus cachos ficam mais definidos.",
+                    "data": "2024-11-14"
+                }
+            }
+        ],
+        "curtidas": ["Clara_J","Ana.s"]
+    },
+    {
+        "login": "Paula_Lima",
+        "post": {
+            "titulo": "Como cuidar do cabelo oleoso?",
+            "conteudo": "Meu cabelo fica oleoso muito rápido. Quais produtos e hábitos ajudam a reduzir a oleosidade?",
+            "data": "2024-11-14"
+        },
+        "comentarios": [
+            {
+                "login": "Luiz89",
+                "comentario": {
+                    "conteudo": "Lavar com shampoo transparente ajuda a remover o excesso de oleosidade.",
+                    "data": "2024-11-14"
+                }
+            },
+            {
+                "login": "MarcosF",
+                "comentario": {
+                    "conteudo": "Evitar tocar muito no cabelo também ajuda a mantê-lo limpo por mais tempo.",
+                    "data": "2024-11-14"
+                }
+            }
+        ],
+        "curtidas": ["Breno123","Ana.s"]
+    },
+    {
+        "login": "Ana.s",
+        "post": {
+            "titulo": "Lugares para doar cabelo",
+            "conteudo": "Gostaria de doar o meu cabelo, não fiz nenhuma química nele, porém não sei onde nem como eu realizo a doação.",
+            "data": "2024-11-14"
+        },
+        "comentarios": [],
+        "curtidas": []
+    }
+]
