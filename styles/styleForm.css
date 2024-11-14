@@ -69,3 +69,10 @@ select{
     transform: scale(0.95); 
     box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
 }
+
+#resultadoRotina{
+    font-size: 150%;
+    color:red;
+    font-weight: bold;
+   
+}
