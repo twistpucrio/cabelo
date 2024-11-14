@@ -3,8 +3,19 @@ async function gerarCronograma(cronogramaId) {
     containerCronograma.innerHTML = '';
 
     const tituloCronograma = document.createElement('h1');
+    const tipoRotina = document.createElement('h1');
     tituloCronograma.innerHTML = "Seu cronograma";
     tituloCronograma.classList.add('tituloCronograma');
+    tipoRotina.classList.add('tipoRotina')
+    if (cronogramaId==1){
+        tipoRotina.innerHTML = 'Rotina 1: Danos e quebras';
+    }else if (cronogramaId==2){
+        tipoRotina.innerHTML = 'Rotina 2: Ressecamento';
+    }else if (cronogramaId==3){
+        tipoRotina.innerHTML = 'Rotina 3: Controle de frizz';
+    }else{
+        tipoRotina.innerHTML = 'Rotina 4: Brilho e vitalidade';
+    }
 
     const avisinho = document.createElement('p');
     avisinho.innerHTML = "Clique para saber quais produtos usar! =D";
@@ -82,6 +93,7 @@ async function gerarCronograma(cronogramaId) {
     tabelaProdutos.setAttribute('id', 'tabelaProdutos');
 
     containerCronograma.appendChild(tituloCronograma);
+    containerCronograma.appendChild(tipoRotina);
     containerCronograma.appendChild(avisinho);
     containerCronograma.appendChild(tabelaDiv);
     containerCronograma.appendChild(tabelaProdutos);
