@@ -70,6 +70,10 @@ function adicionarPost() {
     });
 }
 
+function mostraComentarios(){
+    //func que ao clicar no botao comentarios de cada post mostra os comentarios com um dropdown.
+    //se clicar de novo no botao fecha o dropdown de comentarios
+}
 
 //funcao para o usuario fazer um comentario em um post:
 function adicionarComentario(postData){
@@ -172,7 +176,7 @@ window.addEventListener("load", async function () {
     if (!forum){
         pegaInfoForum();
     }
-    
+
     mostraForum();
     console.log(forum);
 
