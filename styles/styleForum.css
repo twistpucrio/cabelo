@@ -30,38 +30,73 @@
 }
 
 .post{
-    border: pink solid 8px;
+    border: pink solid 0.4rem;
     border-radius: 5rem;
     padding: 2rem 4rem 3rem 4rem;
+    margin: 3rem 0rem 3rem 0rem;
 }
 
 .adicionarPostDIv{
-    margin: 2rem;
-    text-align: center;
+    text-align: left;
+    margin: 3rem 3rem 3rem 1rem;
 }
 
 .adicionarPostBtn{
-    
+    border: none;
+    background-color: #DF4C83;
+    font-size: larger;
+    padding: 0.8rem;
+    border-radius: 1.2rem;
+    color: white;
+    font-family: "mulish";
+    cursor: pointer;
+}
+
+.adicionarPostBtn:hover{
+    background-color: #f56399;
+    transform: translateY(-0.2rem);
+    box-shadow: rgb(104, 76, 92) 0rem 0.2rem 0.3rem;
+}
+
+.adicionarPostBtn:active{
+    background-color: #ce2c67;
+    transform: translateY(0.2rem);
+    box-shadow: none;
+}
+
+.curtidas{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.curtidasTexto{
+    color: gray;
 }
 
 .curtidaBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
     border: none;
     cursor: pointer;
     appearance: none;
     background-color: inherit;
 }
 
-
 .imgBtnCurtida{
-    width: 10%;
-    transition: transform 0.6s ease-in-out;
+    width: 60%;
+    transition: transform 0.1s ease-in-out;
 }
 
 .imgBtnCurtida:hover{
-    filter: brightness(85%);
+    filter: brightness(105%);
     transform: scale(1.1);
 }
 
 .imgBtnCurtida:active{
     filter: brightness(100%);
+    transform: scale(1);
 }
