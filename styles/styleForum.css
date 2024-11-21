@@ -1,3 +1,67 @@
+#tituloForum{
+    padding-left: 8rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #DF4C83;
+}
+
+#tituloForum::before{
+    content: '';
+    position: absolute;
+    margin-top: 3.3rem;
+    width: 25%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #DF4C83;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+#tituloForum:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+#forumContainer{
+    padding-left: 8rem;
+    padding-right: 8rem;
+    margin-bottom: 10rem;
+}
+
+.post{
+    border: pink solid 8px;
+    border-radius: 5rem;
+    padding: 2rem 4rem 3rem 4rem;
+}
+
+.adicionarPostDIv{
+    margin: 2rem;
+    text-align: center;
+}
+
+.adicionarPostBtn{
+    
+}
+
+.curtidaBtn{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
+
 .imgBtnCurtida{
     width: 10%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.imgBtnCurtida:hover{
+    filter: brightness(85%);
+    transform: scale(1.1);
+}
+
+.imgBtnCurtida:active{
+    filter: brightness(100%);
 }
