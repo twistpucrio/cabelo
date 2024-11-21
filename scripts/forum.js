@@ -9,9 +9,67 @@ function curtirPost(postData){
 
 
 //funcao para o usuario fazer um novo post:
-function adicionarPost(){
-    //adicionar post somente se usuário estiver logado
+function adicionarPost() {
+    let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+    if (!usuarioLogado) {
+        alert("Você precisa estar logado para adicionar um post.");
+        return;
+    }
+
+    // Criar uma interface para o usuário inserir título e texto do post
+    const container = document.getElementById("forumContainer");
+    const postForm = document.createElement("div");
+    postForm.classList.add("postForm");
+
+    postForm.innerHTML = `
+        <h2>Adicionar Novo Post</h2>
+        <label for="tituloPost">Título:</label>
+        <input type="text" id="tituloPost" class="inputTitulo" placeholder="Digite o título do post" required />
+        <label for="textoPost">Texto:</label>
+        <textarea id="textoPost" class="inputTexto" placeholder="Digite o conteúdo do post" required></textarea>
+        <button id="salvarPostBtn" class="salvarPostBtn">Salvar Post</button>
+        <button id="cancelarPostBtn" class="cancelarPostBtn">Cancelar</button>
+    `;
+
+    // Adicionar o formulário ao container
+    container.appendChild(postForm);
+
+    // Botão de salvar
+    document.getElementById("salvarPostBtn").addEventListener("click", function () {
+        const titulo = document.getElementById("tituloPost").value.trim();
+        const texto = document.getElementById("textoPost").value.trim();
+
+        if (!titulo || !texto) {
+            alert("Por favor, preencha todos os campos antes de salvar.");
+            return;
+        }
+
+        const novoPost = {
+            login: usuarioLogado.login,
+            post: {
+                titulo: titulo,
+                conteudo: texto,
+                data: new Date().toISOString().split("T")[0],
+            },
+            curtidas: [],
+            comentarios: []
+        };
+
+        // Salvar no localStorage
+        let forum = JSON.parse(localStorage.getItem("forum"));
+        forum.push(novoPost);
+        localStorage.setItem("forum", JSON.stringify(forum));
+        console.log(forum);
+        // Atualizar a exibição
+        mostraForum();
+    });
+
+    // Botão de cancelar
+    document.getElementById("cancelarPostBtn").addEventListener("click", function () {
+        postForm.remove();
+    });
 }
+
 
 //funcao para o usuario fazer um comentario em um post:
 function adicionarComentario(postData){
@@ -93,6 +151,7 @@ function mostraForum(){
     adicionarPostBtn.classList.add("adicionarPostBtn");
     adicionarPostBtn.setAttribute('id', 'btnPost');
     adicionarPostBtn.innerHTML = 'Adicione o seu post...';
+   
     adicionarPostBtn.addEventListener('click', function() {
         adicionarPost();
     });
@@ -104,12 +163,17 @@ function mostraForum(){
 async function pegaInfoForum(){
     const response = await fetch('scripts/forum.json');
     const forum = await response.json();
+
     localStorage.setItem("forum", JSON.stringify(forum));
-    mostraForum();
 }
 
 window.addEventListener("load", async function () {
-    pegaInfoForum();
     let forum = JSON.parse(localStorage.getItem("forum"));
+    if (!forum){
+        pegaInfoForum();
+    }
+    
+    mostraForum();
     console.log(forum);
+
 });
