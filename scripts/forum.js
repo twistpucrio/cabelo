@@ -1,12 +1,19 @@
+
+
+
+//Funcao para o usuario curtir um post:
 function curtirPost(postData){
     console.log(postData);
     //usuario logado pode curtir posts, porém não mais de uma vez
 }
 
+
+//funcao para o usuario fazer um novo post:
 function adicionarPost(){
     //adicionar post somente se usuário estiver logado
 }
 
+//funcao para o usuario fazer um comentario em um post:
 function adicionarComentario(postData){
     console.log(postData);
     //adicionar comentario somente se usuário estiver logado
@@ -73,7 +80,6 @@ function mostraForum(){
         
         curtidasDiv.innerHTML = "<p class='curtidasTexto'>" + postData.curtidas.length + "</p>";
         curtidasDiv.appendChild(curtidaBtn);
-
         
         postDiv.appendChild(comentarioDiv);
         postDiv.appendChild(adicionarComentarioDiv);
