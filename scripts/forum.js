@@ -1,7 +1,27 @@
 function curtirPost(postData){
     console.log(postData);
-    //usuario logado pode curtir posts, porém não mais de uma vez
+    let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+    if (!usuarioLogado) {
+        alert("Você precisa estar logado para curtir um post.");
+        return;
+    }
+
+    if (postData.curtidas.includes(usuarioLogado.login)) {
+        alert("Você já curtiu este post.");
+        return;
+    }
+
+    postData.curtidas.push(usuarioLogado.login);
+
+    let forum = JSON.parse(localStorage.getItem("forum"));
+    forum = forum.map(post => 
+        post.post.titulo === postData.post.titulo ? postData : post
+    );
+    localStorage.setItem("forum", JSON.stringify(forum));
+
+    mostraForum();
 }
+
 
 function adicionarPost(){
     //adicionar post somente se usuário estiver logado
