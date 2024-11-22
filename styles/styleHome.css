@@ -114,19 +114,32 @@
     background-color: pink;
 }
 
+
 #navigator a {
     color: white;
     text-decoration: none;
     font-size: large;
     padding-left: 1rem;
     padding-right: 1rem;
-    font-family: 'Mulish', Arial, sans-serif;
+    font-family: 'mulishbold';
     font-weight: bolder;
     letter-spacing: 0.05rem;
+
+    background-image: linear-gradient(
+    to right,
+    #DF4C83,
+    #DF4C83 50%,
+    #ffffff 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 #navigator a:hover {
-    color:#DF4C83;
+    background-position: 0;
 }
 
 #formularioBtn{
