@@ -100,6 +100,13 @@ function mostraForum(){
             comentarioDiv.appendChild(comentarioElemento);
         });
 
+        if (postData.comentarios.length == 0){
+            const comentarioMensagem = document.createElement("p");
+            comentarioMensagem.classList.add("comentarioMsg");
+            comentarioMensagem.innerHTML = 'Ainda não há comentários neste post...'
+            comentarioDiv.appendChild(comentarioMensagem);
+        }
+
         const adicionarComentarioDiv = document.createElement("div");
         adicionarComentarioDiv.classList.add("adicionarComentarioDIv");
         const adicionarComentarioBtn = document.createElement("button");
@@ -117,10 +124,14 @@ function mostraForum(){
         curtidaBtn.classList.add("curtidaBtn");
 
         console.log(postData.curtidas);
-        if (postData.curtidas.includes(usuarioLogado.login)){
-            curtidaBtn.innerHTML = "<img src='https://www.iconpacks.net/icons/1/free-heart-icon-992-thumb.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+        if (usuarioLogado){
+            if (postData.curtidas.includes(usuarioLogado.login)){
+                curtidaBtn.innerHTML = "<img src='/img/coracaocheio.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
+            } else{
+                curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            }
         } else{
-            curtidaBtn.innerHTML = "<img src='https://cdn-icons-png.flaticon.com/256/1077/1077035.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
         }
 
         curtidaBtn.addEventListener('click', function() {

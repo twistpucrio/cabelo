@@ -1,5 +1,173 @@
+#tituloForum{
+    padding-left: 8rem;
+    margin-bottom: 1rem;
+    font-size: 2.7rem;
+    color: #DF4C83;
+    display: flex
+}
+
+#tituloForum::before{
+    content: '';
+    position: absolute;
+    margin-top: 3.3rem;
+    width: 20%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #DF4C83;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+#tituloForum:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+#forumContainer{
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.post{
+    width:60%;
+    border: pink solid 0.4rem;
+    border-radius: 3rem;
+    padding: 2rem 4rem 3rem 4rem;
+    margin: 3rem 0rem 3rem 0rem;
+    transition: transform 0.2s ease-in;
+}
+
+.loginPost{
+    font-size: medium;
+    margin-bottom: 2rem;
+}
+
+.conteudoPost{
+    font-size: larger;
+}
+
+.post:hover{
+    box-shadow: pink 2px 2px 10px;
+    transform: scale(1.02);
+}
+
+.comentarios{
+    background-color: rgb(255, 242, 244);
+    padding: 1rem 2rem;
+    margin: 3rem 0rem;
+    border-radius: 2rem;
+}
+
+.comentario{
+    margin-left: 3rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    border-left: pink 3px solid;
+}
+
+.conteudoData{
+    text-align: right;
+    font-size: small;
+    color: grey;
+}
+
+.adicionarComentarioBtn{
+    border: none;
+    background-color: pink;
+    font-size: medium;
+    padding: 0.9rem;
+    border-radius: 1.2rem;
+    color: white;
+    font-family: "mulish";
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+.adicionarComentarioBtn:hover{
+    background-color: rgb(253, 182, 194);
+    transform: scale(1.02);
+    box-shadow: pink 0px 0px 5px;
+}
+
+.adicionarComentarioBtn:active{
+    background-color: rgb(255, 169, 184);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.adicionarPostDIv{
+    text-align: left;
+    margin: 3rem 3rem 3rem 1rem;
+}
+
+.adicionarPostBtn{
+    border: none;
+    background-color: #DF4C83;
+    font-size: larger;
+    padding: 0.8rem;
+    border-radius: 1.2rem;
+    color: white;
+    font-family: "mulish";
+    cursor: pointer;
+}
+
+.adicionarPostBtn:hover{
+    background-color: #f56399;
+    transform: translateY(-0.2rem);
+    box-shadow: rgb(104, 76, 92) 0rem 0.2rem 0.3rem;
+}
+
+.adicionarPostBtn:active{
+    background-color: #ce2c67;
+    transform: translateY(0.2rem);
+    box-shadow: none;
+}
+
+.curtidas{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.curtidasTexto{
+    color: gray;
+}
+
+.curtidaBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
 .imgBtnCurtida{
-    width: 10%;
+    transform: rotate(13deg);
+    width: 50%;
+    margin-left: -2rem;
+    transition: transform 0.1s ease-in-out;
+}
+
+.imgBtnCurtida:hover{
+    filter: brightness(105%);
+    transform: scale(1.1);
+}
+
+.imgBtnCurtida:active{
+    filter: brightness(100%);
+    transform: scale(1);
 }
 
 .modal {
@@ -36,7 +204,6 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
 #modalFechar:hover {
     background-color: #0056b3;
 }
