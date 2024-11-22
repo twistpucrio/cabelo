@@ -4,7 +4,7 @@
 //Funcao para o usuario curtir um post:
 function curtirPost(postData){
     console.log(postData);
-    //usuario logado pode curtir posts, porém não mais de uma vez
+    //usuario logado pode curtir posts, porem não mais de uma vez
 }
 
 
@@ -16,7 +16,10 @@ function adicionarPost() {
         return;
     }
 
-    // Criar uma interface para o usuário inserir título e texto do post
+    if (document.querySelector(".postForm")) {
+        return;
+    }
+
     const container = document.getElementById("forumContainer");
     const postForm = document.createElement("div");
     postForm.classList.add("postForm");
@@ -31,10 +34,8 @@ function adicionarPost() {
         <button id="cancelarPostBtn" class="cancelarPostBtn">Cancelar</button>
     `;
 
-    // Adicionar o formulário ao container
     container.appendChild(postForm);
 
-    // Botão de salvar
     document.getElementById("salvarPostBtn").addEventListener("click", function () {
         const titulo = document.getElementById("tituloPost").value.trim();
         const texto = document.getElementById("textoPost").value.trim();
@@ -55,16 +56,14 @@ function adicionarPost() {
             comentarios: []
         };
 
-        // Salvar no localStorage
         let forum = JSON.parse(localStorage.getItem("forum"));
         forum.push(novoPost);
         localStorage.setItem("forum", JSON.stringify(forum));
         console.log(forum);
-        // Atualizar a exibição
         mostraForum();
     });
 
-    // Botão de cancelar
+    // btn cancela post (pra apagar o form)
     document.getElementById("cancelarPostBtn").addEventListener("click", function () {
         postForm.remove();
     });
@@ -73,7 +72,6 @@ function adicionarPost() {
 //func que ao clicar no botao comentarios de cada post mostra os comentarios com um dropdown.
 //se clicar de novo no botao fecha o dropdown de comentarios
 function mostraComentarios(event) {
-    // Procura pela lista de comentários associada ao post
     const listaComentarios = event.target.closest(".comentarios").querySelector(".listaComentarios");
     if (listaComentarios) {
         listaComentarios.classList.toggle("hidden");
@@ -89,6 +87,9 @@ function adicionarComentario(postData) {
         return;
     }
 
+    if (document.querySelector(".comentarioForm")) {
+        return;
+    }
 
     const postDiv = Array.from(document.querySelectorAll(".post"))
         .find(div => div.querySelector(".tituloPost").innerText === postData.post.titulo);
@@ -110,7 +111,6 @@ function adicionarComentario(postData) {
 
     postDiv.appendChild(comentarioForm);
 
-    // Evento para salvar o comentário
     comentarioForm.querySelector("#enviarComentarioBtn").addEventListener("click", function () {
         const conteudo = comentarioForm.querySelector("#conteudoComentario").value.trim();
 
@@ -118,6 +118,8 @@ function adicionarComentario(postData) {
             alert("Por favor, escreva um comentário antes de enviar.");
             return;
         }
+
+
 
         const novoComentario = {
             login: usuarioLogado.login,
@@ -127,7 +129,6 @@ function adicionarComentario(postData) {
             },
         };
 
-        // Salvar o comentário no localStorage
         let forum = JSON.parse(localStorage.getItem("forum"));
         const postIndex = forum.findIndex(post => post.post.titulo === postData.post.titulo);
 
@@ -136,11 +137,9 @@ function adicionarComentario(postData) {
             localStorage.setItem("forum", JSON.stringify(forum));
         }
 
-        // Atualizar a exibição do post
         mostraForum();
     });
 
-    // Evento para cancelar o comentário
     comentarioForm.querySelector("#cancelarComentarioBtn").addEventListener("click", function () {
         comentarioForm.remove();
     });
@@ -195,6 +194,7 @@ function mostraForum() {
         adicionarComentarioBtn.classList.add("adicionarComentarioBtn");
         adicionarComentarioBtn.innerHTML = 'Adicione o seu comentario...';
         adicionarComentarioBtn.addEventListener('click', function() {
+
             adicionarComentario(postData);
         });
 
