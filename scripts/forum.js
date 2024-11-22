@@ -167,7 +167,7 @@ function mostraForum() {
         const comentarioDiv = document.createElement("div");
         comentarioDiv.classList.add("comentarios");
 
-        const tituloComentario = document.createElement("h3");
+        const tituloComentario = document.createElement("button");
         tituloComentario.classList.add("tituloComentario");
         tituloComentario.textContent = "Comentários";
         tituloComentario.addEventListener("click", mostraComentarios);
