@@ -1,17 +1,17 @@
-function curtirPost(postData){
-    console.log(postData);
-    let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+function curtirPost(postData) {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+    const jaCurtiu = postData.curtidas.includes(usuarioLogado.login);
+
     if (!usuarioLogado) {
-        alert("Você precisa estar logado para curtir um post.");
+        exibirModal("Você precisa estar logado para curtir ou descurtir um post.");
         return;
     }
 
-    if (postData.curtidas.includes(usuarioLogado.login)) {
-        alert("Você já curtiu este post.");
-        return;
+    if (jaCurtiu) {
+        postData.curtidas = postData.curtidas.filter(login => login !== usuarioLogado.login);
+    } else {
+        postData.curtidas.push(usuarioLogado.login);
     }
-
-    postData.curtidas.push(usuarioLogado.login);
 
     let forum = JSON.parse(localStorage.getItem("forum"));
     forum = forum.map(post => 
@@ -19,7 +19,41 @@ function curtirPost(postData){
     );
     localStorage.setItem("forum", JSON.stringify(forum));
 
-    mostraForum();
+    atualizaBotaoDeCurtida(postData);
+}
+
+function atualizaBotaoDeCurtida(postData) {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+    const posts = document.querySelectorAll(".post");
+    
+    posts.forEach(postDiv => {
+        const tituloPost = postDiv.querySelector(".tituloPost").innerText;
+        if (tituloPost === postData.post.titulo) {
+            const curtidasTexto = postDiv.querySelector(".curtidasTexto");
+            const curtidaBtn = postDiv.querySelector(".curtidaBtn");
+            
+            curtidasTexto.innerText = postData.curtidas.length;
+
+            if (postData.curtidas.includes(usuarioLogado.login)) {
+                curtidaBtn.innerHTML = "<img src='https://www.iconpacks.net/icons/1/free-heart-icon-992-thumb.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
+            } else {
+                curtidaBtn.innerHTML = "<img src='https://cdn-icons-png.flaticon.com/256/1077/1077035.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            }
+        }
+    });
+}
+
+function exibirModal(mensagem) {
+    const modal = document.getElementById("modalMensagem");
+    const modalTexto = document.getElementById("modalMensagemTexto");
+    const modalFechar = document.getElementById("modalFechar");
+    modalTexto.innerText = mensagem;
+
+    modal.classList.add("open");
+
+    modalFechar.addEventListener("click", function () {
+        modal.classList.remove("open");
+    }, { once: true });
 }
 
 
@@ -31,6 +65,8 @@ function adicionarComentario(postData){
     console.log(postData);
     //adicionar comentario somente se usuário estiver logado
 }
+
+
 
 function mostraForum(){
     let forum = JSON.parse(localStorage.getItem("forum"));
