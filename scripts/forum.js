@@ -44,6 +44,13 @@ function mostraForum(){
             comentarioDiv.appendChild(comentarioElemento);
         });
 
+        if (postData.comentarios.length == 0){
+            const comentarioMensagem = document.createElement("p");
+            comentarioMensagem.classList.add("comentarioMsg");
+            comentarioMensagem.innerHTML = 'Ainda não há comentários neste post...'
+            comentarioDiv.appendChild(comentarioMensagem);
+        }
+
         const adicionarComentarioDiv = document.createElement("div");
         adicionarComentarioDiv.classList.add("adicionarComentarioDIv");
         const adicionarComentarioBtn = document.createElement("button");

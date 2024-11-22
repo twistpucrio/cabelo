@@ -1,15 +1,16 @@
 #tituloForum{
     padding-left: 8rem;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 2.7rem;
     color: #DF4C83;
+    display: flex
 }
 
 #tituloForum::before{
     content: '';
     position: absolute;
     margin-top: 3.3rem;
-    width: 25%;
+    width: 20%;
     height: 3px;
     border-radius: 5px;
     background-color: #DF4C83;
@@ -24,16 +25,82 @@
 }
 
 #forumContainer{
-    padding-left: 8rem;
-    padding-right: 8rem;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .post{
+    width:60%;
     border: pink solid 0.4rem;
-    border-radius: 5rem;
+    border-radius: 3rem;
     padding: 2rem 4rem 3rem 4rem;
     margin: 3rem 0rem 3rem 0rem;
+    transition: transform 0.2s ease-in;
+}
+
+.loginPost{
+    font-size: medium;
+    margin-bottom: 2rem;
+}
+
+.conteudoPost{
+    font-size: larger;
+}
+
+.post:hover{
+    box-shadow: pink 2px 2px 10px;
+    transform: scale(1.02);
+}
+
+.comentarios{
+    background-color: rgb(255, 242, 244);
+    padding: 1rem 2rem;
+    margin: 3rem 0rem;
+    border-radius: 2rem;
+}
+
+.comentario{
+    margin-left: 3rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    border-left: pink 3px solid;
+}
+
+.conteudoData{
+    text-align: right;
+    font-size: small;
+    color: grey;
+}
+
+.adicionarComentarioBtn{
+    border: none;
+    background-color: pink;
+    font-size: medium;
+    padding: 0.9rem;
+    border-radius: 1.2rem;
+    color: white;
+    font-family: "mulish";
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+.adicionarComentarioBtn:hover{
+    background-color: rgb(253, 182, 194);
+    transform: scale(1.02);
+    box-shadow: pink 0px 0px 5px;
+}
+
+.adicionarComentarioBtn:active{
+    background-color: rgb(255, 169, 184);
+    transform: scale(1);
+    box-shadow: none;
 }
 
 .adicionarPostDIv{
@@ -87,7 +154,9 @@
 }
 
 .imgBtnCurtida{
-    width: 60%;
+    transform: rotate(13deg);
+    width: 50%;
+    margin-left: -2rem;
     transition: transform 0.1s ease-in-out;
 }
 
