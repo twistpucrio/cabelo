@@ -165,7 +165,54 @@
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 1700px) {
+    #imagemFundo{
+        background-image: url(../img/Resp.jpg);
+    }
+}
+@media (max-width: 1626px) {
+    #imagemFundo{
+        background-image: url(../img/Resp1.jpg);
+    }
+}
 
+@media (max-width: 1433px) {
+    #imagemFundo{
+        background-image: url(../img/Resp1.jpg);
+    }
+}
+@media (max-width: 1393px) {
+    #imagemFundo{
+        background-image: url(../img/Resp4.jpg);
+    }
+}
+
+@media (max-width: 1323px) {
+    #imagemFundo{
+        background-image: url(../img/Resp0.jpg);
+    }
+}
+@media (max-width: 1235px) {
+    #imagemFundo{
+        background-image: url(../img/Resp01.jpg);
+    }
+}
+@media (max-width: 1107px) {
+    #imagemFundo{
+        background-image: url(../img/Resp02.jpg);
+    }
+}
+
+@media (max-width: 994px) {
+    #imagemFundo{
+        background-image: url(../img/Resp001.jpg);
+    }
+}
+@media (max-width: 768px) {
+    #imagemFundo{
+        background-image: url(../img/Resp03.jpg);
+    }
+}
 #mensagemHome{
     font-family: "mulish";
     color: #df5789;
