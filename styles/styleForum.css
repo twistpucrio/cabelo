@@ -1,3 +1,7 @@
 .imgBtnCurtida{
     width: 10%;
 }
+
+.hidden {
+    display: none;
+}

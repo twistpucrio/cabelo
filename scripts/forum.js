@@ -70,18 +70,84 @@ function adicionarPost() {
     });
 }
 
-function mostraComentarios(){
-    //func que ao clicar no botao comentarios de cada post mostra os comentarios com um dropdown.
-    //se clicar de novo no botao fecha o dropdown de comentarios
+//func que ao clicar no botao comentarios de cada post mostra os comentarios com um dropdown.
+//se clicar de novo no botao fecha o dropdown de comentarios
+function mostraComentarios(event) {
+    // Procura pela lista de comentários associada ao post
+    const listaComentarios = event.target.closest(".comentarios").querySelector(".listaComentarios");
+    if (listaComentarios) {
+        listaComentarios.classList.toggle("hidden");
+    }
 }
 
 //funcao para o usuario fazer um comentario em um post:
-function adicionarComentario(postData){
-    console.log(postData);
-    //adicionar comentario somente se usuário estiver logado
+// Função para o usuário fazer um comentário em um post
+function adicionarComentario(postData) {
+    let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+    if (!usuarioLogado) {
+        alert("Você precisa estar logado para comentar.");
+        return;
+    }
+
+
+    const postDiv = Array.from(document.querySelectorAll(".post"))
+        .find(div => div.querySelector(".tituloPost").innerText === postData.post.titulo);
+
+    if (!postDiv) {
+        console.error("Post não encontrado.");
+        return;
+    }
+
+  
+    const comentarioForm = document.createElement("div");
+    comentarioForm.classList.add("comentarioForm");
+    comentarioForm.innerHTML = `
+        <h3>Adicionar Comentário</h3>
+        <textarea id="conteudoComentario" class="inputComentario" placeholder="Digite seu comentário"></textarea>
+        <button id="enviarComentarioBtn" class="enviarComentarioBtn">Enviar</button>
+        <button id="cancelarComentarioBtn" class="cancelarComentarioBtn">Cancelar</button>
+    `;
+
+    postDiv.appendChild(comentarioForm);
+
+    // Evento para salvar o comentário
+    comentarioForm.querySelector("#enviarComentarioBtn").addEventListener("click", function () {
+        const conteudo = comentarioForm.querySelector("#conteudoComentario").value.trim();
+
+        if (!conteudo) {
+            alert("Por favor, escreva um comentário antes de enviar.");
+            return;
+        }
+
+        const novoComentario = {
+            login: usuarioLogado.login,
+            comentario: {
+                conteudo: conteudo,
+                data: new Date().toISOString().split("T")[0],
+            },
+        };
+
+        // Salvar o comentário no localStorage
+        let forum = JSON.parse(localStorage.getItem("forum"));
+        const postIndex = forum.findIndex(post => post.post.titulo === postData.post.titulo);
+
+        if (postIndex !== -1) {
+            forum[postIndex].comentarios.push(novoComentario);
+            localStorage.setItem("forum", JSON.stringify(forum));
+        }
+
+        // Atualizar a exibição do post
+        mostraForum();
+    });
+
+    // Evento para cancelar o comentário
+    comentarioForm.querySelector("#cancelarComentarioBtn").addEventListener("click", function () {
+        comentarioForm.remove();
+    });
 }
 
-function mostraForum(){
+
+function mostraForum() {
     let forum = JSON.parse(localStorage.getItem("forum"));
     const container = document.getElementById("forumContainer");
     let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
@@ -97,11 +163,18 @@ function mostraForum(){
             <p class='loginPost'><strong>Postado por:</strong> ${postData.login} em ${postData.post.data}</p>
             <p class='conteudoPost'>${postData.post.conteudo}</p>
         `;
-
+ 
         const comentarioDiv = document.createElement("div");
         comentarioDiv.classList.add("comentarios");
-        comentarioDiv.innerHTML = "<h3 class='tituloComentario'>Comentários</h3>";
-        
+
+        const tituloComentario = document.createElement("h3");
+        tituloComentario.classList.add("tituloComentario");
+        tituloComentario.textContent = "Comentários";
+        tituloComentario.addEventListener("click", mostraComentarios);
+
+        const listaComentarios = document.createElement("div");
+        listaComentarios.classList.add("listaComentarios", "hidden");
+
         postData.comentarios.forEach(comentario => {
             const comentarioElemento = document.createElement("div");
             comentarioElemento.classList.add("comentario");
@@ -110,8 +183,11 @@ function mostraForum(){
                 <p class='conteudoComentario'>${comentario.comentario.conteudo}</p>
                 <p class='conteudoData'><em>${comentario.comentario.data}</em></p>
             `;
-            comentarioDiv.appendChild(comentarioElemento);
+            listaComentarios.appendChild(comentarioElemento);
         });
+
+        comentarioDiv.appendChild(tituloComentario);
+        comentarioDiv.appendChild(listaComentarios);
 
         const adicionarComentarioDiv = document.createElement("div");
         adicionarComentarioDiv.classList.add("adicionarComentarioDIv");
@@ -129,20 +205,19 @@ function mostraForum(){
         const curtidaBtn = document.createElement("button");
         curtidaBtn.classList.add("curtidaBtn");
 
-        console.log(postData.curtidas);
-        if (postData.curtidas.includes(usuarioLogado.login)){
+        if (postData.curtidas.includes(usuarioLogado.login)) {
             curtidaBtn.innerHTML = "<img src='https://www.iconpacks.net/icons/1/free-heart-icon-992-thumb.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
-        } else{
+        } else {
             curtidaBtn.innerHTML = "<img src='https://cdn-icons-png.flaticon.com/256/1077/1077035.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
         }
 
         curtidaBtn.addEventListener('click', function() {
             curtirPost(postData);
         });
-        
+
         curtidasDiv.innerHTML = "<p class='curtidasTexto'>" + postData.curtidas.length + "</p>";
         curtidasDiv.appendChild(curtidaBtn);
-        
+
         postDiv.appendChild(comentarioDiv);
         postDiv.appendChild(adicionarComentarioDiv);
         postDiv.appendChild(curtidasDiv);
@@ -164,12 +239,15 @@ function mostraForum(){
     container.appendChild(adicionarPostDiv);
 }
 
+
 async function pegaInfoForum(){
     const response = await fetch('scripts/forum.json');
     const forum = await response.json();
 
     localStorage.setItem("forum", JSON.stringify(forum));
 }
+
+
 
 window.addEventListener("load", async function () {
     let forum = JSON.parse(localStorage.getItem("forum"));
