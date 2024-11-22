@@ -1,12 +1,14 @@
 function curtirPost(postData) {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
-    const jaCurtiu = postData.curtidas.includes(usuarioLogado.login);
 
     if (!usuarioLogado) {
+        console.log("Usuário não está logado. Modal será exibido."); 
         exibirModal("Você precisa estar logado para curtir ou descurtir um post.");
         return;
     }
 
+    const jaCurtiu = postData.curtidas.includes(usuarioLogado.login);
+     
     if (jaCurtiu) {
         postData.curtidas = postData.curtidas.filter(login => login !== usuarioLogado.login);
     } else {
@@ -35,9 +37,9 @@ function atualizaBotaoDeCurtida(postData) {
             curtidasTexto.innerText = postData.curtidas.length;
 
             if (postData.curtidas.includes(usuarioLogado.login)) {
-                curtidaBtn.innerHTML = "<img src='https://www.iconpacks.net/icons/1/free-heart-icon-992-thumb.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
+                curtidaBtn.innerHTML = "<img src='/img/coracaocheio.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
             } else {
-                curtidaBtn.innerHTML = "<img src='https://cdn-icons-png.flaticon.com/256/1077/1077035.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+                curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
             }
         }
     });
@@ -46,15 +48,17 @@ function atualizaBotaoDeCurtida(postData) {
 function exibirModal(mensagem) {
     const modal = document.getElementById("modalMensagem");
     const modalTexto = document.getElementById("modalMensagemTexto");
-    const modalFechar = document.getElementById("modalFechar");
+    const botaoLogar = document.getElementById("botaoLogar");
+
     modalTexto.innerText = mensagem;
 
     modal.classList.add("open");
 
-    modalFechar.addEventListener("click", function () {
-        modal.classList.remove("open");
+    botaoLogar.addEventListener("click", function () {
+        location.href = "loginCadastro.html"; 
     }, { once: true });
 }
+
 
 
 function adicionarPost(){
