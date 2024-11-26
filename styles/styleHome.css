@@ -114,19 +114,32 @@
     background-color: pink;
 }
 
+
 #navigator a {
     color: white;
     text-decoration: none;
     font-size: large;
     padding-left: 1rem;
     padding-right: 1rem;
-    font-family: 'Mulish', Arial, sans-serif;
+    font-family: 'mulishbold';
     font-weight: bolder;
     letter-spacing: 0.05rem;
+
+    background-image: linear-gradient(
+    to right,
+    #DF4C83,
+    #DF4C83 50%,
+    #ffffff 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 #navigator a:hover {
-    color:#DF4C83;
+    background-position: 0;
 }
 
 #formularioBtn{
@@ -165,7 +178,54 @@
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 1700px) {
+    #imagemFundo{
+        background-image: url(../img/Resp.jpg);
+    }
+}
+@media (max-width: 1626px) {
+    #imagemFundo{
+        background-image: url(../img/Resp1.jpg);
+    }
+}
 
+@media (max-width: 1433px) {
+    #imagemFundo{
+        background-image: url(../img/Resp1.jpg);
+    }
+}
+@media (max-width: 1393px) {
+    #imagemFundo{
+        background-image: url(../img/Resp4.jpg);
+    }
+}
+
+@media (max-width: 1323px) {
+    #imagemFundo{
+        background-image: url(../img/Resp0.jpg);
+    }
+}
+@media (max-width: 1235px) {
+    #imagemFundo{
+        background-image: url(../img/Resp01.jpg);
+    }
+}
+@media (max-width: 1107px) {
+    #imagemFundo{
+        background-image: url(../img/Resp02.jpg);
+    }
+}
+
+@media (max-width: 994px) {
+    #imagemFundo{
+        background-image: url(../img/Resp001.jpg);
+    }
+}
+@media (max-width: 768px) {
+    #imagemFundo{
+        background-image: url(../img/Resp03.jpg);
+    }
+}
 #mensagemHome{
     font-family: "mulish";
     color: #df5789;
