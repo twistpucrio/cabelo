@@ -154,11 +154,21 @@
 }
 
 .imgBtnCurtida{
-    transform: rotate(13deg);
+
+    width: 10%;
+}
+
+.hidden {
+    display: none;
+}
+
+.imgBtnCurtida {
     width: 50%;
     margin-left: -2rem;
     transition: transform 0.1s ease-in-out;
+    transform: rotate(13deg); /* Colocado no lugar correto */
 }
+
 
 .imgBtnCurtida:hover{
     filter: brightness(105%);
@@ -236,6 +246,7 @@
 #botaoLogar:hover{
     transform: scale(1.06);  
 }
+
 #botaoLogar:active{
     transform: scale(0.95); 
     box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
