@@ -1,3 +1,6 @@
+
+// Função para o usuário curtir um post
+
 function curtirPost(postData) {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
 
@@ -7,7 +10,7 @@ function curtirPost(postData) {
         return;
     }
 
-    
+
 
     const jaCurtiu = postData.curtidas.includes(usuarioLogado.login);
      
@@ -16,6 +19,7 @@ function curtirPost(postData) {
     } else {
         postData.curtidas.push(usuarioLogado.login);
     }
+
 
     let forum = JSON.parse(localStorage.getItem("forum"));
     forum = forum.map(post => 
@@ -37,6 +41,7 @@ function atualizaBotaoDeCurtida(postData) {
             const curtidaBtn = postDiv.querySelector(".curtidaBtn");
             
             curtidasTexto.innerText = postData.curtidas.length;
+
 
             if (postData.curtidas.includes(usuarioLogado.login)) {
                 curtidaBtn.innerHTML = "<img src='/img/coracaocheio.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
@@ -61,7 +66,7 @@ function exibirModal(mensagem) {
     }, { once: true });
 }
 
-//funcao para o usuario fazer um novo post:
+// Função para adicionar um novo post
 function adicionarPost() {
     let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
     if (!usuarioLogado) {
@@ -116,89 +121,12 @@ function adicionarPost() {
         mostraForum();
     });
 
-    // btn cancela post (pra apagar o form)
     document.getElementById("cancelarPostBtn").addEventListener("click", function () {
         postForm.remove();
     });
 }
 
-//func que ao clicar no botao comentarios de cada post mostra os comentarios com um dropdown.
-//se clicar de novo no botao fecha o dropdown de comentarios
-function mostraComentarios(event) {
-    const listaComentarios = event.target.closest(".comentarios").querySelector(".listaComentarios");
-    if (listaComentarios) {
-        listaComentarios.classList.toggle("hidden");
-    }
-}
-
-//funcao para o usuario fazer um comentario em um post:
-// Função para o usuário fazer um comentário em um post
-function adicionarComentario(postData) {
-    let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
-    if (!usuarioLogado) {
-        alert("Você precisa estar logado para comentar.");
-        return;
-    }
-
-    if (document.querySelector(".comentarioForm")) {
-        return;
-    }
-
-    const postDiv = Array.from(document.querySelectorAll(".post"))
-        .find(div => div.querySelector(".tituloPost").innerText === postData.post.titulo);
-
-    if (!postDiv) {
-        console.error("Post não encontrado.");
-        return;
-    }
-
-  
-    const comentarioForm = document.createElement("div");
-    comentarioForm.classList.add("comentarioForm");
-    comentarioForm.innerHTML = `
-        <h3>Adicionar Comentário</h3>
-        <textarea id="conteudoComentario" class="inputComentario" placeholder="Digite seu comentário"></textarea>
-        <button id="enviarComentarioBtn" class="enviarComentarioBtn">Enviar</button>
-        <button id="cancelarComentarioBtn" class="cancelarComentarioBtn">Cancelar</button>
-    `;
-
-    postDiv.appendChild(comentarioForm);
-
-    comentarioForm.querySelector("#enviarComentarioBtn").addEventListener("click", function () {
-        const conteudo = comentarioForm.querySelector("#conteudoComentario").value.trim();
-
-        if (!conteudo) {
-            alert("Por favor, escreva um comentário antes de enviar.");
-            return;
-        }
-
-
-
-        const novoComentario = {
-            login: usuarioLogado.login,
-            comentario: {
-                conteudo: conteudo,
-                data: new Date().toISOString().split("T")[0],
-            },
-        };
-
-        let forum = JSON.parse(localStorage.getItem("forum"));
-        const postIndex = forum.findIndex(post => post.post.titulo === postData.post.titulo);
-
-        if (postIndex !== -1) {
-            forum[postIndex].comentarios.push(novoComentario);
-            localStorage.setItem("forum", JSON.stringify(forum));
-        }
-
-        mostraForum();
-    });
-
-    comentarioForm.querySelector("#cancelarComentarioBtn").addEventListener("click", function () {
-        comentarioForm.remove();
-    });
-}
-
-
+// Função para mostrar o fórum
 function mostraForum() {
     let forum = JSON.parse(localStorage.getItem("forum"));
     const container = document.getElementById("forumContainer");
@@ -247,7 +175,6 @@ function mostraForum() {
         adicionarComentarioBtn.classList.add("adicionarComentarioBtn");
         adicionarComentarioBtn.innerHTML = 'Adicione o seu comentario...';
         adicionarComentarioBtn.addEventListener('click', function() {
-
             adicionarComentario(postData);
         });
 
@@ -296,23 +223,11 @@ function mostraForum() {
     container.appendChild(adicionarPostDiv);
 }
 
-
-async function pegaInfoForum(){
-    const response = await fetch('scripts/forum.json');
-    const forum = await response.json();
-
-    localStorage.setItem("forum", JSON.stringify(forum));
-}
-
-
-
 window.addEventListener("load", async function () {
     let forum = JSON.parse(localStorage.getItem("forum"));
-    if (!forum){
+    if (!forum) {
         pegaInfoForum();
     }
-
     mostraForum();
     console.log(forum);
-
 });
