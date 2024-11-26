@@ -277,3 +277,21 @@
     background-color: #f19dbd;
 }
 /* fim modal */
+
+#parteEmbaixadores{
+    margin: 2rem 10rem;
+}
+
+#embaixadorasTitulo{
+    margin-top: 3rem;
+    text-shadow: 2px 2px #f19dbd;
+    font-family: "mulish";
+    color: #df5789;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+#logoChique{
+    font-family: "fonte";
+    font-style: italic;
+}
