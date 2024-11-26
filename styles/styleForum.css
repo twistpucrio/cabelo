@@ -154,11 +154,21 @@
 }
 
 .imgBtnCurtida{
-    transform: rotate(13deg);
+
+    width: 10%;
+}
+
+.hidden {
+    display: none;
+}
+
+.imgBtnCurtida {
     width: 50%;
     margin-left: -2rem;
     transition: transform 0.1s ease-in-out;
+    transform: rotate(13deg); /* Colocado no lugar correto */
 }
+
 
 .imgBtnCurtida:hover{
     filter: brightness(105%);
@@ -207,3 +217,4 @@
 #modalFechar:hover {
     background-color: #0056b3;
 }
+
