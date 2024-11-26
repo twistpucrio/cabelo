@@ -54,4 +54,5 @@ function verificaOpcoes(){
     else{
         gerarRotina();
     }
+    
 }
