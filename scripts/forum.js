@@ -12,7 +12,7 @@ function curtirPost(postData){
 function adicionarPost() {
     let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
     if (!usuarioLogado) {
-        alert("Você precisa estar logado para adicionar um post.");
+        exibirModal("Você precisa estar logado para realizar essa ação.");
         return;
     }
 
