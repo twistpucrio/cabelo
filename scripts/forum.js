@@ -1,14 +1,66 @@
+// Função para o usuário curtir um post
+function curtirPost(postData) {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
 
+    if (!usuarioLogado) {
+        console.log("Usuário não está logado. Modal será exibido."); 
+        exibirModal("Você precisa estar logado para curtir ou descurtir um post.");
+        return;
+    }
 
+    const jaCurtiu = postData.curtidas.includes(usuarioLogado.login);
+     
+    if (jaCurtiu) {
+        postData.curtidas = postData.curtidas.filter(login => login !== usuarioLogado.login);
+    } else {
+        postData.curtidas.push(usuarioLogado.login);
+    }
 
-//Funcao para o usuario curtir um post:
-function curtirPost(postData){
-    console.log(postData);
-    //usuario logado pode curtir posts, porem não mais de uma vez
+    let forum = JSON.parse(localStorage.getItem("forum"));
+    forum = forum.map(post => 
+        post.post.titulo === postData.post.titulo ? postData : post
+    );
+    localStorage.setItem("forum", JSON.stringify(forum));
+
+    atualizaBotaoDeCurtida(postData);
 }
 
+function atualizaBotaoDeCurtida(postData) {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+    const posts = document.querySelectorAll(".post");
+    
+    posts.forEach(postDiv => {
+        const tituloPost = postDiv.querySelector(".tituloPost").innerText;
+        if (tituloPost === postData.post.titulo) {
+            const curtidasTexto = postDiv.querySelector(".curtidasTexto");
+            const curtidaBtn = postDiv.querySelector(".curtidaBtn");
+            
+            curtidasTexto.innerText = postData.curtidas.length;
 
-//funcao para o usuario fazer um novo post:
+            if (postData.curtidas.includes(usuarioLogado.login)) {
+                curtidaBtn.innerHTML = "<img src='/img/coracaocheio.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
+            } else {
+                curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            }
+        }
+    });
+}
+
+function exibirModal(mensagem) {
+    const modal = document.getElementById("modalMensagem");
+    const modalTexto = document.getElementById("modalMensagemTexto");
+    const botaoLogar = document.getElementById("botaoLogar");
+
+    modalTexto.innerText = mensagem;
+
+    modal.classList.add("open");
+
+    botaoLogar.addEventListener("click", function () {
+        location.href = "loginCadastro.html"; 
+    }, { once: true });
+}
+
+// Função para adicionar um novo post
 function adicionarPost() {
     let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
     if (!usuarioLogado) {
@@ -63,89 +115,12 @@ function adicionarPost() {
         mostraForum();
     });
 
-    // btn cancela post (pra apagar o form)
     document.getElementById("cancelarPostBtn").addEventListener("click", function () {
         postForm.remove();
     });
 }
 
-//func que ao clicar no botao comentarios de cada post mostra os comentarios com um dropdown.
-//se clicar de novo no botao fecha o dropdown de comentarios
-function mostraComentarios(event) {
-    const listaComentarios = event.target.closest(".comentarios").querySelector(".listaComentarios");
-    if (listaComentarios) {
-        listaComentarios.classList.toggle("hidden");
-    }
-}
-
-//funcao para o usuario fazer um comentario em um post:
-// Função para o usuário fazer um comentário em um post
-function adicionarComentario(postData) {
-    let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
-    if (!usuarioLogado) {
-        alert("Você precisa estar logado para comentar.");
-        return;
-    }
-
-    if (document.querySelector(".comentarioForm")) {
-        return;
-    }
-
-    const postDiv = Array.from(document.querySelectorAll(".post"))
-        .find(div => div.querySelector(".tituloPost").innerText === postData.post.titulo);
-
-    if (!postDiv) {
-        console.error("Post não encontrado.");
-        return;
-    }
-
-  
-    const comentarioForm = document.createElement("div");
-    comentarioForm.classList.add("comentarioForm");
-    comentarioForm.innerHTML = `
-        <h3>Adicionar Comentário</h3>
-        <textarea id="conteudoComentario" class="inputComentario" placeholder="Digite seu comentário"></textarea>
-        <button id="enviarComentarioBtn" class="enviarComentarioBtn">Enviar</button>
-        <button id="cancelarComentarioBtn" class="cancelarComentarioBtn">Cancelar</button>
-    `;
-
-    postDiv.appendChild(comentarioForm);
-
-    comentarioForm.querySelector("#enviarComentarioBtn").addEventListener("click", function () {
-        const conteudo = comentarioForm.querySelector("#conteudoComentario").value.trim();
-
-        if (!conteudo) {
-            alert("Por favor, escreva um comentário antes de enviar.");
-            return;
-        }
-
-
-
-        const novoComentario = {
-            login: usuarioLogado.login,
-            comentario: {
-                conteudo: conteudo,
-                data: new Date().toISOString().split("T")[0],
-            },
-        };
-
-        let forum = JSON.parse(localStorage.getItem("forum"));
-        const postIndex = forum.findIndex(post => post.post.titulo === postData.post.titulo);
-
-        if (postIndex !== -1) {
-            forum[postIndex].comentarios.push(novoComentario);
-            localStorage.setItem("forum", JSON.stringify(forum));
-        }
-
-        mostraForum();
-    });
-
-    comentarioForm.querySelector("#cancelarComentarioBtn").addEventListener("click", function () {
-        comentarioForm.remove();
-    });
-}
-
-
+// Função para mostrar o fórum
 function mostraForum() {
     let forum = JSON.parse(localStorage.getItem("forum"));
     const container = document.getElementById("forumContainer");
@@ -194,7 +169,6 @@ function mostraForum() {
         adicionarComentarioBtn.classList.add("adicionarComentarioBtn");
         adicionarComentarioBtn.innerHTML = 'Adicione o seu comentario...';
         adicionarComentarioBtn.addEventListener('click', function() {
-
             adicionarComentario(postData);
         });
 
@@ -205,10 +179,14 @@ function mostraForum() {
         const curtidaBtn = document.createElement("button");
         curtidaBtn.classList.add("curtidaBtn");
 
-        if (postData.curtidas.includes(usuarioLogado.login)) {
-            curtidaBtn.innerHTML = "<img src='https://www.iconpacks.net/icons/1/free-heart-icon-992-thumb.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+        if (usuarioLogado) {
+            if (postData.curtidas.includes(usuarioLogado.login)) {
+                curtidaBtn.innerHTML = "<img src='/img/coracaocheio.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
+            } else {
+                curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            }
         } else {
-            curtidaBtn.innerHTML = "<img src='https://cdn-icons-png.flaticon.com/256/1077/1077035.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
         }
 
         curtidaBtn.addEventListener('click', function() {
@@ -239,23 +217,11 @@ function mostraForum() {
     container.appendChild(adicionarPostDiv);
 }
 
-
-async function pegaInfoForum(){
-    const response = await fetch('scripts/forum.json');
-    const forum = await response.json();
-
-    localStorage.setItem("forum", JSON.stringify(forum));
-}
-
-
-
 window.addEventListener("load", async function () {
     let forum = JSON.parse(localStorage.getItem("forum"));
-    if (!forum){
+    if (!forum) {
         pegaInfoForum();
     }
-
     mostraForum();
     console.log(forum);
-
 });
