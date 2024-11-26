@@ -2,8 +2,7 @@ function curtirPost(postData) {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
 
     if (!usuarioLogado) {
-        console.log("Usuário não está logado. Modal será exibido."); 
-        exibirModal("Você precisa estar logado para curtir ou descurtir um post.");
+        exibirModal("Você precisa estar logado para realizar essa ação.");
         return;
     }
 
