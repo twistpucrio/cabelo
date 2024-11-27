@@ -157,8 +157,8 @@ function adicionarComentario(postData) {
     const comentarioForm = document.createElement("div");
     comentarioForm.classList.add("comentarioForm");
     comentarioForm.innerHTML = `
-        <h3>Adicionar Comentário</h3>
         <textarea id="conteudoComentario" class="inputComentario" placeholder="Digite seu comentário"></textarea>
+        <br><br>
         <button id="enviarComentarioBtn" class="enviarComentarioBtn">Enviar</button>
         <button id="cancelarComentarioBtn" class="cancelarComentarioBtn">Cancelar</button>
     `;
