@@ -1,11 +1,65 @@
 
 
 
-//Funcao para o usuario curtir um post:
-function curtirPost(postData){
-    console.log(postData);
-    //usuario logado pode curtir posts, porem não mais de uma vez
+function curtirPost(postData) {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+
+    if (!usuarioLogado) {
+        console.log("Usuário não está logado. Modal será exibido."); 
+        exibirModal("Você precisa estar logado para curtir ou descurtir um post.");
+        return;
+    }
+
+    const jaCurtiu = postData.curtidas.includes(usuarioLogado.login);
+
+    if (jaCurtiu) {
+        postData.curtidas = postData.curtidas.filter(login => login !== usuarioLogado.login);
+    } else {
+        postData.curtidas.push(usuarioLogado.login);
+    }
+    let forum = JSON.parse(localStorage.getItem("forum"));
+    forum = forum.map(post => 
+        post.post.titulo === postData.post.titulo ? postData : post
+    );
+    localStorage.setItem("forum", JSON.stringify(forum));
+
+    atualizaBotaoDeCurtida(postData);
 }
+
+function atualizaBotaoDeCurtida(postData) {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+    const posts = document.querySelectorAll(".post");
+
+    posts.forEach(postDiv => {
+        const tituloPost = postDiv.querySelector(".tituloPost").innerText;
+        if (tituloPost === postData.post.titulo) {
+            const curtidasTexto = postDiv.querySelector(".curtidasTexto");
+            const curtidaBtn = postDiv.querySelector(".curtidaBtn");
+
+            curtidasTexto.innerText = postData.curtidas.length;
+
+            if (postData.curtidas.includes(usuarioLogado.login)) {
+                curtidaBtn.innerHTML = "<img src='/img/coracaocheio.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
+            } else {
+                curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            }
+        }
+    });
+}
+
+function exibirModal(mensagem) {
+    const modal = document.getElementById("modalMensagem");
+    const modalTexto = document.getElementById("modalMensagemTexto");
+    const botaoLogar = document.getElementById("botaoLogar");
+
+    modalTexto.innerText = mensagem;
+
+    modal.classList.add("open");
+    botaoLogar.addEventListener("click", function () {
+        location.href = "loginCadastro.html"; 
+    }, { once: true });
+}
+
 
 
 //funcao para o usuario fazer um novo post:
@@ -103,8 +157,8 @@ function adicionarComentario(postData) {
     const comentarioForm = document.createElement("div");
     comentarioForm.classList.add("comentarioForm");
     comentarioForm.innerHTML = `
-        <h3>Adicionar Comentário</h3>
         <textarea id="conteudoComentario" class="inputComentario" placeholder="Digite seu comentário"></textarea>
+        <br><br>
         <button id="enviarComentarioBtn" class="enviarComentarioBtn">Enviar</button>
         <button id="cancelarComentarioBtn" class="cancelarComentarioBtn">Cancelar</button>
     `;

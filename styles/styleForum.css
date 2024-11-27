@@ -213,8 +213,47 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
+    font-size: medium;
+    width: 13rem;
+    height: 2.6rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
+    transition: transform 0.5s ease;
+
 }
 #modalFechar:hover {
     background-color: #0056b3;
 }
+
+
+#botaoLogar:active{
+    transform: scale(0.95); 
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
+}
+
+.tituloComentario{
+    background-color: rgb(255, 242, 244);
+    border:none;
+    font-size: medium;
+    font-weight: 700;
+    color:#be1b57;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.tituloComentario:hover{
+    transform: scale(1.08); 
+    cursor: pointer;
+    
+}
+
+
+    
+
+textarea{
+    width: 50%;
+    height: 50px;
+}
+
 
