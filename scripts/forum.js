@@ -1,6 +1,3 @@
-
-
-
 //Funcao para o usuario curtir um post:
 function curtirPost(postData){
     console.log(postData);
@@ -205,10 +202,14 @@ function mostraForum() {
         const curtidaBtn = document.createElement("button");
         curtidaBtn.classList.add("curtidaBtn");
 
-        if (postData.curtidas.includes(usuarioLogado.login)) {
-            curtidaBtn.innerHTML = "<img src='https://www.iconpacks.net/icons/1/free-heart-icon-992-thumb.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
-        } else {
-            curtidaBtn.innerHTML = "<img src='https://cdn-icons-png.flaticon.com/256/1077/1077035.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+        if (usuarioLogado){
+            if (postData.curtidas.includes(usuarioLogado.login)) {
+                curtidaBtn.innerHTML = "<img src='/img/coracaocheio.png' alt='Coração cheio' class='imgBtnCurtida'></img>";
+            } else {
+                curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
+            }
+        } else{
+            curtidaBtn.innerHTML = "<img src='/img/coracaovazio.png' alt='Coração vazio' class='imgBtnCurtida'></img>";
         }
 
         curtidaBtn.addEventListener('click', function() {
