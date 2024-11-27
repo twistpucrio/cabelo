@@ -66,7 +66,7 @@ function exibirModal(mensagem) {
 function adicionarPost() {
     let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
     if (!usuarioLogado) {
-        exibirModal("Você precisa estar logado para realizar essa ação.");
+        alert("Você precisa estar logado para adicionar um post.");
         return;
     }
 
