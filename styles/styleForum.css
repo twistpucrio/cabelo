@@ -256,4 +256,57 @@ textarea{
     height: 50px;
 }
 
+.enviarComentarioBtn{
+    font-weight: 600;
+    height: 45px;
+    width: 10%;
+    border: none;
+    background-color: pink;
+    font-size: medium;
+    border-radius: 1.2rem;
+    color: rgb(0, 0, 0);
+    font-family: "mulish";
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
 
+.enviarComentarioBtn:hover{
+    background-color: rgb(253, 182, 194);
+    transform: scale(1.02);
+    box-shadow: pink 0px 0px 5px;
+}
+
+.enviarComentarioBtn:active{
+    background-color: rgb(255, 169, 184);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+
+.cancelarComentarioBtn{
+    font-weight: 600;
+    height: 45px;
+    width: 10%;
+    border: none;
+    background-color: rgba(216, 78, 101, 0.801);
+    font-size: medium;
+    border-radius: 1.05rem;
+    color: rgb(255, 255, 255);
+    font-family: "mulish";
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+.cancelarComentarioBtn:hover{
+    background-color: rgba(223, 58, 85, 0.801);
+    transform: scale(1.05);
+    box-shadow: pink 0px 0px 5px;
+}
+
+.cancelarComentarioBtn:active{
+    background-color: rgb(255, 169, 184);
+    transform: scale(1);
+    box-shadow: none;
+}
