@@ -2,8 +2,7 @@ function curtirPost(postData) {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
 
     if (!usuarioLogado) {
-        console.log("Usuário não está logado. Modal será exibido."); 
-        exibirModal("Você precisa estar logado para curtir ou descurtir um post.");
+        exibirModal("Você precisa estar logado para realizar esta ação.");
         return;
     }
 
@@ -48,12 +47,20 @@ function exibirModal(mensagem) {
     const modal = document.getElementById("modalMensagem");
     const modalTexto = document.getElementById("modalMensagemTexto");
     const botaoLogar = document.getElementById("botaoLogar");
+    const botaoFechar = document.getElementById("botaoFechar"); // Seleciona o botão de fechar
 
     modalTexto.innerText = mensagem;
 
     modal.classList.add("open");
+
+    // Evento para o botão de login (uma única vez)
     botaoLogar.addEventListener("click", function () {
-        location.href = "loginCadastro.html"; 
+        location.href = "loginCadastro.html";
+    }, { once: true });
+
+    // Evento para o botão de fechar (uma única vez)
+    botaoFechar.addEventListener("click", function () {
+        modal.classList.remove("open"); // Fecha o modal
     }, { once: true });
 }
 
