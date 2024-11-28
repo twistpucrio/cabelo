@@ -25,10 +25,18 @@
         </nav>
         <section id="main">
             <h1 id="tituloForum">Fórum de Dúvidas</h1>
+            
+            <div id="campoBuscaContainer">
+                <input type="text" id="campoBusca" placeholder="Procurar no fórum..." />
+                <button id="btnBusca" onclick="buscarPostPorPalavra(document.getElementById('campoBusca').value)">
+                    Buscar
+                </button>
+            </div>
             <div id="forumContainer">
             </div>
             <div id="modalMensagem" class="modal">
                 <div class="modal-content">
+                    <img src="img/botaoFechar.png" id="botaoFechar" alt="Fechar" />
                     <p id="modalMensagemTexto"></p>
                     <button class="botaologin" id="botaoLogar">Fazer Login</button>
                 </div>
