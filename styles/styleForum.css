@@ -271,6 +271,80 @@ textarea{
     box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
 }
 
+
+.tituloComentario{
+    background-color: rgb(255, 242, 244);
+    border:none;
+    font-size: medium;
+    font-weight: 700;
+    color:#be1b57;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.tituloComentario:hover{
+    transform: scale(1.08); 
+    cursor: pointer;
+    
+}
+
+
+    
+
+textarea{
+    width: 50%;
+    height: 50px;
+}
+
+
+
+#campoBuscaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#campoBusca {
+    width: 40%;
+    padding: 0.8rem;
+    margin-right: 1rem;
+    border: 1px solid #DF4C83;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+#campoBusca:focus {
+    border-color: #be1b57;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(189, 42, 105, 0.5);
+}
+
+#btnBusca {
+    padding: 0.8rem 1.5rem;
+    background-color: #DF4C83;
+    color: white;
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btnBusca:hover {
+    background-color: #f56399;
+    transform: translateY(-0.2rem);
+}
+
+#btnBusca:active {
+    background-color: #ce2c67;
+    transform: translateY(0.2rem);
+    box-shadow: none;
+}
+
 #botaoFechar {
     position: absolute; /* Posição em relação ao modal */
     top: 10px; /* Distância do topo */
@@ -279,3 +353,4 @@ textarea{
     height: 30px; /* Altura da imagem (ajuste conforme necessário) */
     cursor: pointer; /* Mostra que é clicável */
 }
+
