@@ -76,12 +76,15 @@ function adicionarPost() {
     postForm.classList.add("postForm");
 
     postForm.innerHTML = `
-        <h2>Adicionar Novo Post</h2>
-        <label for="tituloPost">Título:</label>
-        <input type="text" id="tituloPost" class="inputTitulo" placeholder="Digite o título do post" required />
-        <label for="textoPost">Texto:</label>
-        <textarea id="textoPost" class="inputTexto" placeholder="Digite o conteúdo do post" required></textarea>
-        <button id="salvarPostBtn" class="salvarPostBtn">Salvar Post</button>
+        <label for="tituloPost" id="labelTituloPost">Título:</label>
+        <br>
+        <input type="text"  class="inputTitulo"  required />
+        <br><br>
+        <label for="textoPost" id="labelTextoPost">Texto:</label>
+        <br>
+        <textarea id="textoPost" class="inputTexto"  required></textarea>
+        <br><br>
+        <button id="salvarPostBtn" class="salvarPostBtn">Enviar</button>
         <button id="cancelarPostBtn" class="cancelarPostBtn">Cancelar</button>
     `;
 
