@@ -292,9 +292,143 @@ textarea{
 
 textarea{
     width: 50%;
+    height: 85px;
+}
+
+.enviarComentarioBtn{
+    font-weight: 600;
+    height: 45px;
+    width: 10%;
+    border: none;
+    background-color: pink;
+    font-size: medium;
+    border-radius: 1.2rem;
+    color: rgb(0, 0, 0);
+    font-family: "mulish";
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+.enviarComentarioBtn:hover{
+    background-color: rgb(253, 182, 194);
+    transform: scale(1.02);
+    box-shadow: pink 0px 0px 5px;
+}
+
+.enviarComentarioBtn:active{
+    background-color: rgb(255, 169, 184);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+
+.cancelarComentarioBtn{
+    font-weight: 600;
+    height: 45px;
+    width: 10%;
+    border: none;
+    background-color: rgba(216, 78, 101, 0.801);
+    font-size: medium;
+    border-radius: 1.05rem;
+    color: rgb(255, 255, 255);
+    font-family: "mulish";
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+.cancelarComentarioBtn:hover{
+    background-color: rgba(223, 58, 85, 0.801);
+    transform: scale(1.05);
+    box-shadow: pink 0px 0px 5px;
+}
+
+.cancelarComentarioBtn:active{
+    background-color: rgba(216, 78, 101, 0.801);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.inputTitulo{
+    width: 100%;
     height: 50px;
 }
 
+.inputTexto{
+    width: 100%;
+    height: 150px;
+}
+
+
+.postForm{
+    
+    width: 30%;
+    margin: 3rem 3rem 3rem 1rem;
+}
+
+#cancelarPostBtn{
+    font-weight: 600;
+    height: 45px;
+    width: 20%;
+    border: none;
+    background-color: rgba(216, 78, 101, 0.801);
+    font-size: medium;
+    border-radius: 1.05rem;
+    color: rgb(255, 255, 255);
+    font-family: "mulish";
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+#cancelarPostBtn:hover{
+    background-color: rgba(223, 58, 85, 0.801);
+    transform: scale(1.05);
+    box-shadow: rgb(250, 142, 160) 0px 0px 5px;
+}
+
+#cancelarPostBtn:active{
+    background-color: rgba(216, 78, 101, 0.801);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+#salvarPostBtn{
+    font-weight: 600;
+    height: 45px;
+    width: 20%;
+    border: none;
+    background-color: pink;
+    font-size: medium;
+    border-radius: 1.2rem;
+    color: rgb(0, 0, 0);
+    font-family: "mulish";
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+#salvarPostBtn:hover{
+    background-color: rgb(253, 182, 194);
+    transform: scale(1.02);
+    box-shadow: rgb(241, 205, 211) 0px 0px 5px;
+}
+
+#salvarPostBtn:active{
+    background-color: rgb(255, 169, 184);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+#labelTextoPost{
+    font-size: larger;
+}
+
+#labelTituloPost{
+    font-size: larger;
+    
+}
 
 
 #campoBuscaContainer {
@@ -353,4 +487,5 @@ textarea{
     height: 30px; /* Altura da imagem (ajuste conforme necessário) */
     cursor: pointer; /* Mostra que é clicável */
 }
+
 
