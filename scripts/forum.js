@@ -74,22 +74,18 @@ function adicionarPost() {
         return;
     }
 
-    if (document.querySelector(".postForm")) {
-        return;
-    }
-
     const container = document.getElementById("forumContainer");
     const postForm = document.createElement("div");
     postForm.classList.add("postForm");
 
     postForm.innerHTML = `
-        <label for="tituloPost" id="labelTituloPost">Título:</label>
+        <label for="tituloPost">Título:</label>
         <br>
-        <input type="text"  class="inputTitulo"  required />
+        <input type="text" id="tituloPost" class="inputTitulo" required />
         <br><br>
-        <label for="textoPost" id="labelTextoPost">Texto:</label>
+        <label for="textoPost">Texto:</label>
         <br>
-        <textarea id="textoPost" class="inputTexto"  required></textarea>
+        <textarea id="textoPost" class="inputTexto" required></textarea>
         <br><br>
         <button id="salvarPostBtn" class="salvarPostBtn">Enviar</button>
         <button id="cancelarPostBtn" class="cancelarPostBtn">Cancelar</button>
@@ -116,15 +112,14 @@ function adicionarPost() {
             curtidas: [],
             comentarios: []
         };
-
-        let forum = JSON.parse(localStorage.getItem("forum"));
+        let forum = JSON.parse(localStorage.getItem("forum")) || [];
         forum.push(novoPost);
         localStorage.setItem("forum", JSON.stringify(forum));
-        console.log(forum);
-        mostraForum();
-    });
 
-    // btn cancela post (pra apagar o form)
+        // Atualiza o fórum e remove o formulário
+        mostraForum();
+        postForm.remove();
+    });
     document.getElementById("cancelarPostBtn").addEventListener("click", function () {
         postForm.remove();
     });
