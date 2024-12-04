@@ -159,8 +159,10 @@
     transform: scale(1.06);
 }
 
-#formularioBtn:active{
+#formularioBtn:active, #formularioBtn:focus{
     transform: scale(1);
+    outline: none;
+    border: none;
 }
 
 #imagemFundo{
@@ -251,7 +253,7 @@
 }
 
 #modalFormulario{
-    background-color: #fca2c042;
+    background-color: #fca2c06e;
 }
 
 .modalFormulario.open{
@@ -259,39 +261,110 @@
     z-index: 999;
 }
 
-.modalFormulario h2{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    color: #FFFFFF;
-    margin-bottom: 2.5rem;
-}
-
 #modalFormularioInner{
-	width: 20%;
-	height: 30%;
+	width: 40%;
+	height: 43%;
 	border-radius: 2rem;
 	justify-items: center;
     display: block;
     align-content: center;
-	padding: 1%;
-    background-color: #f19dbd;
+	padding: 2rem;
+    background-color: #e2729b;
 }
+
+#msgFormulario{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#divBtnModalFechar{
+    text-align: right;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: -1.5rem;
+    border-bottom: 4px white solid;
+}
+
+#botaoFecha{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform 0.1s ease-in;
+    border-radius: 50%;
+}
+
+#botaoFecha:hover{
+    transform: scale(1.05);
+}
+
+#botaoFecha:active{
+    transform: scale(1.0);
+}
+
+#botaoFecha:focus{
+    border: none;
+    filter: invert(36%) sepia(84%) saturate(2599%) hue-rotate(295deg) brightness(88%) contrast(80%);
+    outline: none;
+}
+
+#btnImagemHome{
+    width: 3.5rem;
+}
+
+#botaoLogin{
+    border: none;
+    background-color: rgb(255, 213, 220);
+    font-size: 1.4rem;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    color: #e2729b;
+    font-family: "mulish";
+    font-weight: bolder;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+#botaoLogin:hover{
+    background-color: rgb(255, 201, 210);
+    transform: scale(1.02);
+}
+
+#botaoLogin:active, #botaoLogin:focus{
+    background-color: rgb(255, 188, 199);
+    transform: scale(1);
+    outline: none;
+    border: none;
+}
+
+
 /* fim modal */
 
-#parteEmbaixadores{
+#carouselExampleIndicators{
     margin: 2rem 10rem;
 }
 
 #embaixadorasTitulo{
-    margin-top: 3rem;
+    margin-top: 5rem;
     text-shadow: 2px 2px #f19dbd;
     font-family: "mulish";
     color: #df5789;
     font-size: 3rem;
     font-weight: bolder;
+    text-align: center;
 }
 
 #logoChique{
     font-family: "fonte";
     font-style: italic;
 }
+
+#carouselEmbaixadores{
+    background-color: #ffe0e6;
+    margin-bottom: 10rem;
+}
+
