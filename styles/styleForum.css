@@ -204,6 +204,7 @@ textarea{
 #modalMensagem{
     background-color: #fca2c042;
 }
+
 .modal{
     opacity: 0;
     position: fixed;
@@ -225,23 +226,61 @@ textarea{
 }
 
 #modalMensagemTexto{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     color:#ffffff;
-    margin-bottom: 1.4rem;
-    font-size: large;
+    margin: 4rem 2rem 2.5rem 2rem;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
 .modal-content{
-	width: 20%;
-    height: 30%;
+	width: 30%;
+    height: 40%;
     border-radius: 2rem;
-    justify-items: center;
-    display: block;
+    display: flex;
     align-content: center;
     padding: 1%;
     background-color: #f19dbd;
     position: relative; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#divBtnModalFechar{
+    text-align: right;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border-bottom: 4px white solid;
+}
+
+#botaoFecha{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform 0.1s ease-in;
+    border-radius: 50%;
+}
+
+#botaoFecha:hover{
+    transform: scale(1.05);
+}
+
+#botaoFecha:active{
+    transform: scale(1.0);
+}
+
+#botaoFecha:focus{
+    border: none;
+    filter: invert(36%) sepia(84%) saturate(2599%) hue-rotate(295deg) brightness(88%) contrast(80%);
+    outline: none;
+}
+
+#btnImagemHome{
+    width: 3.5rem;
 }
 
 #botaoLogar{
@@ -458,6 +497,8 @@ textarea{
 }
 
 #btnBusca {
+    font-family: "mulish";
+    font-weight: bolder;
     padding: 0.8rem 1.5rem;
     background-color: #DF4C83;
     color: white;
@@ -475,6 +516,31 @@ textarea{
 
 #btnBusca:active {
     background-color: #ce2c67;
+    transform: translateY(0.2rem);
+    box-shadow: none;
+}
+
+.btnOrdenar {
+    font-family: "mulish";
+    font-weight: bolder;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff7aab;
+    color: white;
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0rem 0rem 0rem 2rem;
+}
+
+.btnOrdenar:hover {
+    background-color: #ff95bc;
+    transform: translateY(-0.2rem);
+}
+
+.btnOrdenar:active {
+    background-color: #ff609a;
     transform: translateY(0.2rem);
     box-shadow: none;
 }
