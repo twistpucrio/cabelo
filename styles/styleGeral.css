@@ -12,6 +12,7 @@ body {
     margin: 0 auto;
     background-color: pink;
     font-family: "mulish";
+    caret-color: pink;
 }
 
 #conteudo {
