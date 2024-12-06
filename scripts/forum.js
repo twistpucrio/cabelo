@@ -2,7 +2,7 @@ function curtirPost(postData) {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
 
     if (!usuarioLogado) {
-        exibirModal("Você precisa estar logado para realizar esta ação.");
+        exibirModalPrecisaLogin("Você precisa estar logado para realizar esta ação.");
         return;
     }
 
@@ -43,20 +43,37 @@ function atualizaBotaoDeCurtida(postData) {
     });
 }
 
-function exibirModal(mensagem) {
+function exibirModalPrecisaLogin(mensagem) {
     const modal = document.getElementById("modalMensagem");
     const modalTexto = document.getElementById("modalMensagemTexto");
-    const botaoLogar = document.getElementById("botaoLogar");
-    const botaoFechar = document.getElementById("botaoFechar"); // Seleciona o botão de fechar
+    const botaoFechar = document.getElementById("botaoFecha"); // Seleciona o botão de fechar
+    
+    modalTexto.innerText = mensagem;
+    
+    modal.classList.add("open");
+    
+    // Evento para o botão de fechar (uma única vez)
+    botaoFechar.addEventListener("click", function () {
+        modal.classList.remove("open"); // Fecha o modal
+    }, { once: true });
+
+
+    // Evento para o botão de login (uma única vez)
+    let botaoLogar = document.createElement('button');
+    botaoLogar.innerHTML = "<button class='botaologin' id='botaoLogar'>Fazer Login</button>";
+    botaoLogar.addEventListener("click", function () {
+        location.href = "loginCadastro.html";
+    }, { once: true });
+}
+
+function exibirModalCampo(mensagem) {
+    const modal = document.getElementById("modalMensagem");
+    const modalTexto = document.getElementById("modalMensagemTexto");
+    const botaoFechar = document.getElementById("botaoFecha"); // Seleciona o botão de fechar
 
     modalTexto.innerText = mensagem;
 
     modal.classList.add("open");
-
-    // Evento para o botão de login (uma única vez)
-    botaoLogar.addEventListener("click", function () {
-        location.href = "loginCadastro.html";
-    }, { once: true });
 
     // Evento para o botão de fechar (uma única vez)
     botaoFechar.addEventListener("click", function () {
@@ -70,7 +87,7 @@ function exibirModal(mensagem) {
 function adicionarPost() {
     let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
     if (!usuarioLogado) {
-        alert("Você precisa estar logado para adicionar um post.");
+        exibirModalPrecisaLogin("Você precisa estar logado para adicionar um post.");
         return;
     }
 
@@ -85,7 +102,7 @@ function adicionarPost() {
     postForm.innerHTML = `
         <label for="tituloPost" id="labelTituloPost">Título:</label>
         <br>
-        <input type="text"  class="inputTitulo"  required />
+        <input type="text" id='tituloPost' class="inputTitulo"  required />
         <br><br>
         <label for="textoPost" id="labelTextoPost">Texto:</label>
         <br>
@@ -98,13 +115,15 @@ function adicionarPost() {
     container.appendChild(postForm);
 
     document.getElementById("salvarPostBtn").addEventListener("click", function () {
-        const titulo = document.getElementById("tituloPost").value.trim();
-        const texto = document.getElementById("textoPost").value.trim();
+        let titulo = document.getElementById("tituloPost");
+        let texto = document.getElementById("textoPost");
 
         if (!titulo || !texto) {
-            alert("Por favor, preencha todos os campos antes de salvar.");
+            exibirModalCampo("Por favor, preencha todos os campos antes de salvar.");
             return;
         }
+        titulo = titulo.value.trim();
+        texto = texto.value.trim();
 
         const novoPost = {
             login: usuarioLogado.login,
@@ -144,7 +163,7 @@ function mostraComentarios(event) {
 function adicionarComentario(postData) {
     let usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
     if (!usuarioLogado) {
-        alert("Você precisa estar logado para comentar.");
+        exibirModalPrecisaLogin("Você precisa estar logado para comentar.");
         return;
     }
 
@@ -176,7 +195,7 @@ function adicionarComentario(postData) {
         const conteudo = comentarioForm.querySelector("#conteudoComentario").value.trim();
 
         if (!conteudo) {
-            alert("Por favor, escreva um comentário antes de enviar.");
+            exibirModalCampo("Por favor, escreva um comentário antes de enviar.");
             return;
         }
 
