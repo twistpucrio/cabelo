@@ -497,6 +497,8 @@ textarea{
 }
 
 #btnBusca {
+    font-family: "mulish";
+    font-weight: bolder;
     padding: 0.8rem 1.5rem;
     background-color: #DF4C83;
     color: white;
@@ -514,6 +516,31 @@ textarea{
 
 #btnBusca:active {
     background-color: #ce2c67;
+    transform: translateY(0.2rem);
+    box-shadow: none;
+}
+
+.btnOrdenar {
+    font-family: "mulish";
+    font-weight: bolder;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff7aab;
+    color: white;
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0rem 0rem 0rem 2rem;
+}
+
+.btnOrdenar:hover {
+    background-color: #ff95bc;
+    transform: translateY(-0.2rem);
+}
+
+.btnOrdenar:active {
+    background-color: #ff609a;
     transform: translateY(0.2rem);
     box-shadow: none;
 }

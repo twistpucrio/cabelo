@@ -225,6 +225,22 @@ function adicionarComentario(postData) {
     });
 }
 
+function ordenarPostsData(crescente){
+    let forum = JSON.parse(localStorage.getItem("forum"));
+    
+    console.log(forum);
+    if (!crescente){
+        //ordenar em ordem decrescente
+        forum.sort((a, b) => new Date(a.post.data) - new Date(b.post.data));
+    } else{
+        //ordenar em ordem crescente
+        forum.sort((a, b) => new Date(b.post.data) - new Date(a.post.data));
+    }
+    console.log(forum);
+
+    localStorage.setItem("forum", JSON.stringify(forum));
+    mostraForum();
+}
 
 function mostraForum() {
     let forum = JSON.parse(localStorage.getItem("forum"));
@@ -454,6 +470,9 @@ function buscarPostPorPalavra(palavra) {
 
 window.addEventListener("load", async function () {
     let btnBusca = document.querySelector("#campoBusca");
+    const btnCres = document.getElementById("btnCrescente");
+    const btnDecres = document.getElementById("btnDecrescente");
+
     let forum = JSON.parse(localStorage.getItem("forum"));
     if (!forum){
         pegaInfoForum();
@@ -466,7 +485,15 @@ window.addEventListener("load", async function () {
         }
     });
 
-    mostraForum();
+    btnCres.addEventListener("click", function(){
+        ordenarPostsData(true);
+    });
+
+    btnDecres.addEventListener("click", function(){
+        ordenarPostsData(false);
+    });
+
+    ordenarPostsData(false);
     console.log(forum);
 
 });
