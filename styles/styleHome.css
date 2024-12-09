@@ -140,7 +140,10 @@
 
 #navigator a:hover {
     background-position: 0;
+    cursor: pointer;
 }
+
+
 
 #formularioBtn{
     font-family: "mulish";
