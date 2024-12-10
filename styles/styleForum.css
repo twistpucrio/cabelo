@@ -554,4 +554,68 @@ textarea{
     cursor: pointer; /* Mostra que é clicável */
 }
 
+/* botao remover */
+.removeBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
 
+.imgBtnRemover {
+    width: 60%;
+    margin-left: -2rem;
+    transition: transform 0.1s ease-in-out;
+}
+
+
+.imgBtnRemover:hover{
+    filter: brightness(105%);
+    transform: scale(1.1);
+}
+
+.imgBtnRemover:active{
+    filter: brightness(100%);
+    transform: scale(1);
+}
+
+
+#botaoRemover{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    border: 0;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    color: #250c19;
+    background-color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+    font-size: medium;
+    width: 13rem;
+    height: 2.6rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.226);
+    transition: transform 0.3s ease;
+}
+
+#botaoRemover:hover{
+    transform: scale(1.1);  
+}
+#botaoRemover:active{
+    transform: scale(0.95); 
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.226);
+}
+
+.removeDiv{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: -1rem;
+    margin-top: -2.1rem;
+}
