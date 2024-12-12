@@ -157,8 +157,6 @@ async function associarFuncoes(){
 function produtosCronograma(tipo){ 
     const containerProdutos = document.getElementById("tabelaProdutos");
 
-    console.log(tipo);
-
     if (tipo == "h"){
         if (document.getElementById("tabelaHidratacao")) {
             const tabelaHidratacao = document.getElementById("tabelaHidratacao");
@@ -293,7 +291,6 @@ window.addEventListener("load", async function() {
     if (!usuario){
         semUsuario();
     } else {
-        console.log(usuario);
         let cronogramaUsuario = usuario.cronograma;
 
         if (cronogramaUsuario == -1){

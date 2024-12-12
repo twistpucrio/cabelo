@@ -70,7 +70,6 @@ async function verificarUsuario() {
 
         if (usuarioEncontrado) {
             if (usuarioEncontrado.senha === senha) {
-                console.log("Usuário encontrado: ", JSON.stringify(usuarioEncontrado));
                 localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
                 modalSucesso('login');
                 return;
@@ -85,7 +84,6 @@ async function verificarUsuario() {
 
             if (usuarioCadastrado) {
                 if (usuarioCadastrado.senha === senha) {
-                    console.log("Usuário cadastrado: ", JSON.stringify(usuarioCadastrado));
                     localStorage.setItem("usuario", JSON.stringify(usuarioCadastrado));
                     modalSucesso('login');
                     return;
@@ -156,7 +154,6 @@ async function realizarCadastro() {
                 "email": email,
                 "cronograma": -1
             };
-            console.log(JSON.stringify(usuarioNovo));
             localStorage.setItem("usuario", JSON.stringify(usuarioNovo));
             modalSucesso('cadastro');
             document.getElementById("divCadastro").style.display = 'none';
