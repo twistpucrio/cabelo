@@ -167,6 +167,7 @@ async function pegaInfoForum(){
     const forum = await response.json();
 
     localStorage.setItem("forum", JSON.stringify(forum));
+    mostraForum();
 }
 
 
@@ -294,7 +295,8 @@ window.addEventListener("load", async function () {
     const btnDecres = document.getElementById("btnDecrescente");
 
     let forum = JSON.parse(localStorage.getItem("forum"));
-    if (!forum){
+    console.log(forum);
+    if (forum == null){
         pegaInfoForum();
     }
 
